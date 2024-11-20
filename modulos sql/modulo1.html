@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso en Línea: Programación Básica</title>
+    <link rel="stylesheet" href="../css/modulos_responsive.css">
+    <!-- Agregar enlace a Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f1f3f6;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            padding: 50px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            padding: 35px;
+            position: relative;
+        }
+
+        .back-icon {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: #34495e;
+            font-size: 1.5em;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .back-icon:hover {
+            color: #2c3e50;
+        }
+
+        .header {
+            text-align: center;
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+            border-bottom: 2px solid #e5e7eb;
+        }
+
+        .header h1 {
+            font-size: 2.6em;
+            color: #1a1a2e;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #7f8c8d;
+            font-size: 1.2em;
+        }
+
+        .module {
+            padding: 30px;
+            margin-bottom: 20px;
+            background-color: #f9fafb;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+        }
+
+        .module h2 {
+            font-size: 2em;
+            color: #3498db;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .video-container {
+            margin-bottom: 20px;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .video-container iframe {
+            width: 100%;
+            height: 350px;
+            border: none;
+        }
+
+        .materials ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .materials li {
+            margin: 12px 0;
+        }
+
+        .materials li a {
+            color: #3498db;
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .materials li a:hover {
+            color: #2980b9;
+        }
+
+        .quiz button {
+            display: inline-block;
+            margin: 12px 10px 0 0;
+            padding: 12px 22px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .quiz button:hover {
+            background-color: #2980b9;
+        }
+
+        .certificate {
+            text-align: center;
+            padding-top: 25px;
+            border-top: 2px solid #e5e7eb;
+        }
+
+        .cert-btn {
+            margin-top: 15px;
+            padding: 14px 32px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .cert-btn:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <i class="bi bi-arrow-left back-icon" onclick="goBack()"></i>
+
+        <!-- Cabecera Principal -->
+        <header class="header">
+            <h1>Curso SQL</h1>
+            <p>Introducete en el mundo SQL con este primer modulo. Incluye videos, material de apoyo y evaluaciones.</p>
+        </header>
+
+        <!-- Sección de Módulo -->
+        <section class="module">
+            <h2>Módulo 1: Introducción a SQL</h2>
+
+            <!-- Video Embebido -->
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/uUdKAYl-F7g" title="Video de introducción a la programación" allowfullscreen></iframe>
+            </div>
+
+            <!-- Materiales Adicionales -->
+            <div class="materials">
+                <h3>Materiales Adicionales</h3>
+                <ul>
+                    <li><a href="https://www.w3schools.com/sql/" target="_blank">Guía del Módulo 1 (sitio web)</a></li>
+                </ul>
+            </div>
+
+            <!-- Evaluación Interactiva -->
+            <div class="quiz">
+                <h3>Evaluación: Introducción a SQL</h3>
+                <p>Pregunta: ¿Qué significa SQL?</p>
+                <button onclick="checkAnswer('A')">A) Structured Query Language</button>
+                <button onclick="checkAnswer('B')">B) Simple Query Language</button>
+                <button onclick="checkAnswer('C')">C) Standard Query Language</button>
+            </div>
+        </section>
+
+        <!-- Sección de Certificado -->
+        <section class="certificate">
+            <h2>Certifica tus conocimientos</h2>
+            <p>Seguí completando los módulos y rendí el examen final para obtener tu certificado.</p>
+        </section>
+    </div>
+
+    <script>
+        // Función para evaluar respuestas del cuestionario
+        function checkAnswer(answer) {
+            const correctAnswer = 'A';
+            if (answer === correctAnswer) {
+                Swal.fire({
+                    title: "Respuesta correcta",
+                    text: "Sigue así y lograrás grandes resultados.",
+                    icon: "success"
+                });
+            } else {
+                Swal.fire({
+                    title: "Respuesta incorrecta",
+                    text: "No te rindas, vuelve a intentarlo.",
+                    icon: "error"
+                });
+            }
+        }
+
+        // Función para el botón de volver
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+    <!--Sweet alert-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

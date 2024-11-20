@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FreeCur</title>
+    <link rel="stylesheet" href="css/index.css">
+    <!--Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!--Letras bootstrap-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+10&family=Quicksand:wght@300..700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg modern-navbar">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="imagenes/logo.png.png" alt="Logo" class="navbar-logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <ul class="navbar-nav mx-auto">
+            <li><a class="nav-link" href="#cursos">Cursos</a></li>
+            <li><a class="nav-link" href="#opiniones">Opiniones</a></li>
+          </ul>
+          <div class="navbar-actions">
+            <i class="bi bi-moon toggle-theme" id="darkModeToggle"></i>
+            <button class="cta-button">¡Únete!</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- Hero -->
+    <section class="hero container-fluid d-flex">
+        <div class="container-fluid lado-izq text-center col-lg-6 col-md-6 col-sm-12">
+            <h1 class="mt-5 mb-5">EL CAMINO HACIA<br>TU FUTURO COMIENZA HOY</h1>
+            <ul>
+              <li><i class="bi bi-award"></i><b>Certificación Reconocida</b><span class="texto-ul">: Acredita tus conocimientos y valida tu esfuerzo.</span></li>
+              <li><i class="bi bi-clock"></i><b>Acceso 24/7</b><span class="texto-ul">: Aprende donde y cuando quieras.</span></li>
+              <li><i class="bi bi-person-check"></i><b>Inclusión y Accesibilidad</b><span class="texto-ul">: Cursos adaptados para todos los niveles y capacidades.</span></li>
+              <li><i class="bi bi-pencil-square"></i><b>Evaluaciones Prácticas</b><span class="texto-ul">: Gana experiencia con evaluaciones.</span></li>
+            </ul>
+            <button class="btn inscribirse mt-4">INSCRIBITE AHORA</button>
+        </div>
+        <div class="container-fluid lado-der text-center col-lg-6 col-md-6 col-sm-12">
+          <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="d-block carrusel-derecha1" alt="Imagen persona estudiando"></div>
+              </div>
+              <div class="carousel-item">
+                <div class="d-block carrusel-derecha2" alt="Imagen persona estudiando"></div>
+              </div>
+              <div class="carousel-item">
+                <div class="d-block carrusel-derecha3" alt="Imagen persona estudiando"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <!-- Botón de Preguntas Frecuentes -->
+    <button class="faq-button" onclick="mostrarPreguntasFrecuentes()">?</button>
+
+        <!--Seccion ¿por que elegirnos?-->
+        <section class="elegirnos container-fluid"> 
+            <h2 class="subtitulo text-center mb-5">¿ Por que <span class="resaltar-texto">FreeCur</span> ?</h2>
+            <!--tarjetas-->
+            <div class="container tarjetas mt-2">
+              <!--tarjeta 1-->
+              <div class="card mb-5" style="width: 18rem;">
+                <img src="imagenes/carta1_0.avif" class="card-img-top" alt="imagen de hombre teniendo una idea">
+                <div class="card-body">
+                  <p class="card-text">Impulsa tu carrera y amplía tus oportunidades. En FreeCur te preparamos con las habilidades y conocimientos que necesitas para alcanzar tus metas.</p>
+                </div>
+              </div>
+              <!--tarjeta 2-->
+              <div class="card mb-5" style="width: 18rem;">
+                <img src="imagenes/carta2_0.avif" class="card-img-top" alt="Imagen de computadora con elementos">
+                <div class="card-body">
+                  <p class="card-text">Online, accesible y a tu ritmo. Nuestros cursos combinan teoría con práctica, ayudándote a construir un portafolio profesional mientras adquieres nuevas habilidades.</p>
+                </div>
+              </div>
+              <!--tarjeta 3-->
+              <div class="card mb-5" style="width: 18rem;">
+                <img src="imagenes/carta3_1.webp" class="card-img-top" alt="Imagen de una mujer enseñando a un hombre">
+                <div class="card-body">
+                  <p class="card-text">Aprendizaje con respaldo. Cuenta con el apoyo de nuestros mentores, comunidad y coaches que te guiarán paso a paso para que nunca te sientas solo en tu camino.</p>
+                </div>
+              </div>
+              <!--tarjeta 4-->
+              <div class="card mb-5" style="width: 18rem;">
+                <img src="imagenes/carta4_1.avif" class="card-img-top" alt="Imagen de hombre buscando orientacion">
+                <div class="card-body">
+                  <p class="card-text">Habilidades prácticas para el mercado laboral. Aprende lo que las empresas buscan y recibe talleres, capacitaciones y asistencia en tu búsqueda laboral.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+      
+          <!--Seccion cursos populares-->
+          <section class="cursos-populares container-fluid" id="cursos">
+            <h2 class="cursos-titulo text-center mb-5">NUESTROS CURSOS POPULARES</h2>
+            <div class="grid-cursos">
+              <div class="grid-item">
+                <div class="nombre-curso">Matemáticas</div>
+              </div>
+              <div class="grid-item">
+                <div class="nombre-curso">Desarrollo Web</div>
+              </div>
+              <div class="grid-item">
+                <div class="nombre-curso">MySQL</div>
+              </div>
+              <div class="grid-item">
+                <div class="nombre-curso">Java</div>
+              </div>
+            </div>
+            
+            <div class="fin-cursos"><span class="uno">#1</span><span class="texto-cursos">EN CURSOS DIGITALES</span></div>
+            <button class="btn boton-curso"><a class="cursos-link" href="cursos_populares.html">VER TODOS LOS CURSOS</a></button>
+          </section>
+      
+          <!--Seccion recomendaciones-->
+          <section class="recomendaciones container-fluid" id="opiniones">
+            <h3 class="testimonios-titulo text-center">TESTIMONIOS DE ESTUDIANTES</h3>
+            <div class="container">
+              <!-- Carrusel de Testimonios Animado -->
+              <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                <!-- Indicadores -->
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Testimonio 1"></button>
+                  <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1" aria-label="Testimonio 2"></button>
+                  <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2" aria-label="Testimonio 3"></button>
+                </div>
+              
+                <!-- Slides -->
+                <div class="carousel-inner caja-carrusel">
+                  <div class="carousel-item active">
+                    <div class="testimonial-item">
+                      <img src="imagenes/WhatsApp Image 2024-10-10 at 14.33.21.jpeg" class="critic-image" alt="Crítico 1">
+                      <blockquote class="critic-text">
+                        <p>“Este servicio superó todas mis expectativas. La atención al detalle es impecable.”</p>
+                        <div class="critic-name">— Laura Gómez, Cliente Satisfecho</>
+                      </blockquote>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="testimonial-item">
+                      <img src="imagenes/WhatsApp Image 2024-10-10 at 14.33.21.jpeg" class="critic-image" alt="Crítico 2">
+                      <blockquote class="critic-text">
+                        <p>“Increíble experiencia de principio a fin. Lo recomendaría sin dudarlo.<br> Gracias FreeCur por hacerlo posible”</p>
+                        <div class="critic-name">— Marcos Rivera, Profesional de Marketing</div>
+                      </blockquote>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="testimonial-item">
+                      <img src="imagenes/WhatsApp Image 2024-10-10 at 14.33.21.jpeg" class="critic-image" alt="Crítico 3">
+                      <blockquote class="critic-text">
+                        <p>“Una calidad que no he encontrado en ningún otro lugar. Simplemente espectacular.”</p>
+                        <div class="critic-name">— Ana Torres, Ejecutiva de Ventas</div>
+                      </blockquote>
+                    </div>
+                  </div>
+                </div>
+              
+                <!-- Controles de navegación -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Siguiente</span>
+                </button>
+              </div>
+            </div>
+          </section>
+
+    <!-- Footer -->
+    <footer class="container-fluid footer">
+        <div class="row py-5">
+            <!-- Columna 1: Enlaces rápidos -->
+            <div class="col-md-3">
+              <h5 class="footer-title">Enlaces rápidos</h5>
+              <ul class="footer-links">
+                <li><a href="cursos_populares.html">Cursos</a></li>
+                <li><a href="#opiniones">Opiniones</a></li>
+              </ul>
+            </div>
+    
+            <!-- Columna 2: Redes Sociales -->
+            <div class="col-md-3">
+              <h5 class="footer-title">Síguenos</h5>
+              <div class="social-icons">
+                <a href="https://www.facebook.com/?stype=lo&flo=1&deoia=1&jlou=AfeL3MctCi2b0GHXoTsW02jFMerN04bAMTiV91khRt1d4IYehraf-Q-xjnUTbTi-sQdd4YKI-hhsGGPnarSGoxTkczZ3oqgnfgorRU0ukV6JwA&smuh=50444&lh=Ac_VF0qovf6Z80vI7fw" class="social-icon"><i class="bi bi-facebook"></i></a>
+                <a href="https://x.com/?lang=es" class="social-icon"><i class="bi bi-twitter"></i></a>
+                <a href="https://www.linkedin.com/" class="social-icon"><i class="bi bi-linkedin"></i></a>
+                <a href="https://www.instagram.com/" class="social-icon"><i class="bi bi-instagram"></i></a>
+              </div>
+            </div>
+    
+            <!-- Columna 3: Información adicional -->
+            <div class="col-md-6">
+              <h5 class="footer-title">Sobre FreeCur</h5>
+              <p>FreeCur ofrece cursos online de alta calidad, accesibles y a tu propio ritmo. Con el respaldo de mentores y la comunidad, te ayudamos a alcanzar tus metas profesionales.</p>
+            </div>
+          </div>
+    
+          <!-- Fila de derechos de autor -->
+          <div class="row division-footer">
+            <div class="col text-center py-3">
+              <p class="m-0">&copy; 2024 FreeCur. Todos los derechos reservados.</p>
+            </div>
+          </div>
+    </footer>
+    <!--scripts-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+    function mostrarPreguntasFrecuentes() {
+      Swal.fire({
+        title: 'Preguntas Frecuentes',
+        html: `
+          <h3>¿Qué tipos de cursos ofrecen?</h3>
+          <p>Ofrecemos cursos de diversas áreas, como tecnología, negocios, y más.</p>
+          <h3>¿Cuál es la duración de los cursos?</h3>
+          <p>La duración varía según el curso. Puedes aprender a tu propio ritmo.</p>
+          <h3>¿Otorgan certificación?</h3>
+          <p>Sí, al finalizar los cursos, obtendrás una certificación reconocida.</p>
+        `,
+        icon: 'info',
+        confirmButtonText: 'Cerrar',
+        customClass: {
+          popup: 'faq-popup'
+        }
+      });
+    }
+    </script>
+    <!-- JavaScript para alternar el modo oscuro -->
+    <script>
+        // Selecciona el botón
+        const darkModeToggle = document.getElementById('darkModeToggle');
+    
+        // Agrega un evento de clic al botón
+        darkModeToggle.addEventListener('click', () => {
+            // Alterna la clase 'dark-mode' en el body
+            document.body.classList.toggle('dark-mode');
+    
+            // Alterna el icono entre luna y sol
+            if (document.body.classList.contains('dark-mode')) {
+                darkModeToggle.classList.remove('bi-moon');
+                darkModeToggle.classList.add('bi-sun');
+            } else {
+                darkModeToggle.classList.remove('bi-sun');
+                darkModeToggle.classList.add('bi-moon');
+            }
+        });
+    </script>
+    <!--Bootstrap-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>

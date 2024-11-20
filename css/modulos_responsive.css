@@ -1,0 +1,296 @@
+/*Hacer*/
+  @media screen and (max-width:450px) {
+    h1 {
+        font-size: 2rem !important;
+    }
+    p {
+        font-size: 1rem !important;
+    }
+    h2 {
+        font-size: 1.5rem !important;
+        display: flex;
+        text-align: center;
+    }
+    .video-container {
+        width: 210px !important;
+        height: 300px !important;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    iframe {
+        transform: rotate(90deg); /* Gira el video 90 grados */
+        transform-origin: center;
+        height: 180px !important; /* Ajusta la altura */
+        width: 320px !important;  /* Ajusta el ancho para mantener proporción */
+    }
+    .solo-celulares{
+        display: inherit !important;
+        margin-bottom: 10px;
+        color: #2980b9;
+        font-weight: bold;
+        display: flex;
+        text-align: center;
+    }
+    .materials h3{
+        display: flex !important;
+        text-align: center !important;        
+    }
+    .quiz h3{
+        margin-top: 20px;
+        padding-left: 50px;
+    }
+    .quiz p{
+        margin-top: 5px;
+        display: flex;
+        text-align: center;
+    }
+  }
+  /*Listo*/
+  @media screen and (max-width:420px) {
+    h1 {
+        font-size: 2rem !important;
+    }
+    p {
+        font-size: 1rem !important;
+    }
+    h2 {
+        font-size: 1.5rem !important;
+        display: flex;
+        text-align: center;
+    }
+    .video-container {
+        width: 190px !important;
+        height: 300px !important;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    iframe {
+        transform: rotate(90deg); /* Gira el video 90 grados */
+        transform-origin: center;
+        height: 180px !important; /* Ajusta la altura */
+        width: 320px !important;  /* Ajusta el ancho para mantener proporción */
+    }
+    .solo-celulares{
+        display: inherit !important;
+        margin-bottom: 10px;
+        color: #2980b9;
+        font-weight: bold;
+        display: flex;
+        text-align: center;
+    }
+    .materials h3{
+        display: flex !important;
+        text-align: center !important;        
+    }
+    .quiz h3{
+        margin-top: 20px;
+        padding-left: 40px;
+    }
+    .quiz p{
+        margin-top: 5px;
+        display: flex;
+        text-align: center;
+    }
+  }
+  /*Lograda*/
+  @media screen and (max-width:400px) {
+    h1 {
+        font-size: 2rem !important;
+    }
+    p {
+        font-size: 1rem !important;
+    }
+    h2 {
+        font-size: 1.5rem !important;
+        display: flex;
+        text-align: center;
+    }
+    .video-container {
+        width: 160px !important;
+        height: 300px !important;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    iframe {
+        transform: rotate(90deg); /* Gira el video 90 grados */
+        transform-origin: center;
+        height: 180px !important; /* Ajusta la altura */
+        width: 320px !important;  /* Ajusta el ancho para mantener proporción */
+    }
+    .solo-celulares{
+        display: inherit !important;
+        margin-bottom: 10px;
+        color: #2980b9;
+        font-weight: bold;
+        display: flex;
+        text-align: center;
+    }
+    .materials h3{
+        display: flex !important;
+        text-align: center !important;        
+    }
+    .quiz h3{
+        margin-top: 20px;
+        padding-left: 30px;
+    }
+    .quiz p{
+        margin-top: 5px;
+        display: flex;
+        text-align: center;
+    }
+  }
+  /*adaptacion lograda*/
+  @media screen and (max-width: 380px) {
+    h1 {
+        font-size: 2rem !important;
+    }
+    p {
+        font-size: 1rem !important;
+    }
+    h2 {
+        font-size: 1.5rem !important;
+        display: flex;
+        text-align: center;
+    }
+    .video-container {
+        width: 160px !important;
+        height: 300px !important;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    iframe {
+        transform: rotate(90deg); /* Gira el video 90 grados */
+        transform-origin: center;
+        height: 180px !important; /* Ajusta la altura */
+        width: 320px !important;  /* Ajusta el ancho para mantener proporción */
+    }
+    .solo-celulares{
+        display: inherit !important;
+        margin-bottom: 10px;
+        color: #2980b9;
+        font-weight: bold;
+        display: flex;
+        text-align: center;
+    }
+    .materials h3{
+        display: flex !important;
+        text-align: center !important;        
+    }
+    .quiz h3{
+        margin-top: 20px;
+        padding-left: 25px;
+    }
+    .quiz p{
+        margin-top: 5px;
+        display: flex;
+        text-align: center;
+    }
+}
+   
+  /*hacer*/
+  @media screen and (max-width:360px) {
+    h1 {
+        font-size: 2rem !important;
+    }
+    p {
+        font-size: 1rem !important;
+    }
+    h2 {
+        font-size: 1.5rem !important;
+        display: flex;
+        text-align: center;
+    }
+    .video-container {
+        width: 140px !important;
+        height: 300px !important;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    iframe {
+        transform: rotate(90deg); /* Gira el video 90 grados */
+        transform-origin: center;
+        height: 150px !important; /* Ajusta la altura */
+        width: 320px !important;  /* Ajusta el ancho para mantener proporción */
+    }
+    .solo-celulares{
+        display: inherit !important;
+        margin-bottom: 10px;
+        color: #2980b9;
+        font-weight: bold;
+        display: flex;
+        text-align: center;
+    }
+    .materials h3{
+        display: flex !important;
+        text-align: center !important;        
+    }
+    .quiz h3{
+        margin-top: 20px;
+        padding-left: 20px;
+    }
+    .quiz p{
+        margin-top: 5px;
+        display: flex;
+        text-align: center;
+    }
+  }
+  /*listo*/
+  @media screen and (max-width:350px) {
+    h1 {
+        font-size: 1.5rem !important;
+    }
+    p {
+        font-size: 1rem !important;
+    }
+    h2 {
+        font-size: 1.2rem !important;
+        display: flex;
+        text-align: center;
+    }
+    .video-container {
+        width: 120px !important;
+        height: 260px !important;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    iframe {
+        transform: rotate(90deg); /* Gira el video 90 grados */
+        transform-origin: center;
+        height: 120px !important; /* Ajusta la altura */
+        width: 250px !important;  /* Ajusta el ancho para mantener proporción */
+    }
+    .solo-celulares{
+        display: inherit !important;
+        font-size: 0.5rem;
+        margin-bottom: 10px;
+        color: #2980b9;
+        font-weight: bold;
+        display: flex;
+        text-align: center;
+    }
+    .materials h3{
+        display: flex !important;
+        text-align: center !important;        
+    }
+    .quiz h3{
+        margin-top: 20px;
+        padding-left: 10px;
+    }
+    .quiz p{
+        margin-top: 5px;
+        display: flex;
+        text-align: center;
+    }
+  }

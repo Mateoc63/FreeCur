@@ -1,0 +1,664 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FreeCur</title>
+    <link rel="stylesheet" href="../css/evaluaciones.css">
+    <!--Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!--Letras bootstrap-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+10&family=Quicksand:wght@300..700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <style>
+      /* Estilo para el ícono de usuario */
+      .user-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #007bff;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        font-weight: bold;
+        margin-right: 10px;
+      }
+      .message { 
+        display: flex; 
+        align-items: center;
+        margin-bottom: 10px;
+      }
+      .boton-inscribirse {
+          border: 1px solid white !important;
+          width: 8rem;
+          border-radius: 5px;
+          display: flex;
+          justify-content: center;
+          margin: 0 auto;
+      }
+      .user-photo { 
+        width: 40px; 
+        height: 40px; 
+        border-radius: 50%;
+        background-size: cover;
+        margin-right: 10px; 
+      }
+      .titulo-curso{
+            padding-top: 30px;
+            color: white;
+            text-shadow: 0 0 10px black;
+            font-weight: bold;
+        }
+        
+        .descripcion-curso{
+            color: white;
+            font-size: 1.3rem;
+            text-shadow: 0 0 5px black;
+            font-weight: bold;
+        }
+       /*Lado derecho*/
+       .der{
+            border-left: 1px solid transparent;
+            font-family: sans-serif;
+            height: 85vh;
+        }
+        .ul-modulos {
+            list-style: none;
+            padding-left: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        ul li {
+            font-size: 1.5rem;
+            margin: 15px 0;
+            display: flex;
+            align-items: center;
+        }
+        ul li i {
+            font-size: 1.8rem;
+            color: #f39c12;
+            margin-right: 15px;
+        }
+        .lado-der{
+            width: 50%;
+            height: 75vh;
+        }
+        #testimonialCarousel {
+            max-width: 600px;
+            margin: auto;
+        }
+        .enlace-modulos{
+          color: black;
+          text-decoration: none;
+        }
+        @media screen and (max-width:767px) {
+          .foro-modulo{
+            height: 170vh;
+          }
+          .ul-modulos{
+            margin-left: -20px;
+          }
+        }
+                /* Contenedor del Testimonio */
+                .testimonial-item {
+            text-align: center;
+            position: relative;
+            padding: 20px 20px;
+            color: #fff;
+        }
+        /* Imagen del Crítico */
+        .critic-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            animation: imageFadeIn 1s ease;
+        }
+
+        /* Texto de la Crítica */
+        .critic-text p {
+            font-size: 1.2rem;
+            font-style: italic;
+            opacity: 0;
+            animation: textSlideIn 1s forwards ease-in-out 0.5s;
+        }
+
+        /* Nombre del Crítico */
+        .critic-name {
+            font-size: 1rem;
+            margin-top: 15px;
+            opacity: 0;
+            animation: nameFadeIn 1s forwards ease-in-out 1s;
+        }
+
+        /* Animaciones */
+        @keyframes imageFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes textSlideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes nameFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Fondo de cada slide */
+        .carousel-item:nth-child(1) { background-color: #2a9d8f; }
+        .carousel-item:nth-child(2) { background-color: #e76f51; }
+        .carousel-item:nth-child(3) { background-color: #264653; }
+            /*-------------------modo oscuro---------------------------------- */
+    body.dark-mode {
+      background-color: #121212;
+      color: #ffffff;
+    }
+    .dark-mode .navbar, .dark-mode .footer {
+      background-color: #333333;
+    }
+    .dark-mode .division-footer{
+      border-top: 1px solid white;
+    }
+    .dark-mode .resaltar-texto{
+      background-color: lightblue !important;
+      color: black !important;
+      border-radius: 20px;
+      padding: 5px;
+    }
+    .dark-mode .boton-curso{
+      border: 1px solid white !important;
+    }
+    .dark-mode .boton-curso:hover{
+      background-color: white !important;
+      color: black !important;
+    }
+    .dark-mode .navbar, .dark-mode .footer, .dark-mode .faq-button, .dark-mode .grid-item, .dark-mode .testimonial-item{
+      border: 1px solid white;
+    }
+    .dark-mode .boton-enviar, .dark-mode .user-icon{
+      border: 1px solid white !important;
+    }
+    .dark-mode .presentacion-curso{
+      border-bottom: 1px solid white;
+      border-top: 1px solid white;
+    }
+    .dark-mode .btn, .dark-mode .faq-button {
+      background-color: #555555;
+      color: #ffffff;
+    }
+    .dark-mode .titulo-curso, .dark-mode .descripcion-curso{
+      background-color: transparent !important;
+    }
+    .dark-mode-button {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background-color: #333;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .dark-mode .btn{
+      border: none !important;
+    }
+      body.dark-mode {
+          background-color: #000;
+          color: #fff; 
+      }
+      body.dark-mode * {
+          background-color: #000 !important;
+          color: #fff !important;
+      }
+      body.dark-mode button, 
+      body.dark-mode input, 
+      body.dark-mode select, 
+      body.dark-mode textarea {
+          background-color: #000 !important;
+          color: #fff !important;
+          border-color: #fff;
+      }
+      body.dark-mode .navbar, 
+      body.dark-mode .card, 
+      body.dark-mode .modal-content, 
+      body.dark-mode .dropdown-menu {
+          background-color: #000 !important;
+          color: #fff !important;
+      }
+      body.dark-mode a {
+          color: #fff;
+      }
+
+      body.dark-mode a:hover {
+          color: #ccc;
+      }
+      .dark-mode .navbar{
+          border: none !important;
+      }
+      /*Estilo para botones responsives de cursos puntuales*/
+@media screen and (max-width:1280px) {
+  .navbar-nav i {
+    font-size: 40px;
+    margin: 0 40px;
+  }
+
+}
+@media screen and (max-width:1024px) {
+  .presentacion-curso{
+    background-image: url(../imagenes/java1.jpg);
+    background-size: contain;
+    height: 58vh;
+    background-position: 180%;
+  }
+  .navbar-nav i {
+    font-size: 40px;
+    margin: 0 40px;
+  }
+  .presentacion-curso{
+    height: 30vh !important;
+  }
+  .titulo-curso{
+    font-size: 2rem;
+    padding-top: 50px !important;
+    text-shadow: 0 0 5px black !important;
+  }
+  .boton-inscribirse{
+    background-color: black;
+    border: 1px solid white;
+  }
+}
+/*Listo*/
+@media screen and (max-width:950px) {
+  .presentacion-curso{
+    background-image: url(../imagenes/java1.jpg);
+    background-size: contain;
+    height: 58vh;
+  }
+  .navbar-nav i {
+    font-size: 40px;
+    margin: 0 40px;
+  }
+  .presentacion-curso{
+    height: 40vh !important;
+  }
+}
+/*Listo*/
+@media screen and (max-width:830px) {
+  .presentacion-curso{
+    background-image: url(../imagenes/java1.jpg);
+    background-size: contain;
+    height: 58vh;
+  }
+  .navbar-nav i {
+    font-size: 40px;
+    margin: 0 40px;
+  }
+  .presentacion-curso{
+    height: 40vh !important;
+  }
+}
+@media screen and (max-width:780px) {
+  .presentacion-curso{
+    background-image: url(../imagenes/java1.jpg);
+    background-size: contain;
+    height: 58vh;
+    background-position: 900%;
+  }
+  .navbar-nav i {
+    font-size: 40px;
+    margin: 0 40px;
+  }
+  .presentacion-curso{
+    height: 40vh !important;
+  }
+}
+/*HACER RESPONSIVE*/
+@media screen and (max-width:767px) {
+  .presentacion-curso{
+    background-image: url(../imagenes/java1.jpg);
+    background-size: contain;
+    height: 58vh;
+    background-position: 180%;
+  }
+}
+@media screen and (max-width:700px) {
+  .presentacion-curso{
+    background-image: url(../imagenes/java1.jpg);
+    background-size: contain;
+    height: 58vh;
+    background-position: 180%;
+  }
+}
+/*seguir aca*/
+@media screen and (max-width:550px) {
+  .presentacion-curso{
+    background-image: url(../imagenes/java1.jpg);
+    background-size: contain;
+    height: 30vh !important;
+    background-position: 905% !important;
+  }
+}
+@media screen and (max-width:450px) {
+  .presentacion-curso{
+    background-image: url(../imagenes/java1.jpg);
+    background-size: contain;
+    height: 25vh !important;
+    background-position: 1200% !important;
+  }
+}
+/*Listo*/
+@media screen and (max-width:420px) {
+  .presentacion-curso{
+    background-image: url(../imagenes/java1.jpg);
+    background-size: contain;
+    height: 25vh !important;
+    background-position: 1200% !important;
+  }
+}
+/*Lograda*/
+@media screen and (max-width:400px) {
+  .presentacion-curso{
+    background-image: url(../imagenes/java1.jpg);
+    background-size: contain;
+    height: 25vh !important;
+    background-position: 1100% !important;
+  }
+}
+/*adaptacion lograda*/
+@media screen and (max-width:380px) {
+  .presentacion-curso{
+    background-image: url(../imagenes/java1.jpg);
+    background-size: contain;
+    height: 30vh !important;
+    background-position: 900% !important;
+  }
+}     
+/*hacer*/
+@media screen and (max-width:360px) {
+  .presentacion-curso{
+    background-image: url(../imagenes/java1.jpg);
+    background-size: contain;
+    height: 58vh;
+    background-position: 180%;
+  }
+}
+/*listo*/
+@media screen and (max-width:350px) {
+  .presentacion-curso{
+    background-image: url(../imagenes/java1.jpg);
+    background-size: contain;
+    height: 25vh !important;
+  }
+}
+    </style>
+
+    <!-- Botón de Preguntas Frecuentes -->
+    <button class="faq-button" onclick="mostrarPreguntasFrecuentes()">?</button>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg modern-navbar">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="../imagenes/logo.png.png" alt="Logo" class="navbar-logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <ul class="navbar-nav mx-auto">
+            <li><a class="nav-link" href="../cursos_populares.html">Cursos</a></li>
+            <li><a class="nav-link" href="#foro">Foro</a></li>
+          </ul>
+          <div class="navbar-actions">
+            <i class="bi bi-moon toggle-theme" id="darkModeToggle"></i>
+            <button class="cta-button">¡Inscribirse!</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+
+    <!--Presentación curso-->
+    <section class="presentacion-curso container-fluid">
+        <h1 class="titulo-curso text-center">JAVA</h1>
+        <p class="descripcion-curso mt-4 text-center">Aprende a programar en Java desde <br> lo básico hasta conceptos avanzados. <br>Desarrolla aplicaciones robustas <br> y mejora tus habilidades de programación.<br> Al finalizar, obtendrás un certificado<br> que respalda tus conocimientos en Java</p>
+        <div class="boton-inscribirse text-center d-flex justify-content-center mt-4">
+            <button class="btn"><a class="enlace-inscripcion" href="#">INSCRIBIRSE</a></button>
+        </div>        
+    </section>
+
+    <!--Foro y modulos-->
+    <section class="foro-modulo container-fluid d-flex flex-wrap">
+      <div class="container izq text-center col-12 col-md-6">
+        <div class="foro" id="foro">
+          <h1 class="text-center mt-2 mb-3">FORO DE PREGUNTAS</h1>
+          <div id="chat-container">
+            <div class="message">
+              <div class="user-photo" style="background-image: url(../imagenes/WhatsApp\ Image\ 2024-10-10\ at\ 14.33.21.jpeg);"></div>
+              <div class="message-content">
+                  <p><strong>Profesor:</strong> ¡Bienvenidos al foro de la materia! No duden en hacer sus preguntas.</p>
+              </div>
+          </div>
+          </div>
+      
+          <div id="input-container">
+              <input type="text" id="message-input" placeholder="Escribe tu pregunta...">
+              <button class="mt-2 boton-enviar" id="send-btn" onclick="addMessage()">Enviar</button>
+          </div>
+        </div>
+      </div>
+      <div class="container der text-center col-12 col-md-6">
+        <ul class="container mt-4 ul-modulos">
+            <li><i class="bi bi-backpack3"></i><b><a class="enlace-modulos" href="../modulos java/modulo1.html">Modulo 1</a></b></li>
+            <li><i class="bi bi-backpack3"></i><b><a class="enlace-modulos" href="../modulos java/modulo2.html">Modulo 2</a></b></li>
+            <li><i class="bi bi-pencil-square"></i><b><a class="enlace-modulos" href="../modulos java/examen.html">Examen final</a></b></li>
+        </ul>
+        <!--Carrusel opiniones-->
+        <div class="container">
+            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Testimonio 1"></button>
+                <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1" aria-label="Testimonio 2"></button>
+                <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2" aria-label="Testimonio 3"></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="testimonial-item">
+                    <img src="../imagenes/WhatsApp Image 2024-10-10 at 14.33.21.jpeg" class="critic-image" alt="Crítico 1">
+                    <blockquote class="critic-text">
+                      <p>“Este servicio superó todas mis expectativas. La atención al detalle es impecable.”</p>
+                      <div class="critic-name">— Laura Gómez, Cliente Satisfecho</>
+                    </blockquote>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="testimonial-item">
+                    <img src="../imagenes/WhatsApp Image 2024-10-10 at 14.33.21.jpeg" class="critic-image" alt="Crítico 2">
+                    <blockquote class="critic-text">
+                      <p>“Increíble experiencia de principio a fin. Lo recomendaría sin dudarlo.</p>
+                      <div class="critic-name">— Marcos Rivera, Profesional de Marketing</div>
+                    </blockquote>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="testimonial-item">
+                    <img src="../imagenes/WhatsApp Image 2024-10-10 at 14.33.21.jpeg" class="critic-image" alt="Crítico 3">
+                    <blockquote class="critic-text">
+                      <p>“Una calidad que no he encontrado en ningún otro lugar. Simplemente espectacular.”</p>
+                      <div class="critic-name">— Ana Torres, Ejecutiva de Ventas</div>
+                    </blockquote>
+                  </div>
+                </div>
+              </div>      
+              <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+              </button>
+          </div>
+      </div>
+    </section>
+
+    <!--Footer-->
+    <footer class="container-fluid footer">
+      <div class="row py-5">
+        <div class="col-md-3">
+          <h5 class="footer-title">Enlaces rápidos</h5>
+          <ul class="footer-links">
+            <li><a href="../cursos_populares.html">Cursos</a></li>
+            <li><a href="#foro">Foro</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-3">
+          <h5 class="footer-title">Síguenos</h5>
+          <div class="social-icons">
+                <a href="https://www.facebook.com/?stype=lo&flo=1&deoia=1&jlou=AfeL3MctCi2b0GHXoTsW02jFMerN04bAMTiV91khRt1d4IYehraf-Q-xjnUTbTi-sQdd4YKI-hhsGGPnarSGoxTkczZ3oqgnfgorRU0ukV6JwA&smuh=50444&lh=Ac_VF0qovf6Z80vI7fw" class="social-icon"><i class="bi bi-facebook"></i></a>
+                <a href="https://x.com/?lang=es" class="social-icon"><i class="bi bi-twitter"></i></a>
+                <a href="https://www.linkedin.com/" class="social-icon"><i class="bi bi-linkedin"></i></a>
+                <a href="https://www.instagram.com/" class="social-icon"><i class="bi bi-instagram"></i></a>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <h5 class="footer-title">Sobre FreeCur</h5>
+          <p>FreeCur ofrece cursos online de alta calidad, accesibles y a tu propio ritmo. Con el respaldo de mentores y la comunidad, te ayudamos a alcanzar tus metas profesionales.</p>
+        </div>
+      </div>
+
+      <div class="row division-footer">
+        <div class="col text-center py-3">
+          <p class="m-0">&copy; 2024 FreeCur. Todos los derechos reservados.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!--script foro-->
+    <script>
+        let isFirstMessage = true; // Variable para controlar la primera vez
+  
+        function addMessage() {
+            const chatContainer = document.getElementById("chat-container");
+            const messageInput = document.getElementById("message-input");
+            const messageText = messageInput.value.trim();
+  
+            if (messageText !== "") {
+                const messageElement = document.createElement("div");
+                messageElement.classList.add("message");
+  
+                if (!isFirstMessage) {
+                    // Para el primer mensaje, muestra la imagen del profesor
+                    const userPhoto = document.createElement("div");
+                    userPhoto.classList.add("user-photo");
+                    userPhoto.style.backgroundImage = "url(imagenes/WhatsApp Image 2024-10-10 at 14.33.21.jpeg')";
+                    messageElement.appendChild(userPhoto);
+                    isFirstMessage = false; // Cambia el estado para los siguientes mensajes
+                } else {
+                    // Para los mensajes siguientes, muestra el icono de usuario
+                    const userIcon = document.createElement("div");
+                    userIcon.classList.add("user-icon");
+                    userIcon.textContent = "U"; // Letra U para usuario
+                    messageElement.appendChild(userIcon);
+                }
+  
+                const messageContent = document.createElement("div");
+                messageContent.classList.add("message-content");
+                const messageTextElement = document.createElement("p");
+                messageTextElement.textContent = messageText;
+                
+                messageContent.appendChild(messageTextElement);
+                messageElement.appendChild(messageContent);
+                chatContainer.appendChild(messageElement);
+  
+                messageInput.value = "";
+                chatContainer.scrollTop = chatContainer.scrollHeight;
+            }
+        }
+  
+        // Permitir enviar el mensaje al presionar Enter
+        document.getElementById("message-input").addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                addMessage();
+            }
+        });
+      </script>
+          <script>
+            function mostrarPreguntasFrecuentes() {
+              Swal.fire({
+                title: 'Preguntas Frecuentes',
+                html: `
+                  <h3>¿Cuál es el mejor entorno de desarrollo (IDE) para programar en Java?</h3>
+                  <p>Para principiantes, se recomienda usar Eclipse o IntelliJ IDEA. Ambos son gratuitos y ofrecen herramientas útiles como autocompletado, depuración y una interfaz intuitiva. NetBeans es otra opción que viene con varias funciones integradas, lo que puede ser útil si prefieres un entorno más completo desde el inicio.</p>
+                  <h3>¿Es necesario aprender otros lenguajes antes de Java?</h3>
+                  <p>No, no es necesario tener conocimientos previos de otros lenguajes. Java es muy adecuado para principiantes y tiene una sintaxis relativamente sencilla. Aprender Java puede, de hecho, facilitarte el aprendizaje de otros lenguajes en el futuro, gracias a su enfoque en programación orientada a objetos.</p>
+                  <h3>¿Cómo puedo obtener ayuda si tengo dudas mientras practico?</h3>
+                  <p>Puedes obtener ayuda en el foro del curso donde los profesores y otros estudiantes pueden responder tus preguntas. Además, existen recursos adicionales como Stack Overflow, donde puedes encontrar soluciones a dudas comunes de programación en Java.</p>
+                `,
+                icon: 'info',
+                confirmButtonText: 'Cerrar',
+                customClass: {
+                  popup: 'faq-popup'
+                }
+              });
+            }
+            </script>
+<script>
+  // Selecciona el botón
+  const darkModeToggle = document.getElementById('darkModeToggle');
+
+  // Agrega un evento de clic al botón
+  darkModeToggle.addEventListener('click', () => {
+      // Alterna la clase 'dark-mode' en el body
+      document.body.classList.toggle('dark-mode');
+
+      // Alterna el icono entre luna y sol
+      if (document.body.classList.contains('dark-mode')) {
+          darkModeToggle.classList.remove('bi-moon');
+          darkModeToggle.classList.add('bi-sun');
+      } else {
+          darkModeToggle.classList.remove('bi-sun');
+          darkModeToggle.classList.add('bi-moon');
+      }
+  });
+</script>
+      <!--Sweet Alert-->
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+  </body>
+</html>

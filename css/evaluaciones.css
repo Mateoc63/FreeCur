@@ -1,0 +1,1128 @@
+* {
+    box-sizing: border-box;
+}
+/* Navbar */
+body{
+  background-color: #eeee !important;
+}
+.modern-navbar {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 85%;
+  background: rgba(45, 159, 123, 0.8);
+  backdrop-filter: blur(12px); 
+  border-radius: 40px; 
+  padding: 15px 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+.modern-navbar.scrolled {
+  transform: translateX(-50%) scale(0.9);
+  background: rgba(45, 159, 123, 0.95); 
+}
+
+.navbar-logo {
+  height: 60px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.navbar-logo:hover {
+  transform: scale(1.1);
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  gap: 25px; 
+}
+
+.navbar-nav .nav-link {
+  position: relative; 
+  padding-bottom: 5px;
+  font-size: 1.5rem;
+}
+
+/* Hover en los enlaces */
+.navbar-nav .nav-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #a8d5ba;
+  transform: translateY(-3px); 
+}
+
+.navbar-nav .nav-link::after {
+  content: ''; 
+  position: absolute;
+  bottom: 0; 
+  left: 0;
+  width: 0; 
+  height: 3px; 
+  background-color: #557c55; 
+  transition: width 0.3s ease;
+
+}
+
+.navbar-nav .nav-link:hover::after {
+  width: 100%; 
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.toggle-theme {
+  font-size: 25px;
+  color: white;
+  cursor: pointer;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.toggle-theme:hover {
+  color: #000;
+  transform: rotate(360deg);
+}
+
+.cta-button {
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 20px;
+  color: #ffffff;
+  background: linear-gradient(90deg, #375a4c, #2a3c32);
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(55, 90, 76, 0.4); 
+  transition: all 0.3s ease-in-out;
+}
+
+.cta-button:hover {
+  transform: scale(1.05);
+  background: #4e7c64;
+  box-shadow: 0 8px 30px rgba(55, 90, 76, 0.6);
+}
+@media (max-width: 768px) {
+  .modern-navbar {
+    border-radius: 20px;
+  }
+  .navbar-nav {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .navbar-actions {
+    flex-direction: column;
+    gap: 15px;
+  }
+} 
+
+/*Presentacion curso*/
+.presentacion-curso{
+    background-image: url(../imagenes/java1.jpg);
+    background-size: contain;
+    height: 58vh;
+}
+.titulo-curso{
+    padding-top: 30px;
+    color: white;
+}
+.descripcion-curso{
+    color: white;
+    font-size: 1.3rem;
+}
+.enlace-inscripcion{
+    color: white !important;
+    text-decoration: none !important;
+}
+
+/*Seccion foro y modulos*/
+.foro-modulo{
+    height: 85vh;
+}
+/*Lado izquierdo*/
+.foro {
+    font-family: Arial, sans-serif;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+#chat-container {
+    border: 1px solid #ccc;
+    padding: 10px;
+    height: 400px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+}
+.message {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 8px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+.user-icon, .user-photo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.user-photo {
+    background-size: cover;
+}
+.message-content {
+    flex: 1;
+}
+.message-content p {
+    margin: 0;
+}
+#message-input {
+    width: calc(100% - 60px);
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+#send-btn {
+    padding: 10px 15px;
+    font-size: 16px;
+    margin-left: 10px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+#send-btn:hover {
+    background-color: #0056b3;
+}
+/*Lado derecho*/
+.der{
+    border-left: 1px solid black;
+}
+/*Footer*/
+.inferior-web{
+    background-color: #000c;
+    height: 25vh;
+}
+/* Estilo para el botón de Preguntas Frecuentes */
+.faq-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    background-color: black;
+    color: #fff;
+    border: none;
+    border-radius: 100%;
+    padding: 10px 15px;
+    font-size: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+/*--------------------------------FOOTER-------------------------------------------*/
+footer {
+    background-color: #2a9d8f; /* Color de fondo */
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+  }
+  
+  /* Título del footer */
+  .footer-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  
+  /* Enlaces rápidos */
+  .footer-links {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .footer-links li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-links a:hover {
+    color: #f1faee;
+  }
+  
+  /* Iconos de redes sociales */
+  .social-icons a {
+    font-size: 1.5rem;
+    margin: 0 10px;
+    color: white;
+    transition: color 0.3s ease;
+  }
+  
+  .social-icons a:hover {
+    color: #f1faee;
+  }
+  
+  /* Derechos de autor */
+  footer .row:last-child {
+    background-color: #1a7d6f;
+  }
+  footer .row:last-child p {
+    font-size: 0.9rem;
+  }
+  /*--------------SWEET ALERT----------------*/
+.faq-popup {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
+  }
+  .swal2-title {
+    font-size: 22px;
+    color: #4a90e2;
+  }
+  .swal2-html-container {
+    text-align: left;
+    color: #333;
+  }
+  .swal2-confirm {
+    background-color: #4a90e2;
+    color: white;
+    font-size: 16px;
+    padding: 8px 20px;
+    border-radius: 4px;
+  }
+  .swal2-confirm:hover {
+    background-color: #357ABD;
+  }
+/*----------------------RESPONSIVE----------------------------*/
+@media screen and (max-width:1280px) {
+  .presentacion-curso{
+    height: 50vh !important;
+  }
+  .titulo-curso{
+    font-size: 2rem;
+    padding-top: 50px !important;
+    text-shadow: 0 0 5px black !important;
+  }
+  .boton-inscribirse{
+    background-color: black;
+    border: none !important;
+  }
+  .foro-modulo{
+    height: 80vh !important;
+  }
+  .foro{
+    width: 100%;
+  }
+  .izq{
+    width: 50% !important;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .der{
+    min-height: 720px;
+    width: 40% !important;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .ul-modulos{ 
+    padding-top: 10px !important;
+  }
+  .enlace-modulos{
+    font-size: 1.9rem !important;
+  }
+  .carousel{
+    padding-top: 0px !important;
+  }
+  .carousel-inner{
+    max-height: 400px;
+  }
+  .footer{
+    height: 35vh;
+  }
+  .footer-title{
+    margin-top: 2px;
+  }
+  .social-icons{
+    margin-left: -10px;
+    margin-bottom: 10px;
+  }
+  .navbar-nav i{
+    margin-top: 50px;
+  }
+  .navbar-nav .active{
+    margin-bottom: 1px;
+  }
+}
+@media screen and (max-width:1024px) {
+  .presentacion-curso{
+    height: 26vh !important;
+  }
+  .titulo-curso{
+    font-size: 2rem;
+    padding-top: 50px !important;
+    text-shadow: 0 0 5px black !important;
+  }
+  .boton-inscribirse{
+    background-color: black;
+    border: none !important;
+  }
+  .foro-modulo{
+    height: 50vh !important;
+  }
+  .foro{
+    width: 100%;
+  }
+  .izq{
+    width: 50% !important;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .der{
+    min-height: 720px;
+    width: 40% !important;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .ul-modulos{ 
+    padding-top: 0px !important;
+  }
+  .enlace-modulos{
+    font-size: 1.7rem !important;
+  }
+  .carousel{
+    padding-top: 0px !important;
+  }
+  .carousel-inner{
+    max-height: 400px;
+  }
+  .footer{
+    height: 20vh;
+  }
+  .footer-title{
+    margin-top: 2px;
+  }
+  .social-icons{
+    margin-left: -10px;
+    margin-bottom: 10px;
+  }
+  .navbar-nav i{
+    margin-top: 50px;
+  }
+  .navbar-nav .active{
+    margin-bottom: 1px;
+  }
+}
+@media screen and (max-width:950px) {
+  .presentacion-curso{
+    height: 30vh !important;
+  }
+  .titulo-curso{
+    font-size: 2rem;
+    padding-top: 50px !important;
+    text-shadow: 0 0 5px black !important;
+  }
+  .boton-inscribirse{
+    background-color: black;
+    border: none !important;
+  }
+  .foro-modulo{
+    height: 50vh !important;
+  }
+  .foro{
+    width: 100%;
+  }
+  .izq{
+    width: 50% !important;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .der{
+    min-height: 720px;
+    width: 40% !important;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .ul-modulos{ 
+    padding-top: 0px !important;
+  }
+  .enlace-modulos{
+    font-size: 1.7rem !important;
+  }
+  .carousel{
+    padding-top: 0px !important;
+  }
+  .carousel-inner{
+    max-height: 400px;
+  }
+  .footer{
+    height: 20vh;
+  }
+  .footer-title{
+    margin-top: 2px;
+  }
+  .social-icons{
+    margin-left: -10px;
+    margin-bottom: 10px;
+  }
+  .navbar-nav i{
+    margin-top: 50px;
+  }
+  .navbar-nav .active{
+    margin-bottom: 1px;
+  }
+}
+/*Listo*/
+@media screen and (max-width:830px) {
+  .presentacion-curso{
+    height: 35vh !important;
+  }
+  .titulo-curso{
+    font-size: 2rem;
+    padding-top: 50px !important;
+    text-shadow: 0 0 5px black !important;
+  }
+  .boton-inscribirse{
+    background-color: black;
+    border: none !important;
+  }
+  .foro-modulo{
+    height: 60vh !important;
+  }
+  .foro{
+    width: 100%;
+  }
+  .izq{
+    width: 50% !important;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .der{
+    min-height: 720px;
+    width: 40% !important;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .ul-modulos{ 
+    padding-top: 0px !important;
+  }
+  .enlace-modulos{
+    font-size: 1.7rem !important;
+  }
+  .carousel{
+    padding-top: 0px !important;
+  }
+  .carousel-inner{
+    max-height: 350px;
+  }
+  .footer{
+    height: 25vh;
+  }
+  .footer-title{
+    margin-top: 2px;
+  }
+  .social-icons{
+    margin-left: -10px;
+    margin-bottom: 10px;
+  }
+  .navbar-nav i{
+    margin-top: 50px;
+  }
+  .navbar-nav .active{
+    margin-bottom: 1px;
+  }
+}
+@media screen and (max-width:780px) {
+  .presentacion-curso{
+    height: 40vh !important;
+  }
+  .titulo-curso{
+    font-size: 2rem;
+    padding-top: 50px !important;
+    text-shadow: 0 0 5px black !important;
+  }
+  .boton-inscribirse{
+    background-color: black;
+    border: none !important;
+  }
+  .foro-modulo{
+    height: 65vh !important;
+  }
+  .foro{
+    width: 100%;
+  }
+  .izq{
+    width: 50% !important;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .der{
+    min-height: 720px;
+    width: 40% !important;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .ul-modulos{ 
+    padding-top: 0px !important;
+  }
+  .enlace-modulos{
+    font-size: 1.7rem !important;
+  }
+  .carousel{
+    padding-top: 0px !important;
+  }
+  .carousel-inner{
+    max-height: 350px;
+  }
+  .footer{
+    height: 25vh;
+  }
+  .footer-title{
+    margin-top: 2px;
+  }
+  .social-icons{
+    margin-left: -10px;
+    margin-bottom: 10px;
+  }
+  .navbar-nav i{
+    margin-top: 50px;
+  }
+  .navbar-nav .active{
+    margin-bottom: 1px;
+  }
+}
+/*HACER RESPONSIVE*/
+@media screen and (max-width:767px) {
+  .presentacion-curso{
+    height: 30vh !important;
+  }
+  .titulo-curso{
+    font-size: 2rem;
+    padding-top: 50px !important;
+    text-shadow: 0 0 5px black !important;
+  }
+  .boton-inscribirse{
+    background-color: black;
+    border: none !important;
+  }
+  .foro-modulo{
+    height: 60vh !important;
+  }
+  .foro{
+    width: 100%;
+  }
+  .izq{
+    width: 50% !important;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .der{
+    min-height: 720px;
+    width: 40% !important;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .ul-modulos{ 
+    padding-top: 0px !important;
+  }
+  .enlace-modulos{
+    font-size: 1.7rem !important;
+  }
+  .carousel{
+    padding-top: 0px !important;
+  }
+  .carousel-inner{
+    max-height: 350px;
+  }
+  .footer{
+    height: 25vh;
+  }
+  .footer-title{
+    margin-top: 2px;
+  }
+  .social-icons{
+    margin-left: -10px;
+    margin-bottom: 10px;
+  }
+  .navbar-nav i{
+    margin-top: 50px;
+  }
+  .navbar-nav .active{
+    margin-bottom: 1px;
+  }
+}
+@media screen and (max-width:700px) {
+  .grid-cursos{
+    grid-template-columns: 250px 250px;
+    grid-template-rows: 150px 150px;
+    gap:40px;
+  }
+  .nombre-curso{
+    font-size: 2.2rem;
+  }
+  .texto-ul{
+    display: none;
+  }
+  .navbar-nav i{
+    margin-top: -150px;
+  }
+  .navbar-nav .active{
+    margin-bottom: -150px;
+  }
+}
+
+/*seguir aca*/
+@media screen and (max-width:550px) {
+  .presentacion-curso{
+    height: 35vh !important;
+    background-position: 50%;
+  }
+  .titulo-curso{
+    font-size: 2rem;
+    padding-top: 50px !important;
+    text-shadow: 0 0 5px black !important;
+  }
+  .boton-inscribirse{
+    background-color: black;
+    border: none !important;
+  }
+  .descripcion-curso{
+    display: none;
+  }
+  .foro-modulo{
+    height: 170vh !important;
+  }
+  .foro{
+    width: 100%;
+  }
+  .izq{
+    width: 100% !important;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .der{
+    min-height: 720px;
+    width: 100% !important;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .ul-modulos{ 
+    padding-top: 0px !important;
+  }
+  .enlace-modulos{
+    font-size: 1.7rem !important;
+  }
+  .carousel{
+    padding-top: 0px !important;
+  }
+  .carousel-inner{
+    max-height: 350px;
+  }
+  .footer{
+    height: 65vh;
+  }
+  .footer-title{
+    margin-top: 2px;
+  }
+  .social-icons{
+    margin-left: -10px;
+    margin-bottom: 10px;
+  }
+  .navbar-nav i{
+    margin-top: 50px;
+  }
+  .navbar-nav .active{
+    margin-bottom: 1px;
+  }
+}
+@media screen and (max-width:450px) {
+  .presentacion-curso{
+    height: 25vh !important;
+    background-position: 50%;
+  }
+  .titulo-curso{
+    font-size: 2rem;
+    padding-top: 50px !important;
+    text-shadow: 0 0 5px black !important;
+  }
+  .boton-inscribirse{
+    background-color: black;
+    border: none !important;
+  }
+  .descripcion-curso{
+    display: none;
+  }
+  .foro-modulo{
+    height: 130vh !important;
+  }
+  .foro{
+    width: 100%;
+  }
+  .izq{
+    width: 100% !important;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .der{
+    min-height: 720px;
+    width: 100% !important;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .ul-modulos{ 
+    padding-top: 0px !important;
+  }
+  .enlace-modulos{
+    font-size: 1.7rem !important;
+  }
+  .carousel{
+    padding-top: 0px !important;
+  }
+  .carousel-inner{
+    max-height: 290px;
+  }
+  .footer{
+    height: 55vh;
+  }
+  .footer-title{
+    margin-top: 2px;
+  }
+  .social-icons{
+    margin-left: -10px;
+    margin-bottom: 10px;
+  }
+  .navbar-nav i{
+    margin-top: 50px;
+  }
+  .navbar-nav .active{
+    margin-bottom: 1px;
+  }
+}
+/*Listo*/
+@media screen and (max-width:420px) {
+  .presentacion-curso{
+    height: 25vh !important;
+    background-position: 50%;
+  }
+  .titulo-curso{
+    font-size: 2rem;
+    padding-top: 50px !important;
+    text-shadow: 0 0 5px black !important;
+  }
+  .boton-inscribirse{
+    background-color: black;
+    border: none !important;
+  }
+  .descripcion-curso{
+    display: none;
+  }
+  .foro-modulo{
+    height: 135vh !important;
+  }
+  .foro{
+    width: 100%;
+  }
+  .izq{
+    width: 100% !important;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .der{
+    min-height: 720px;
+    width: 100% !important;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .ul-modulos{ 
+    padding-top: 0px !important;
+  }
+  .enlace-modulos{
+    font-size: 1.7rem !important;
+  }
+  .carousel{
+    padding-top: 0px !important;
+  }
+  .carousel-inner{
+    max-height: 290px;
+  }
+  .footer{
+    height: 55vh;
+  }
+  .footer-title{
+    margin-top: 2px;
+  }
+  .social-icons{
+    margin-left: -10px;
+    margin-bottom: 10px;
+  }
+  .navbar-nav i{
+    margin-top: 50px;
+  }
+  .navbar-nav .active{
+    margin-bottom: 1px;
+  }
+}
+/*Lograda*/
+@media screen and (max-width:400px) {
+  .presentacion-curso{
+    height: 25vh !important;
+    background-position: 50%;
+  }
+  .titulo-curso{
+    font-size: 2rem;
+    padding-top: 50px !important;
+    text-shadow: 0 0 5px black !important;
+  }
+  .boton-inscribirse{
+    background-color: black;
+    border: none !important;
+  }
+  .descripcion-curso{
+    display: none;
+  }
+  .foro-modulo{
+    height: 145vh !important;
+  }
+  .foro{
+    width: 100%;
+  }
+  .izq{
+    width: 100% !important;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .der{
+    min-height: 720px;
+    width: 100% !important;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .ul-modulos{ 
+    padding-top: 0px !important;
+  }
+  .enlace-modulos{
+    font-size: 1.7rem !important;
+  }
+  .carousel{
+    padding-top: 0px !important;
+  }
+  .carousel-inner{
+    max-height: 290px;
+  }
+  .footer{
+    height: 55vh;
+  }
+  .footer-title{
+    margin-top: 2px;
+  }
+  .social-icons{
+    margin-left: -10px;
+    margin-bottom: 10px;
+  }
+  .navbar-nav i{
+    margin-top: 50px;
+  }
+  .navbar-nav .active{
+    margin-bottom: 1px;
+  }
+}
+/*adaptacion lograda*/
+@media screen and (max-width:380px) {
+  .presentacion-curso{
+    height: 30vh !important;
+    background-position: 50%;
+  }
+  .titulo-curso{
+    font-size: 2rem;
+    padding-top: 50px !important;
+    text-shadow: 0 0 5px black !important;
+  }
+  .boton-inscribirse{
+    background-color: black;
+    border: none !important;
+  }
+  .descripcion-curso{
+    display: none;
+  }
+  .foro-modulo{
+    height: 185vh !important;
+  }
+  .foro{
+    width: 100%;
+  }
+  .izq{
+    width: 100% !important;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .der{
+    min-height: 720px;
+    width: 100% !important;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .ul-modulos{ 
+    padding-top: 0px !important;
+  }
+  .enlace-modulos{
+    font-size: 1.7rem !important;
+  }
+  .carousel{
+    padding-top: 0px !important;
+  }
+  .carousel-inner{
+    max-height: 290px;
+  }
+  .footer{
+    height: 75vh;
+  }
+  .footer-title{
+    margin-top: 2px;
+  }
+  .social-icons{
+    margin-left: -10px;
+    margin-bottom: 10px;
+  }
+  .navbar-nav i{
+    margin-top: 50px;
+  }
+  .navbar-nav .active{
+    margin-bottom: 1px;
+  }
+}     
+/*hacer*/
+@media screen and (max-width:360px) {
+  .presentacion-curso{
+    height: 25vh !important;
+    background-position: 50%;
+  }
+  .titulo-curso{
+    font-size: 2rem;
+    padding-top: 50px !important;
+    text-shadow: 0 0 5px black !important;
+  }
+  .boton-inscribirse{
+    background-color: black;
+    border: none !important;
+  }
+  .descripcion-curso{
+    display: none;
+  }
+  .foro-modulo{
+    height: 170vh !important;
+  }
+  .foro{
+    width: 100%;
+  }
+  .izq{
+    width: 100% !important;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .der{
+    min-height: 720px;
+    width: 100% !important;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .ul-modulos{ 
+    padding-top: 0px !important;
+  }
+  .enlace-modulos{
+    font-size: 1.7rem !important;
+  }
+  .carousel{
+    padding-top: 0px !important;
+  }
+  .carousel-inner{
+    max-height: 290px;
+  }
+  .footer{
+    height: 70vh;
+  }
+  .footer-title{
+    margin-top: 2px;
+  }
+  .social-icons{
+    margin-left: -10px;
+    margin-bottom: 10px;
+  }
+  .navbar-nav i{
+    margin-top: 50px;
+  }
+  .navbar-nav .active{
+    margin-bottom: 1px;
+  }
+}
+/*listo*/
+@media screen and (max-width:350px) {
+  .presentacion-curso{
+    height: 25vh !important;
+    background-position: 50%;
+  }
+  .titulo-curso{
+    font-size: 2rem;
+    padding-top: 50px !important;
+    text-shadow: 0 0 5px black !important;
+  }
+  .boton-inscribirse{
+    background-color: black;
+    border: none !important;
+  }
+  .descripcion-curso{
+    display: none;
+  }
+  .foro-modulo{
+    height: 140vh !important;
+  }
+  .foro{
+    width: 100%;
+  }
+  .izq{
+    width: 100% !important;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .der{
+    min-height: 720px;
+    width: 100% !important;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .ul-modulos{ 
+    padding-top: 0px !important;
+  }
+  .enlace-modulos{
+    font-size: 1.7rem !important;
+  }
+  .carousel{
+    padding-top: 0px !important;
+  }
+  .carousel-inner{
+    max-height: 290px;
+  }
+  .footer{
+    height: 60vh;
+  }
+  .footer-title{
+    margin-top: 2px;
+  }
+  .social-icons{
+    margin-left: -10px;
+    margin-bottom: 10px;
+  }
+  .navbar-nav i{
+    margin-top: 50px;
+  }
+  .navbar-nav .active{
+    margin-bottom: 1px;
+  }
+}
+  
+  

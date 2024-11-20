@@ -1,0 +1,738 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FreeCur</title>
+    <link rel="stylesheet" href="../css/evaluaciones.css">
+    <!--Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!--Letras bootstrap-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+10&family=Quicksand:wght@300..700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        /* Navbar */
+        nav {
+            background-color:#2a9d8f; /* Cambiar */
+        }
+        .navbar-nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+        .navbar-nav a {
+            font-size: 22px;
+            margin: 0 60px;
+        }
+        .navbar-nav i {
+            font-size: 40px;
+            margin: 0 60px;
+        }
+
+        /*Presentacion curso*/
+        .presentacion-curso{
+            background-image: url(../imagenes/mysql1.jpg);
+            background-size: contain;
+            height: 58vh;
+        }
+        .titulo-curso{
+            padding-top: 30px;
+            color: white;
+            text-shadow: 0 0 10px black;
+            font-weight: bold;
+        }
+        
+        .descripcion-curso{
+            color: white;
+            font-size: 1.3rem;
+            text-shadow: 0 0 5px black;
+            font-weight: bold;
+        }
+
+        .boton-inscribirse {
+            border: 1px solid white;
+            width: 8rem;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            margin: 0 auto;
+        }
+
+        .descripcion-curso{
+            color: white;
+            font-size: 1.3rem;
+        }
+        .enlace-inscripcion{
+            color: white !important;
+            text-decoration: none !important;
+        }
+
+        /*Seccion foro y modulos*/
+        .foro-modulo{
+            height: 85vh;
+        }
+        /*Lado izquierdo*/
+        .foro {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        #chat-container {
+            border: 1px solid #ccc;
+            padding: 10px;
+            height: 400px;
+            overflow-y: auto;
+            margin-bottom: 10px;
+            background-color: #f9f9f9;
+        }
+        .message {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            padding: 8px;
+            border-radius: 8px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+        }
+        .user-icon, .user-photo {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .user-photo {
+            background-size: cover;
+        }
+        .message-content {
+            flex: 1;
+        }
+        .message-content p {
+            margin: 0;
+        }
+        #message-input {
+            width: calc(100% - 60px);
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        #send-btn {
+            padding: 10px 15px;
+            font-size: 16px;
+            margin-left: 10px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+        }
+        #send-btn:hover {
+            background-color: #0056b3;
+        }
+       /*Lado derecho*/
+       .der{
+            border-left: 1px solid transparent;
+            font-family: sans-serif;
+            height: 85vh;
+        }
+        .ul-modulos {
+            list-style: none;
+            padding-left: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        ul li {
+            font-size: 1.5rem;
+            margin: 15px 0;
+            display: flex;
+            align-items: center;
+        }
+        ul li i {
+            font-size: 1.8rem;
+            color: #f39c12;
+            margin-right: 15px;
+        }
+        .lado-der{
+            width: 50%;
+            height: 75vh;
+        }
+        #testimonialCarousel {
+            max-width: 600px;
+            margin: auto;
+        }
+        .enlace-modulos{
+          color: black;
+          text-decoration: none;
+        }
+        @media screen and (max-width:767px) {
+          .foro-modulo{
+            height: 170vh;
+          }
+          .ul-modulos{
+            margin-left: -20px;
+          }
+        }
+                /* Contenedor del Testimonio */
+                .testimonial-item {
+            text-align: center;
+            position: relative;
+            padding: 20px 20px;
+            color: #fff;
+        }
+        /* Imagen del Crítico */
+        .critic-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            animation: imageFadeIn 1s ease;
+        }
+
+        /* Texto de la Crítica */
+        .critic-text p {
+            font-size: 1.2rem;
+            font-style: italic;
+            opacity: 0;
+            animation: textSlideIn 1s forwards ease-in-out 0.5s;
+        }
+
+        /* Nombre del Crítico */
+        .critic-name {
+            font-size: 1rem;
+            margin-top: 15px;
+            opacity: 0;
+            animation: nameFadeIn 1s forwards ease-in-out 1s;
+        }
+
+        /* Animaciones */
+        @keyframes imageFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes textSlideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes nameFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Fondo de cada slide */
+        .carousel-item:nth-child(1) { background-color: #2a9d8f; }
+        .carousel-item:nth-child(2) { background-color: #e76f51; }
+        .carousel-item:nth-child(3) { background-color: #264653; }
+        /*Footer*/
+        .inferior-web{
+            background-color: #000c;
+            height: 25vh;
+        }
+        /* Estilo para el botón de Preguntas Frecuentes */
+        .faq-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            background-color: black;
+            color: #fff;
+            border: none;
+            border-radius: 100%;
+            padding: 10px 15px;
+            font-size: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        /*--------------------------------FOOTER-------------------------------------------*/
+        footer {
+            background-color: #2a9d8f; /* Color de fondo */
+            color: white;
+            font-family: 'Quicksand', sans-serif;
+        }
+        
+        /* Título del footer */
+        .footer-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        /* Enlaces rápidos */
+        .footer-links {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: #f1faee;
+        }
+        
+        /* Iconos de redes sociales */
+        .social-icons a {
+            font-size: 1.5rem;
+            margin: 0 10px;
+            color: white;
+            transition: color 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            color: #f1faee;
+        }
+        
+        /* Derechos de autor */
+        footer .row:last-child {
+            background-color: #1a7d6f;
+        }
+        footer .row:last-child p {
+            font-size: 0.9rem;
+        }
+        /*--------------SWEET ALERT----------------*/
+        .faq-popup {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 16px;
+        }
+        .swal2-title {
+            font-size: 22px;
+            color: #4a90e2;
+        }
+        .swal2-html-container {
+            text-align: left;
+            color: #333;
+        }
+        .swal2-confirm {
+            background-color: #4a90e2;
+            color: white;
+            font-size: 16px;
+            padding: 8px 20px;
+            border-radius: 4px;
+        }
+        .swal2-confirm:hover {
+            background-color: #357ABD;
+        }
+        /* Estilo para el ícono de usuario */
+        .user-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #007bff;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .message { 
+            display: flex; 
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .user-photo { 
+            width: 40px; 
+            height: 40px; 
+            border-radius: 50%;
+            background-size: cover;
+            margin-right: 10px; 
+        }
+            /*-------------------modo oscuro---------------------------------- */
+    body.dark-mode {
+      background-color: #121212;
+      color: #ffffff;
+    }
+    .dark-mode .navbar, .dark-mode .footer {
+      background-color: #333333;
+    }
+    .dark-mode .division-footer{
+      border-top: 1px solid white;
+    }
+    .dark-mode .resaltar-texto{
+      background-color: lightblue !important;
+      color: black !important;
+      border-radius: 20px;
+      padding: 5px;
+    }
+    .dark-mode .boton-curso{
+      border: 1px solid white !important;
+    }
+    .dark-mode .boton-curso:hover{
+      background-color: white !important;
+      color: black !important;
+    }
+    .dark-mode .navbar, .dark-mode .footer, .dark-mode .faq-button, .dark-mode .grid-item, .dark-mode .testimonial-item{
+      border: 1px solid white;
+    }
+    .dark-mode .boton-enviar, .dark-mode .user-icon{
+      border: 1px solid white !important;
+    }
+    .dark-mode .presentacion-curso{
+      border-bottom: 1px solid white;
+      border-top: 1px solid white;
+    }
+    .dark-mode .btn, .dark-mode .faq-button {
+      background-color: #555555;
+      color: #ffffff;
+    }
+    .dark-mode .titulo-curso, .dark-mode .descripcion-curso{
+      background-color: transparent !important;
+    }
+    .dark-mode-button {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background-color: #333;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .dark-mode .btn{
+      border: none !important;
+    }
+      body.dark-mode {
+          background-color: #000;
+          color: #fff; 
+      }
+      body.dark-mode * {
+          background-color: #000 !important;
+          color: #fff !important;
+      }
+      body.dark-mode button, 
+      body.dark-mode input, 
+      body.dark-mode select, 
+      body.dark-mode textarea {
+          background-color: #000 !important;
+          color: #fff !important;
+          border-color: #fff;
+      }
+      body.dark-mode .navbar, 
+      body.dark-mode .card, 
+      body.dark-mode .modal-content, 
+      body.dark-mode .dropdown-menu {
+          background-color: #000 !important;
+          color: #fff !important;
+      }
+      body.dark-mode a {
+          color: #fff;
+      }
+
+      body.dark-mode a:hover {
+          color: #ccc;
+      }
+      .dark-mode .navbar{
+          border: none !important;
+      }
+    </style>
+
+    <!-- Botón de Preguntas Frecuentes -->
+    <button class="faq-button" onclick="mostrarPreguntasFrecuentes()">?</button>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg modern-navbar">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="../imagenes/logo.png.png" alt="Logo" class="navbar-logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <ul class="navbar-nav mx-auto">
+            <li><a class="nav-link" href="../cursos_populares.html">Cursos</a></li>
+            <li><a class="nav-link" href="#foro">Foro</a></li>
+          </ul>
+          <div class="navbar-actions">
+            <i class="bi bi-moon toggle-theme" id="darkModeToggle"></i>
+            <button class="cta-button">¡Inscribirse!</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+
+    <!--Presentación curso-->
+    <section class="presentacion-curso container-fluid">
+        <h1 class="titulo-curso text-center">MYSQL</h1>
+        <p class="descripcion-curso mt-4 text-center">Aprende a gestionar bases de datos con MySQL, <br> desde consultas básicas hasta operaciones avanzadas.<br> Al finalizar, recibirás un certificado <br>que valida tus conocimientos en MySQL.</p>
+        <div class="boton-inscribirse text-center d-flex justify-content-center mt-4">
+            <button class="btn"><a class="enlace-inscripcion" href="#">INSCRIBIRSE</a></button>
+        </div>        
+    </section>
+
+    <!--Foro y modulos-->
+    <section class="foro-modulo container-fluid d-flex flex-wrap">
+      <div class="container izq text-center col-12 col-md-6">
+        <div class="foro" id="foro">
+          <h1 class="text-center mt-2 mb-3">FORO DE PREGUNTAS</h1>
+          <div id="chat-container">
+            <div class="message">
+              <div class="user-photo" style="background-image: url(../imagenes/WhatsApp\ Image\ 2024-10-10\ at\ 14.33.21.jpeg);"></div>
+              <div class="message-content">
+                  <p><strong>Profesor:</strong> ¡Bienvenidos al foro de la materia! No duden en hacer sus preguntas.</p>
+              </div>
+          </div>
+          </div>
+      
+          <div id="input-container">
+              <input type="text" id="message-input" placeholder="Escribe tu pregunta...">
+              <button class="mt-2 boton-enviar" id="send-btn" onclick="addMessage()">Enviar</button>
+          </div>
+        </div>
+      </div>
+      <div class="container der text-center col-12 col-md-6">
+        <ul class="container mt-4 ul-modulos">
+            <li><i class="bi bi-backpack3"></i><b><a class="enlace-modulos" href="../modulos sql/modulo1.html">Modulo 1</a></b></li>
+            <li><i class="bi bi-backpack3"></i><b><a class="enlace-modulos" href="../modulos sql/modulo2.html">Modulo 2</a></b></li>
+            <li><i class="bi bi-pencil-square"></i><b><a class="enlace-modulos" href="../modulos sql/examen.html">Examen final</a></b></li>
+        </ul>
+        <!--Carrusel opiniones-->
+        <div class="container">
+            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Testimonio 1"></button>
+                <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1" aria-label="Testimonio 2"></button>
+                <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2" aria-label="Testimonio 3"></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="testimonial-item">
+                    <img src="../imagenes/WhatsApp Image 2024-10-10 at 14.33.21.jpeg" class="critic-image" alt="Crítico 1">
+                    <blockquote class="critic-text">
+                      <p>“Este servicio superó todas mis expectativas. La atención al detalle es impecable.”</p>
+                      <div class="critic-name">— Laura Gómez, Cliente Satisfecho</>
+                    </blockquote>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="testimonial-item">
+                    <img src="../imagenes/WhatsApp Image 2024-10-10 at 14.33.21.jpeg" class="critic-image" alt="Crítico 2">
+                    <blockquote class="critic-text">
+                      <p>“Increíble experiencia de principio a fin. Lo recomendaría sin dudarlo.</p>
+                      <div class="critic-name">— Marcos Rivera, Profesional de Marketing</div>
+                    </blockquote>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="testimonial-item">
+                    <img src="../imagenes/WhatsApp Image 2024-10-10 at 14.33.21.jpeg" class="critic-image" alt="Crítico 3">
+                    <blockquote class="critic-text">
+                      <p>“Una calidad que no he encontrado en ningún otro lugar. Simplemente espectacular.”</p>
+                      <div class="critic-name">— Ana Torres, Ejecutiva de Ventas</div>
+                    </blockquote>
+                  </div>
+                </div>
+              </div>      
+              <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+              </button>
+          </div>
+      </div>
+    </section>
+
+    <!--Footer-->
+    <footer class="container-fluid footer">
+      <div class="row py-5">
+        <div class="col-md-3">
+          <h5 class="footer-title">Enlaces rápidos</h5>
+          <ul class="footer-links">
+            <li><a href="../cursos_populares.html">Cursos</a></li>
+            <li><a href="#foro">Foro</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-3">
+          <h5 class="footer-title">Síguenos</h5>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/?stype=lo&flo=1&deoia=1&jlou=AfeL3MctCi2b0GHXoTsW02jFMerN04bAMTiV91khRt1d4IYehraf-Q-xjnUTbTi-sQdd4YKI-hhsGGPnarSGoxTkczZ3oqgnfgorRU0ukV6JwA&smuh=50444&lh=Ac_VF0qovf6Z80vI7fw" class="social-icon"><i class="bi bi-facebook"></i></a>
+            <a href="https://x.com/?lang=es" class="social-icon"><i class="bi bi-twitter"></i></a>
+            <a href="https://www.linkedin.com/" class="social-icon"><i class="bi bi-linkedin"></i></a>
+            <a href="https://www.instagram.com/" class="social-icon"><i class="bi bi-instagram"></i></a>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <h5 class="footer-title">Sobre FreeCur</h5>
+          <p>FreeCur ofrece cursos online de alta calidad, accesibles y a tu propio ritmo. Con el respaldo de mentores y la comunidad, te ayudamos a alcanzar tus metas profesionales.</p>
+        </div>
+      </div>
+
+      <div class="row division-footer">
+        <div class="col text-center py-3">
+          <p class="m-0">&copy; 2024 FreeCur. Todos los derechos reservados.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!--script foro-->
+    <script>
+        let isFirstMessage = true; // Variable para controlar la primera vez
+  
+        function addMessage() {
+            const chatContainer = document.getElementById("chat-container");
+            const messageInput = document.getElementById("message-input");
+            const messageText = messageInput.value.trim();
+  
+            if (messageText !== "") {
+                const messageElement = document.createElement("div");
+                messageElement.classList.add("message");
+  
+                if (!isFirstMessage) {
+                    // Para el primer mensaje, muestra la imagen del profesor
+                    const userPhoto = document.createElement("div");
+                    userPhoto.classList.add("user-photo");
+                    userPhoto.style.backgroundImage = "url(imagenes/WhatsApp Image 2024-10-10 at 14.33.21.jpeg')";
+                    messageElement.appendChild(userPhoto);
+                    isFirstMessage = false; // Cambia el estado para los siguientes mensajes
+                } else {
+                    // Para los mensajes siguientes, muestra el icono de usuario
+                    const userIcon = document.createElement("div");
+                    userIcon.classList.add("user-icon");
+                    userIcon.textContent = "U"; // Letra U para usuario
+                    messageElement.appendChild(userIcon);
+                }
+  
+                const messageContent = document.createElement("div");
+                messageContent.classList.add("message-content");
+                const messageTextElement = document.createElement("p");
+                messageTextElement.textContent = messageText;
+                
+                messageContent.appendChild(messageTextElement);
+                messageElement.appendChild(messageContent);
+                chatContainer.appendChild(messageElement);
+  
+                messageInput.value = "";
+                chatContainer.scrollTop = chatContainer.scrollHeight;
+            }
+        }
+  
+        // Permitir enviar el mensaje al presionar Enter
+        document.getElementById("message-input").addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                addMessage();
+            }
+        });
+      </script>
+<script>
+    function mostrarPreguntasFrecuentes() {
+      Swal.fire({
+        title: 'Preguntas Frecuentes - MySQL',
+        html: `
+          <h3>¿Qué es MySQL?</h3>
+          <p>MySQL es un sistema de gestión de bases de datos relacional de código abierto. Se utiliza para almacenar y gestionar datos estructurados de manera eficiente, y es uno de los sistemas de bases de datos más populares para aplicaciones web.</p>
+  
+          <h3>¿Cuál es la diferencia entre MySQL y SQL?</h3>
+          <p>SQL (Structured Query Language) es un lenguaje estándar utilizado para interactuar con bases de datos. MySQL, por otro lado, es un sistema de gestión de bases de datos que utiliza SQL para ejecutar consultas, crear bases de datos, tablas, y administrar la información almacenada.</p>
+  
+          <h3>¿Cómo puedo instalar MySQL?</h3>
+          <p>Para instalar MySQL, puedes descargar el instalador desde su sitio web oficial (https://dev.mysql.com/downloads/). Dependiendo de tu sistema operativo, también puedes utilizar gestores de paquetes en Linux (como <code>apt</code> en Ubuntu o <code>yum</code> en CentOS) o Homebrew en macOS.</p>
+  
+          <h3>¿Qué son las bases de datos y tablas en MySQL?</h3>
+          <p>En MySQL, una base de datos es una colección organizada de datos. Dentro de una base de datos, los datos se organizan en tablas, que contienen filas y columnas. Cada tabla debe tener una clave primaria para identificar de manera única cada fila.</p>
+  
+          <h3>¿Qué es una consulta SQL?</h3>
+          <p>Una consulta SQL es una instrucción escrita en el lenguaje SQL que permite interactuar con la base de datos. Puede ser utilizada para seleccionar, insertar, actualizar o eliminar datos. Un ejemplo básico de consulta SQL es:</p>
+          <pre><code>SELECT * FROM usuarios;</code></pre>
+  
+          <h3>¿Cómo conecto mi aplicación con MySQL?</h3>
+          <p>Para conectar tu aplicación a una base de datos MySQL, necesitarás utilizar un controlador o biblioteca de conexión específica para el lenguaje de programación que estás usando. Por ejemplo, en PHP puedes utilizar <code>mysqli</code> o <code>PDO</code>, mientras que en Python puedes usar la biblioteca <code>mysql-connector-python</code>.</p>
+  
+          <h3>¿Qué es una clave primaria en MySQL?</h3>
+          <p>Una clave primaria es un campo o combinación de campos en una tabla que identifica de manera única cada fila. No puede contener valores nulos y no debe repetirse. Se utiliza para asegurar la integridad de los datos y facilitar la búsqueda y la relación entre tablas.</p>
+  
+          <h3>¿Qué es una relación entre tablas en MySQL?</h3>
+          <p>En MySQL, las relaciones entre tablas se crean mediante claves foráneas. Una clave foránea es un campo en una tabla que hace referencia a la clave primaria de otra tabla. Esto permite establecer vínculos entre los datos de diferentes tablas y crear bases de datos más complejas y organizadas.</p>
+  
+          <h3>¿Qué es una consulta JOIN en MySQL?</h3>
+          <p>Una consulta <code>JOIN</code> se utiliza para combinar filas de dos o más tablas basadas en una columna común entre ellas. Existen diferentes tipos de JOINs, como <code>INNER JOIN</code>, <code>LEFT JOIN</code>, <code>RIGHT JOIN</code>, y <code>FULL JOIN</code>, cada uno con diferentes comportamientos en cuanto a la combinación de datos.</p>
+  
+          <h3>¿Qué es un índice en MySQL?</h3>
+          <p>Un índice en MySQL es una estructura de datos que mejora la velocidad de las consultas de búsqueda. Los índices pueden ser creados sobre una o más columnas de una tabla y permiten acelerar las operaciones de búsqueda, ordenación y filtrado de datos.</p>
+  
+          <h3>¿Cómo realizo un respaldo de una base de datos en MySQL?</h3>
+          <p>Para hacer un respaldo de una base de datos en MySQL, puedes utilizar el comando <code>mysqldump</code>. Ejemplo:</p>
+          <pre><code>mysqldump -u usuario -p base_de_datos > respaldo.sql</code></pre>
+          <p>Este comando creará un archivo con la estructura y los datos de la base de datos especificada.</p>
+  
+          <h3>¿Qué es una transacción en MySQL?</h3>
+          <p>Una transacción en MySQL es un conjunto de operaciones que se ejecutan de manera conjunta. Las transacciones garantizan la integridad de los datos, permitiendo que las operaciones se completen correctamente o, en caso de error, se reviertan todas las modificaciones realizadas.</p>
+        `,
+        icon: 'info',
+        confirmButtonText: 'Cerrar',
+        customClass: {
+          popup: 'faq-popup'
+        }
+      });
+    }
+  </script>  
+<script>
+  // Selecciona el botón
+  const darkModeToggle = document.getElementById('darkModeToggle');
+
+  // Agrega un evento de clic al botón
+  darkModeToggle.addEventListener('click', () => {
+      // Alterna la clase 'dark-mode' en el body
+      document.body.classList.toggle('dark-mode');
+
+      // Alterna el icono entre luna y sol
+      if (document.body.classList.contains('dark-mode')) {
+          darkModeToggle.classList.remove('bi-moon');
+          darkModeToggle.classList.add('bi-sun');
+      } else {
+          darkModeToggle.classList.remove('bi-sun');
+          darkModeToggle.classList.add('bi-moon');
+      }
+  });
+</script>        
+      <!--Sweet Alert-->
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>

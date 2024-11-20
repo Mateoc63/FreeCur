@@ -1,0 +1,917 @@
+body{
+  background-color: antiquewhite !important;
+  box-sizing: border-box;
+}
+.modern-navbar {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 85%;
+  background: rgba(45, 159, 123, 0.8);
+  backdrop-filter: blur(12px); 
+  border-radius: 40px; 
+  padding: 15px 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+.modern-navbar.scrolled {
+  transform: translateX(-50%) scale(0.9);
+  background: rgba(45, 159, 123, 0.95); 
+}
+
+.navbar-logo {
+  height: 60px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.navbar-logo:hover {
+  transform: scale(1.1);
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  gap: 25px; 
+}
+
+.navbar-nav .nav-link {
+  position: relative; 
+  padding-bottom: 5px;
+  font-size: 1.5rem;
+}
+
+/* Hover en los enlaces */
+.navbar-nav .nav-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #a8d5ba;
+  transform: translateY(-3px); 
+}
+
+.navbar-nav .nav-link::after {
+  content: ''; 
+  position: absolute;
+  bottom: 0; 
+  left: 0;
+  width: 0; 
+  height: 3px; 
+  background-color: #557c55; 
+  transition: width 0.3s ease;
+
+}
+
+.navbar-nav .nav-link:hover::after {
+  width: 100%; 
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.toggle-theme {
+  font-size: 25px;
+  color: white;
+  cursor: pointer;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.toggle-theme:hover {
+  color: #000;
+  transform: rotate(360deg);
+}
+
+.cta-button {
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 20px;
+  color: #ffffff;
+  background: linear-gradient(90deg, #375a4c, #2a3c32);
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(55, 90, 76, 0.4); 
+  transition: all 0.3s ease-in-out;
+}
+
+.cta-button:hover {
+  transform: scale(1.05);
+  background: #4e7c64;
+  box-shadow: 0 8px 30px rgba(55, 90, 76, 0.6);
+}
+@media (max-width: 768px) {
+  .modern-navbar {
+    border-radius: 20px;
+  }
+  .navbar-nav {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .navbar-actions {
+    flex-direction: column;
+    gap: 15px;
+  }
+} 
+    .cursos {
+        background-color: antiquewhite;
+        height: 110vh;
+        padding-top: 30px;
+    }
+
+    .titulo-cursos {
+        padding-top: 1.5rem;
+        margin-bottom: -10px;
+    }
+    
+/*----------------------RESPONSIVE----------------------------*/
+@media screen and (max-width:1280px) {
+    .cursos{
+        height: 105vh !important;
+    }
+    .izq {
+        padding: 60px !important;
+        max-height: 70vh;
+        display: grid;
+        overflow-y: auto;
+        overflow-x: hidden;
+        grid-template-columns: 60vh !important;
+        grid-template-rows: 15vh repeat(5, 25vh) !important;
+        gap: 10px 0;
+        scroll-behavior: smooth;
+        direction: rtl !important; 
+    }
+    .der {
+        padding: 25px !important;
+        max-height: 70vh;
+        display: grid;
+        overflow-y: auto;
+        overflow-x: hidden;
+        grid-template-columns: 60vh !important;
+        grid-template-rows: 15vh repeat(5, 25vh) !important;
+        gap: 10px 0;
+        scroll-behavior: smooth;
+        direction: ltr !important; 
+    }
+    /* Estilo de los elementos de la cuadrícula */
+    .grid-item {
+        margin-left: 20px;
+        background-position: center;
+        background-size: contain;
+        box-shadow: 0 0 8px black;
+    }
+    .enlace{
+      text-decoration: none;
+      color: transparent;
+      font-size: 2rem !important;
+    }
+    .footer{
+      height: 26vh;
+    }
+    .footer-title{
+      margin-top: 2px;
+    }
+    .social-icons{
+      margin-left: -10px;
+      margin-bottom: 10px;
+    }
+    .navbar-nav i{
+      margin-top: 50px;
+    }
+    .navbar-nav .active{
+      margin-bottom: 1px;
+    }
+  }
+/*Listo*/
+@media screen and (max-width:1024px) {
+    .cursos{
+        height: 90vh !important;
+    }
+    .izq {
+        padding: 10px !important;
+        max-height: 70vh;
+        display: grid;
+        overflow-y: auto;
+        overflow-x: hidden;
+        grid-template-columns: 30vh !important;
+        grid-template-rows: 10vh repeat(5, 15vh) !important;
+        gap: 10px 0;
+        scroll-behavior: smooth;
+        direction: rtl !important; 
+    }
+    .der {
+        padding: 25px !important;
+        max-height: 70vh;
+        display: grid;
+        overflow-y: auto;
+        overflow-x: hidden;
+        grid-template-columns: 30vh !important;
+        grid-template-rows: 10vh repeat(5, 15vh) !important;
+        gap: 10px 0;
+        scroll-behavior: smooth;
+        direction: ltr !important; 
+    }
+    /* Estilo de los elementos de la cuadrícula */
+    .grid-item {
+        margin-left: 20px;
+        background-position: center;
+        background-size: contain;
+        box-shadow: 0 0 8px black;
+    }
+    .enlace{
+      text-decoration: none;
+      color: transparent;
+      font-size: 2rem !important;
+    }
+    .footer{
+      height: 20vh;
+    }
+    .footer-title{
+      margin-top: 2px;
+    }
+    .social-icons{
+      margin-left: -10px;
+      margin-bottom: 10px;
+    }
+    .navbar-nav i{
+      margin-top: 50px;
+    }
+    .navbar-nav .active{
+      margin-bottom: 1px;
+    }
+  }
+  /*Listo*/
+  @media screen and (max-width:830px) {
+    .cursos{
+        height: 95vh !important;
+    }
+    .izq {
+        padding: 10px !important;
+        max-height: 70vh;
+        display: grid;
+        overflow-y: auto;
+        overflow-x: hidden;
+        grid-template-columns: 30vh !important;
+        grid-template-rows: 10vh repeat(5, 15vh) !important;
+        gap: 10px 0;
+        scroll-behavior: smooth;
+        direction: rtl !important; 
+    }
+    .der {
+        padding: 25px !important;
+        max-height: 70vh;
+        display: grid;
+        overflow-y: auto;
+        overflow-x: hidden;
+        grid-template-columns: 30vh !important;
+        grid-template-rows: 10vh repeat(5, 15vh) !important;
+        gap: 10px 0;
+        scroll-behavior: smooth;
+        direction: ltr !important; 
+    }
+    /* Estilo de los elementos de la cuadrícula */
+    .grid-item {
+        margin-left: 20px;
+        background-position: center;
+        background-size: contain;
+        box-shadow: 0 0 8px black;
+    }
+    .enlace{
+      text-decoration: none;
+      color: transparent;
+      font-size: 2rem !important;
+    }
+    .footer{
+      height: 26vh;
+    }
+    .footer-title{
+      margin-top: 2px;
+    }
+    .social-icons{
+      margin-left: -10px;
+      margin-bottom: 10px;
+    }
+    .navbar-nav i{
+      margin-top: 50px;
+    }
+    .navbar-nav .active{
+      margin-bottom: 1px;
+    }
+  }
+  /*LISTO*/
+  @media screen and (max-width:780px) {
+    .cursos{
+        height: 95vh !important;
+    }
+    .izq {
+        padding: 15px !important;
+        max-height: 70vh;
+        display: grid;
+        overflow-y: auto;
+        overflow-x: hidden;
+        grid-template-columns: 32vh !important;
+        grid-template-rows: 10vh repeat(5, 15vh) !important;
+        gap: 10px 0;
+        scroll-behavior: smooth;
+        direction: rtl !important; 
+    }
+    .der {
+        padding: 25px !important;
+        max-height: 70vh;
+        display: grid;
+        overflow-y: auto;
+        overflow-x: hidden;
+        grid-template-columns: 32vh !important;
+        grid-template-rows: 10vh repeat(5, 15vh) !important;
+        gap: 10px 0;
+        scroll-behavior: smooth;
+        direction: ltr !important; 
+    }
+    /* Estilo de los elementos de la cuadrícula */
+    .grid-item {
+        margin-left: 20px;
+        background-position: center;
+        background-size: contain;
+        box-shadow: 0 0 8px black;
+    }
+    .enlace{
+      text-decoration: none;
+      color: transparent;
+      font-size: 2rem !important;
+    }
+    .footer{
+      height: 30vh;
+    }
+    .footer-title{
+      margin-top: 2px;
+    }
+    .social-icons{
+      margin-left: -10px;
+      margin-bottom: 10px;
+    }
+    .navbar-nav i{
+      margin-top: 50px;
+    }
+    .navbar-nav .active{
+      margin-bottom: 1px;
+    }
+  }
+  /*HACER RESPONSIVE*/
+  @media screen and (max-width:767px) {
+    .hero, .tarjetas{
+      flex-direction: column;
+    }
+    .texto-ul{
+      display: none;
+    }
+    .elegirnos{
+      height: 290vh;
+    }
+    .tarjetas{
+      align-items: center;
+    }
+    .grid-cursos{
+      grid-template-columns: 300px 300px;
+      grid-template-rows: 150px 150px;
+      gap:40px;
+    }
+    .cursos-titulo{
+      margin-top: -1rem;
+    }
+    .nombre-curso{
+      font-size: 2.5rem;
+    }
+    .cursos-populares{
+      height: 95vh;
+    }
+    .hero{
+      border-bottom: none;
+    }
+    .navbar-nav i{
+      margin-top: -150px;
+    }
+    .navbar-nav .active{
+      margin-bottom: -150px;
+    }
+  }
+  @media screen and (max-width:700px) {
+    .grid-cursos{
+      grid-template-columns: 250px 250px;
+      grid-template-rows: 150px 150px;
+      gap:40px;
+    }
+    .nombre-curso{
+      font-size: 2.2rem;
+    }
+    .texto-ul{
+      display: none;
+    }
+    .navbar-nav i{
+      margin-top: -150px;
+    }
+    .navbar-nav .active{
+      margin-bottom: -150px;
+    }
+  }
+  @media screen and (max-width:600px) {
+    .grid-cursos{
+      grid-template-columns: 350px;
+      grid-template-rows: repeat(4, 150px);
+      gap:40px;
+    }
+    .texto-ul{
+      display: none;
+    }
+    .nombre-curso{
+      font-size: 2.2rem;
+    }
+    .cursos-populares{
+      height: 150vh;
+    }
+    .hero{
+      border-bottom: none;
+    }
+    .navbar-nav i{
+      margin-top: -150px;
+    }
+    .navbar-nav .active{
+      margin-bottom: -150px;
+    }
+  }  
+  /*Listo*/
+  @media screen and (max-width:550px) {
+    .cursos{
+        height: 195vh !important;
+    }
+    .lados{
+        flex-direction: column;
+    }
+    .izq {
+        padding: 45px !important;
+        max-height: 70vh;
+        display: grid;
+        overflow-y: auto;
+        overflow-x: hidden;
+        grid-template-columns: 55vh !important;
+        grid-template-rows: 10vh repeat(5, 25vh) !important;
+        gap: 10px 0;
+        scroll-behavior: smooth;
+        direction: ltr !important; 
+    }
+    .der {
+        padding: 45px !important;
+        max-height: 70vh;
+        display: grid;
+        overflow-y: auto;
+        overflow-x: hidden;
+        grid-template-columns: 55vh !important;
+        grid-template-rows: 10vh repeat(5, 25vh) !important;
+        gap: 10px 0;
+        scroll-behavior: smooth;
+        direction: ltr !important; 
+    }
+    .titulo-informatica, .titulo-otros{
+        display: initial !important;
+        margin-top: 20px;
+    }
+    .titulo-otros{
+        margin-top: 40px !important;
+    }
+    /* Estilo de los elementos de la cuadrícula */
+    .grid-item {
+        margin-left: 20px;
+        background-position: center;
+        background-size: contain;
+        box-shadow: 0 0 8px black;
+    }
+    .enlace{
+      text-decoration: none;
+      color: transparent;
+      font-size: 2rem !important;
+    }
+    .footer{
+      height: 67vh;
+    }
+    .footer-title{
+      margin-top: 2px;
+    }
+    .social-icons{
+      margin-left: -10px;
+      margin-bottom: 10px;
+    }
+    .navbar-nav i{
+      margin-top: 50px;
+    }
+    .navbar-nav .active{
+      margin-bottom: 1px;
+    }
+  }
+  /*Hacer*/
+  @media screen and (max-width:450px) {
+    .cursos{
+        height: 180vh !important;
+    }
+    .lados{
+        flex-direction: column;
+    }
+    .izq {
+        padding: 25px !important;
+        max-height: 70vh;
+        display: grid;
+        overflow-y: auto;
+        overflow-x: hidden;
+        grid-template-columns: 35vh !important;
+        grid-template-rows: 10vh repeat(5, 20vh) !important;
+        gap: 10px 0;
+        scroll-behavior: smooth;
+        direction: ltr !important; 
+    }
+    .der {
+        padding: 25px !important;
+        max-height: 70vh;
+        display: grid;
+        overflow-y: auto;
+        overflow-x: hidden;
+        grid-template-columns: 35vh !important;
+        grid-template-rows: 10vh repeat(5, 20vh) !important;
+        gap: 10px 0;
+        scroll-behavior: smooth;
+        direction: ltr !important; 
+    }
+    .titulo-informatica, .titulo-otros{
+        display: initial !important;
+        margin-top: 20px;
+    }
+    .titulo-otros{
+        margin-top: 40px !important;
+    }
+    /* Estilo de los elementos de la cuadrícula */
+    .grid-item {
+        margin-left: 20px;
+        background-position: center;
+        background-size: contain;
+        box-shadow: 0 0 8px black;
+    }
+    .enlace{
+      text-decoration: none;
+      color: transparent;
+      font-size: 2rem !important;
+    }
+    .footer{
+      height: 52vh;
+    }
+    .footer-title{
+      margin-top: 2px;
+    }
+    .social-icons{
+      margin-left: -10px;
+      margin-bottom: 10px;
+    }
+    .navbar-nav i{
+      margin-top: 50px;
+    }
+    .navbar-nav .active{
+      margin-bottom: 1px;
+    }
+  }
+  /*Listo*/
+  @media screen and (max-width:420px) {
+    .cursos{
+        height: 180vh !important;
+    }
+    .lados{
+        flex-direction: column;
+    }
+    .izq {
+        padding: 25px !important;
+        max-height: 70vh;
+        display: grid;
+        overflow-y: auto;
+        overflow-x: hidden;
+        grid-template-columns: 35vh !important;
+        grid-template-rows: 15vh repeat(5, 20vh) !important;
+        gap: 10px 0;
+        scroll-behavior: smooth;
+        direction: ltr !important; 
+    }
+    .der {
+        padding: 25px !important;
+        max-height: 70vh;
+        display: grid;
+        overflow-y: auto;
+        overflow-x: hidden;
+        grid-template-columns: 35vh !important;
+        grid-template-rows: 15vh repeat(5, 20vh) !important;
+        gap: 10px 0;
+        scroll-behavior: smooth;
+        direction: ltr !important; 
+    }
+    .titulo-informatica, .titulo-otros{
+        display: initial !important;
+        margin-top: 20px;
+    }
+    .titulo-otros{
+        margin-top: 40px !important;
+    }
+    /* Estilo de los elementos de la cuadrícula */
+    .grid-item {
+        margin-left: 20px;
+        background-position: center;
+        background-size: contain;
+        box-shadow: 0 0 8px black;
+    }
+    .enlace{
+      text-decoration: none;
+      color: transparent;
+      font-size: 2rem !important;
+    }
+    .footer{
+      height: 50vh;
+    }
+    .footer-title{
+      margin-top: 2px;
+    }
+    .social-icons{
+      margin-left: -10px;
+      margin-bottom: 10px;
+    }
+    .navbar-nav i{
+      margin-top: 50px;
+    }
+    .navbar-nav .active{
+      margin-bottom: 1px;
+    }
+  }
+  /*Lograda*/
+  @media screen and (max-width:400px) {
+    .cursos{
+        height: 185vh !important;
+    }
+    .lados{
+        flex-direction: column;
+    }
+    .izq {
+        padding: 25px !important;
+        max-height: 70vh;
+        display: grid;
+        overflow-y: auto;
+        overflow-x: hidden;
+        grid-template-columns: 35vh !important;
+        grid-template-rows: 10vh repeat(5, 20vh) !important;
+        gap: 10px 0;
+        scroll-behavior: smooth;
+        direction: ltr !important; 
+    }
+    .der {
+        padding: 25px !important;
+        max-height: 70vh;
+        display: grid;
+        overflow-y: auto;
+        overflow-x: hidden;
+        grid-template-columns: 35vh !important;
+        grid-template-rows: 10vh repeat(5, 20vh) !important;
+        gap: 10px 0;
+        scroll-behavior: smooth;
+        direction: ltr !important; 
+    }
+    .titulo-informatica, .titulo-otros{
+        display: initial !important;
+        margin-top: 20px;
+    }
+    .titulo-otros{
+        margin-top: 40px !important;
+    }
+    /* Estilo de los elementos de la cuadrícula */
+    .grid-item {
+        margin-left: 20px;
+        background-position: center;
+        background-size: contain;
+        box-shadow: 0 0 8px black;
+    }
+    .enlace{
+      text-decoration: none;
+      color: transparent;
+      font-size: 2rem !important;
+    }
+    .footer{
+      height: 60vh;
+    }
+    .footer-title{
+      margin-top: 2px;
+    }
+    .social-icons{
+      margin-left: -10px;
+      margin-bottom: 10px;
+    }
+    .navbar-nav i{
+      margin-top: 50px;
+    }
+    .navbar-nav .active{
+      margin-bottom: 1px;
+    }
+  }
+  /*adaptacion lograda*/
+  @media screen and (max-width:380px) {
+    .cursos{
+        height: 195vh !important;
+    }
+    .lados{
+        flex-direction: column;
+    }
+    .izq {
+        padding: 35px !important;
+        max-height: 70vh;
+        display: grid;
+        overflow-y: auto;
+        overflow-x: hidden;
+        grid-template-columns: 40vh !important;
+        grid-template-rows: 10vh repeat(5, 20vh) !important;
+        gap: 10px 0;
+        scroll-behavior: smooth;
+        direction: ltr !important; 
+    }
+    .der {
+        padding: 35px !important;
+        max-height: 70vh;
+        display: grid;
+        overflow-y: auto;
+        overflow-x: hidden;
+        grid-template-columns: 40vh !important;
+        grid-template-rows: 10vh repeat(5, 25vh) !important;
+        gap: 10px 0;
+        scroll-behavior: smooth;
+        direction: ltr !important; 
+    }
+    .titulo-informatica, .titulo-otros{
+        display: initial !important;
+        margin-top: 20px;
+    }
+    .titulo-otros{
+        margin-top: 40px !important;
+    }
+    /* Estilo de los elementos de la cuadrícula */
+    .grid-item {
+        margin-left: 20px;
+        background-position: center;
+        background-size: contain;
+        box-shadow: 0 0 8px black;
+    }
+    .enlace{
+      text-decoration: none;
+      color: transparent;
+      font-size: 2rem !important;
+    }
+    .footer{
+      height: 76vh;
+    }
+    .footer-title{
+      margin-top: 2px;
+    }
+    .social-icons{
+      margin-left: -10px;
+      margin-bottom: 10px;
+    }
+    .navbar-nav i{
+      margin-top: 50px;
+    }
+    .navbar-nav .active{
+      margin-bottom: 1px;
+    }
+  }     
+  /*hacer*/
+  @media screen and (max-width:360px) {
+    .cursos{
+        height: 190vh !important;
+    }
+    .lados{
+        flex-direction: column;
+    }
+    .izq {
+        padding: 25px !important;
+        max-height: 70vh;
+        display: grid;
+        overflow-y: auto;
+        overflow-x: hidden;
+        grid-template-columns: 35vh !important;
+        grid-template-rows: 10vh repeat(5, 20vh) !important;
+        gap: 10px 0;
+        scroll-behavior: smooth;
+        direction: ltr !important; 
+    }
+    .der {
+        padding: 25px !important;
+        max-height: 70vh;
+        display: grid;
+        overflow-y: auto;
+        overflow-x: hidden;
+        grid-template-columns: 35vh !important;
+        grid-template-rows: 10vh repeat(5, 20vh) !important;
+        gap: 10px 0;
+        scroll-behavior: smooth;
+        direction: ltr !important; 
+    }
+    .titulo-informatica, .titulo-otros{
+        display: initial !important;
+        margin-top: 20px;
+    }
+    .titulo-otros{
+        margin-top: 40px !important;
+    }
+    /* Estilo de los elementos de la cuadrícula */
+    .grid-item {
+        margin-left: 20px;
+        background-position: center;
+        background-size: contain;
+        box-shadow: 0 0 8px black;
+    }
+    .enlace{
+      text-decoration: none;
+      color: transparent;
+      font-size: 2rem !important;
+    }
+    .footer{
+      height: 71vh;
+    }
+    .footer-title{
+      margin-top: 2px;
+    }
+    .social-icons{
+      margin-left: -10px;
+      margin-bottom: 10px;
+    }
+    .navbar-nav i{
+      margin-top: 50px;
+    }
+    .navbar-nav .active{
+      margin-bottom: 1px;
+    }
+  }
+  /*listo*/
+  @media screen and (max-width:350px) {
+    .cursos{
+        height: 180vh !important;
+    }
+    .lados{
+        flex-direction: column;
+    }
+    .izq {
+        padding: 15px !important;
+        max-height: 70vh;
+        display: grid;
+        overflow-y: auto;
+        overflow-x: hidden;
+        grid-template-columns: 30vh !important;
+        grid-template-rows: 10vh repeat(5, 15vh) !important;
+        gap: 10px 0;
+        scroll-behavior: smooth;
+        direction: ltr !important; 
+    }
+    .der {
+        padding: 15px !important;
+        max-height: 70vh;
+        display: grid;
+        overflow-y: auto;
+        overflow-x: hidden;
+        grid-template-columns: 30vh !important;
+        grid-template-rows: 10vh repeat(5, 15vh) !important;
+        gap: 10px 0;
+        scroll-behavior: smooth;
+        direction: ltr !important; 
+    }
+    .titulo-informatica, .titulo-otros{
+        display: initial !important;
+        margin-top: 20px;
+    }
+    .titulo-otros{
+        margin-top: 40px !important;
+    }
+    /* Estilo de los elementos de la cuadrícula */
+    .grid-item {
+        margin-left: 20px;
+        background-position: center;
+        background-size: contain;
+        box-shadow: 0 0 8px black;
+    }
+    .enlace{
+      text-decoration: none;
+      color: transparent;
+      font-size: 2rem !important;
+    }
+    .footer{
+      height: 60vh;
+    }
+    .footer-title{
+      margin-top: 2px;
+    }
+    .social-icons{
+      margin-left: -10px;
+      margin-bottom: 10px;
+    }
+    .navbar-nav i{
+      margin-top: 50px;
+    }
+    .navbar-nav .active{
+      margin-bottom: 1px;
+    }
+  }

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Examen de HTML, CSS y JavaScript</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #f2f2f2, #e2e8f0);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+            margin: 20px;
+            text-align: center;
+        }
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        .question {
+            background-color: #f7fafc;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .question p {
+            margin: 0;
+            font-weight: bold;
+            color: #34495e;
+        }
+        label {
+            display: block;
+            padding: 5px;
+            cursor: pointer;
+            color: #34495e;
+        }
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #34495e;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #3498db;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        #downloadCertificate {
+            display: none;
+            margin-top: 15px;
+            background-color: #27ae60;
+        }
+        #downloadCertificate:hover {
+            background-color: #1f8e52;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Examen Front End Developer</h1>
+        
+        <!-- Preguntas del examen -->
+        <div class="question">
+            <p>1. ¿Cuál es el elemento HTML para una línea horizontal?</p>
+            <label><input type="radio" name="q1" value="correct"> &lt;hr&gt;</label>
+            <label><input type="radio" name="q1" value="wrong"> &lt;line&gt;</label>
+            <label><input type="radio" name="q1" value="wrong"> &lt;horizontal&gt;</label>
+        </div>
+
+        <div class="question">
+            <p>2. ¿Cuál es el selector en CSS para aplicar estilos a todos los párrafos?</p>
+            <label><input type="radio" name="q2" value="correct"> p</label>
+            <label><input type="radio" name="q2" value="wrong"> .p</label>
+            <label><input type="radio" name="q2" value="wrong"> #p</label>
+        </div>
+
+        <div class="question">
+            <p>3. ¿Cómo puedes imprimir algo en la consola en JavaScript?</p>
+            <label><input type="radio" name="q3" value="wrong"> print()</label>
+            <label><input type="radio" name="q3" value="correct"> console.log()</label>
+            <label><input type="radio" name="q3" value="wrong"> write()</label>
+        </div>
+
+        <div class="question">
+            <p>4. ¿Cuál es el atributo HTML para establecer un fondo de color?</p>
+            <label><input type="radio" name="q4" value="wrong"> bgcolor</label>
+            <label><input type="radio" name="q4" value="correct"> style="background-color"</label>
+            <label><input type="radio" name="q4" value="wrong"> color</label>
+        </div>
+
+        <div class="question">
+            <p>5. ¿Cómo seleccionas un elemento por su id en CSS?</p>
+            <label><input type="radio" name="q5" value="wrong"> .id</label>
+            <label><input type="radio" name="q5" value="wrong"> id</label>
+            <label><input type="radio" name="q5" value="correct"> #id</label>
+        </div>
+
+        <!-- Botón para enviar el examen -->
+        <button onclick="calculateScore()">Enviar</button>
+
+        <!-- Resultado del examen -->
+        <div class="result" id="result"></div>
+
+        <!-- Botón para descargar el certificado -->
+        <button id="downloadCertificate" onclick="downloadCertificate()">Descargar Certificado</button>
+    </div>
+    <script>
+        function calculateScore() {
+            let correctAnswers = 0;
+            const totalQuestions = 5;
+            const answers = document.querySelectorAll('input[type="radio"]:checked');
+    
+            answers.forEach(answer => {
+                if (answer.value === "correct") {
+                    correctAnswers++;
+                }
+            });
+    
+            const score = correctAnswers;
+            const resultText = `Tu puntaje es: ${score} de ${totalQuestions}.`;
+    
+            // Mostrar el SweetAlert
+            if (score >= 4) {
+                Swal.fire({
+                    title: '¡Aprobado!',
+                    text: `Tu puntaje es: ${score} de ${totalQuestions}. ¡Felicidades! Has aprobado el examen.`,
+                    icon: 'success',
+                    confirmButtonText: 'Descargar Certificado',
+                    confirmButtonColor: '#27ae60',
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        document.getElementById("downloadCertificate").style.display = "inline-block"; // Muestra el botón
+                    }
+                });
+            } else {
+                Swal.fire({
+                    title: '¡Desaprobado!',
+                    text: `Tu puntaje es: ${score} de ${totalQuestions}. Lo siento, no alcanzaste el puntaje mínimo. ¡Inténtalo nuevamente!`,
+                    icon: 'error',
+                    confirmButtonText: 'Volver a Intentar',
+                    confirmButtonColor: '#e74c3c',
+                });
+                document.getElementById("downloadCertificate").style.display = "none"; // Asegura que el botón de certificado no aparezca
+            }
+    
+            // Mostrar el resultado en la página (fuera del SweetAlert)
+            document.getElementById("result").innerText = resultText;
+        }
+    
+        function downloadCertificate() {
+            const link = document.createElement('a');
+            link.href = '../imagenes/Certificado.png';
+            link.download = 'Certificado.png';
+            link.click();
+        }
+    </script>
+</body>
+</html>
+
+
