@@ -4,6 +4,8 @@
 /*--------------------------------NAVBAR-------------------------------------------*/
 body{
   background-color: #eeee !important;
+  margin: 0; /* Evita espacios en blanco */
+  padding: 0;
 }
 .modern-navbar {
   position: fixed;
@@ -25,11 +27,11 @@ body{
   font-family: 'Arial', sans-serif;
   font-weight: bold;
   font-size: 2rem; 
-  color: #ffffff; 
+  color: black !important; 
   transition: color 0.3s ease, transform 0.3s ease; 
 }
 .navbar-brand:hover {
-  color: #a8d5ba; 
+  color: #a8d5ba !important; 
   transform: translateY(-3px); 
 }
 .navbar-brand .navbar-logo {
@@ -496,8 +498,11 @@ background-color: #357ABD;
 }
 /*-------------------MODO OSCURO---------------------------------- */
     body.dark-mode {
-      background-color: #121212;
+      background-color: black !important;
       color: #ffffff;
+    }
+    .dark-mode .hero{ /*ver como queda*/
+      border-top: no !important;
     }
     .dark-mode .navbar, .dark-mode .footer {
       background-color: #333333;
@@ -518,7 +523,10 @@ background-color: #357ABD;
       background-color: white !important;
       color: black !important;
     }
-    .dark-mode .navbar, .dark-mode .footer, .dark-mode .faq-button, .dark-mode .grid-item, .dark-mode .testimonial-item{
+    nav.dark-mode{
+      background-color: #1a7d6f !important;
+    }
+    .dark-mode .footer, .dark-mode .faq-button, .dark-mode .grid-item, .dark-mode .testimonial-item{
       border: 1px solid white;
     }
     .dark-mode .card {
@@ -586,8 +594,9 @@ background-color: #357ABD;
           color: #ccc;
       }
       .dark-mode .navbar{
-          border: none !important;
+          border: 1px solid white !important;
       }
+      
 
 /*----------------------RESPONSIVE----------------------------*/
 /*adaptacion lograda*/
