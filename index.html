@@ -279,7 +279,7 @@
     <script>
   // Función para cambiar el tamaño del texto
   function cambiarTamanoTexto(accion) {
-    const elementosTexto = document.querySelectorAll('.texto-ul, .hero h1, .card-text, .nombre-curso, .subtitulo'); // Selecciona los elementos cuyo texto se cambiará
+    const elementosTexto = document.querySelectorAll('.texto-ul, b, .card-text, .nombre-curso'); // Selecciona los elementos cuyo texto se cambiará
 
     elementosTexto.forEach(elemento => {
       let tamanoActual = parseFloat(window.getComputedStyle(elemento).fontSize); // Obtiene el tamaño actual de la fuente

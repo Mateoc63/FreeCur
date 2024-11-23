@@ -107,6 +107,12 @@ body{
   color: #000;
   transform: rotate(360deg);
 }
+.dark-mode .container-fluid, .dark-mode .navbar-brand{
+  background-color: transparent !important;
+}
+.dark-mode .navbar-brand, .dark-mode .dropdown-toggle, .dark-mode .dropdown-menu button{
+  border: none !important;
+}
 
 .cta-button {
   font-size: 16px;

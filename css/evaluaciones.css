@@ -172,6 +172,12 @@ body{
       border-bottom: 1px solid white;
       border-top: 1px solid white;
     }
+    .dark-mode .container-fluid, .dark-mode .navbar-brand{
+      background-color: transparent !important;
+    }
+    .dark-mode .navbar-brand, .dark-mode .dropdown-toggle, .dark-mode .dropdown-menu button{
+      border: none !important;
+    }
     .dark-mode .btn, .dark-mode .faq-button {
       background-color: #555555;
       color: #ffffff;

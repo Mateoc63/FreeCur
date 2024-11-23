@@ -112,7 +112,11 @@ body{
   color: #000;
   transform: rotate(360deg);
 }
-
+.dropdown i{
+  font-size: 1.7rem;
+  color: black;
+  margin: 10px;
+}
 .cta-button {
   font-size: 16px;
   font-weight: bold;
@@ -567,7 +571,12 @@ background-color: #357ABD;
           background-color: #000 !important;
           color: #fff !important;
       }
-
+      .dark-mode .container-fluid, .dark-mode .navbar-brand{
+        background-color: transparent !important;
+      }
+      .dark-mode .navbar-brand, .dark-mode .dropdown-toggle, .dark-mode .dropdown-menu button{
+        border: none !important;
+      }
       /* Botones, inputs y otros elementos interactivos */
       body.dark-mode button, 
       body.dark-mode input, 
