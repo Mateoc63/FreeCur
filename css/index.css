@@ -159,6 +159,9 @@ border-bottom: 2px solid #0002;
   height: 75vh;
   background-color: #eeee;
 }
+.lado-izq h1{
+  font-family: "Trirong", serif;
+}
 .inscribirse{
 background-color: rgba(45, 159, 123, 0.8)!important;
 }
@@ -205,6 +208,8 @@ background-image: url(../imagenes/derecha_1.webp);
 /*--------------------------------SECCION ELEGIRNOS-------------------------------------------*/
 .subtitulo{
 padding-top: 40px;
+font-family: "Trirong", serif;
+font-size: 2.5rem;
 }
 .elegirnos{
 background-color: #eeee;
@@ -226,9 +231,29 @@ margin: 0 20px;
   text-align: center;
 }
 /*--------------------------------CURSOS POPULARES-------------------------------------------*/
-.cursos-titulo{
-margin-top: 2rem;
+.titulo-bootcamp {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem; /* Tamaño grande para destacar */
+  font-weight: 700; /* Peso fuerte para resaltar */
+  text-transform: uppercase; /* Mayúsculas para impacto visual */
+  letter-spacing: 2px; /* Espaciado elegante */
+  text-align: center; /* Centrado */
+  color: #000000; /* Negro puro */
+  text-shadow: 
+    1px 1px 2px rgba(0, 0, 0, 0.5), /* Sombra difusa */
+    -1px -1px 2px rgba(255, 255, 255, 0.3); /* Efecto de relieve */
+  animation: moverTitulo 3s ease-in-out infinite; /* Movimiento suave */
 }
+
+@keyframes moverTitulo {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(10px); /* Movimiento sutil hacia la derecha */
+  }
+}
+
 .cursos-populares {
 background-color: #2d9f7b;
 height: 120vh;
@@ -237,7 +262,6 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 }
-
 .grid-cursos {
 display: grid;
 grid-template-columns: 500px 500px;
@@ -301,6 +325,29 @@ display: flex;
 background-color: transparent;
 font-size: 7rem;
 }
+@keyframes oscilar {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.oscilacion {
+  display: inline-block; /* Asegura que la animación funcione correctamente */
+  animation: oscilar 1.5s infinite; /* Oscilación suave y continua */
+}
+
 .texto-cursos{
 align-self: center;
 margin-left: 15px;
@@ -322,6 +369,10 @@ text-decoration: none;
 .recomendaciones{
 height: 80vh;
 background-color: #eeee;
+}
+.recomendaciones h3{
+  font-family: "Trirong", serif;
+  font-size: 2rem;
 }
 
 /*--------------------------------FOOTER-------------------------------------------*/
