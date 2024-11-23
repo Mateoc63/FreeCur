@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Curso en Línea: Programación Básica</title>
+    <title>FreeCur - curso de Psicología</title>
     <link rel="stylesheet" href="../css/modulos_responsive.css">
     <!-- Favicon -->
     <link rel="icon" href="../imagenes/logo.png.png" type="image/x-icon">
@@ -163,35 +163,34 @@
 
         <!-- Cabecera Principal -->
         <header class="header">
-            <h1>Curso de Programación Básica</h1>
-            <p>Empieza a programar desde cero con nuestro curso interactivo. Incluye videos, material de apoyo y evaluaciones.</p>
+            <h1>Curso de Psicología</h1>
+            <p>Introducete en el mundo de la Psicología. Incluye videos, material de apoyo y evaluaciones.</p>
         </header>
 
         <!-- Sección de Módulo -->
         <section class="module">
-            <h2>Módulo 1: Introducción a la Programación</h2>
+            <h2>Módulo 1: Introducción a la Psicología</h2>
 
             <!-- Video Embebido -->
             <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/ELSm-G201Ls" title="Video de introducción a la programación" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/hmaHuOielo8" title="Video de Psicología" allowfullscreen></iframe>
             </div>
 
             <!-- Materiales Adicionales -->
             <div class="materials">
                 <h3>Materiales Adicionales</h3>
                 <ul>
-                    <li><a href="materiales/guia1.pdf" download>Guía del Módulo 1 (PDF)</a></li>
-                    <li><a href="materiales/articulo1.pdf" download>Lectura Recomendada</a></li>
+                    <li><a href="https://concepto.de/psicologia/" target="_blank">Guía del Módulo 1 (sitio web)</a></li>
                 </ul>
             </div>
 
             <!-- Evaluación Interactiva -->
             <div class="quiz">
-                <h3>Evaluación</h3>
-                <p>Pregunta: ¿Qué es la programación?</p>
-                <button onclick="checkAnswer('A')">A) Crear aplicaciones</button>
-                <button onclick="checkAnswer('B')">B) Diseñar estructuras de datos</button>
-                <button onclick="checkAnswer('C')">C) Resolver problemas mediante código</button>
+                <h3>Evaluación de Psicología</h3>
+                <p>Pregunta: ¿Quién es considerado el padre de la psicología moderna?</p>
+                <button onclick="checkAnswer('A')">A) Sigmund Freud</button>
+                <button onclick="checkAnswer('B')">B) Carl Rogers</button>
+                <button onclick="checkAnswer('C')">C) Wilhelm Wundt</button>
             </div>
         </section>
 
@@ -205,7 +204,7 @@
     <script>
         // Función para evaluar respuestas del cuestionario
         function checkAnswer(answer) {
-            const correctAnswer = 'B';
+            const correctAnswer = 'C';
             if (answer === correctAnswer) {
                 Swal.fire({
                     title: "Respuesta correcta",

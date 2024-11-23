@@ -394,7 +394,16 @@
             <li><a class="nav-link" href="#foro">Foro</a></li>
           </ul>
           <div class="navbar-actions">
-            <i class="bi bi-moon toggle-theme" id="darkModeToggle"></i>
+            <div class="dropdown">
+              <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-gear"></i>
+              </button>
+              <ul class="dropdown-menu">
+                <li><button onclick="cambiarTamanoTexto('a')" class="btn">Agrandar texto</button></li>
+                <li><button onclick="cambiarTamanoTexto('b')" class="btn">Achicar texto</button></li>                     
+              </ul>
+            </div>
+          <i class="bi bi-moon toggle-theme" id="darkModeToggle"></i>
           </div>
         </div>
       </div>
@@ -430,8 +439,7 @@
       </div>
       <div class="container der text-center col-12 col-md-6">
         <ul class="container mt-4 ul-modulos">
-            <li><i class="bi bi-backpack3"></i><b><a class="enlace-modulos" href="../modulos psicologia/modulo1.html">Modulo 1</a></b></li>
-            <li><i class="bi bi-backpack3"></i><b><a class="enlace-modulos" href="../modulos psicologia/modulo2.html">Modulo 2</a></b></li>
+            <li><i class="bi bi-backpack3"></i><b><a class="enlace-modulos" href="../modulos psicologia/modulo1.html">Modulo único</a></b></li>
             <li><i class="bi bi-pencil-square"></i><b><a class="enlace-modulos" href="../modulos psicologia/examen.html">Examen final</a></b></li>
         </ul>
         <!--Carrusel opiniones-->
@@ -627,7 +635,25 @@
           darkModeToggle.classList.add('bi-moon');
       }
   });
-</script>          
+</script>  
+<script>
+  function cambiarTamanoTexto(accion) {
+    const elementos = document.querySelectorAll('h1, h2, h3, .descripcion-curso, .message, .texto-profe, .navbar, .footer');  // Seleccionamos todos los elementos que contienen texto
+    let fontSize = window.getComputedStyle(elementos[0]).fontSize;  // Obtenemos el tamaño de fuente actual
+    fontSize = parseFloat(fontSize);  // Convertimos a número
+    
+    if (accion === 'a') {
+        fontSize *= 1.2;  // Aumentamos el tamaño
+    } else if (accion === 'b') {
+        fontSize *= 0.8;  // Reducimos el tamaño
+    }
+    
+    // Aplicamos el nuevo tamaño a todos los elementos seleccionados
+    elementos.forEach(element => {
+        element.style.fontSize = `${fontSize}px`;
+    });
+}
+</script>         
       <!--Sweet Alert-->
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- Bootstrap -->

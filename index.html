@@ -30,6 +30,17 @@
           <ul class="navbar-nav mx-auto">
             <li><a class="nav-link" href="#cursos">Cursos</a></li>
             <li><a class="nav-link" href="#opiniones">Opiniones</a></li>
+            <li>
+              <div class="dropdown">
+                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="bi bi-gear"></i>
+                </button>
+                <ul class="dropdown-menu">
+                  <li><button onclick="cambiarTamanoTexto('a')" class="btn">Agrandar texto</button></li>
+                  <li><button onclick="cambiarTamanoTexto('b')" class="btn">Achicar texto</button></li>
+                </ul>
+              </div>
+            </li>
           </ul>
           <div class="navbar-actions">
             <i class="bi bi-moon toggle-theme" id="darkModeToggle"></i>
@@ -265,6 +276,24 @@
             }
         });
     </script>
+    <script>
+  // Función para cambiar el tamaño del texto
+  function cambiarTamanoTexto(accion) {
+    const elementosTexto = document.querySelectorAll('.texto-ul, .hero h1, .card-text, .nombre-curso, .subtitulo'); // Selecciona los elementos cuyo texto se cambiará
+
+    elementosTexto.forEach(elemento => {
+      let tamanoActual = parseFloat(window.getComputedStyle(elemento).fontSize); // Obtiene el tamaño actual de la fuente
+      if (accion === 'a') {
+        // Aumenta el tamaño de la fuente un 10%
+        elemento.style.fontSize = (tamanoActual * 1.1) + 'px';
+      } else if (accion === 'b') {
+        // Disminuye el tamaño de la fuente un 10%
+        elemento.style.fontSize = (tamanoActual * 0.9) + 'px';
+      }
+    });
+  }
+</script>
+
     <!--Bootstrap-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
