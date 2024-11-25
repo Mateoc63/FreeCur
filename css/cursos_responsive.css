@@ -473,7 +473,7 @@ body{
   /*Listo*/
   @media screen and (max-width:550px) {
     .cursos{
-        height: 195vh !important;
+        height: 205vh !important;
     }
     .lados{
         flex-direction: column;
@@ -541,7 +541,7 @@ body{
   /*Hacer*/
   @media screen and (max-width:450px) {
     .cursos{
-        height: 180vh !important;
+        height: 195vh !important;
     }
     .lados{
         flex-direction: column;
@@ -609,7 +609,7 @@ body{
   /*Listo*/
   @media screen and (max-width:420px) {
     .cursos{
-        height: 180vh !important;
+        height: 195vh !important;
     }
     .lados{
         flex-direction: column;
@@ -677,7 +677,7 @@ body{
   /*Lograda*/
   @media screen and (max-width:400px) {
     .cursos{
-        height: 185vh !important;
+        height: 195vh !important;
     }
     .lados{
         flex-direction: column;
@@ -745,7 +745,7 @@ body{
   /*adaptacion lograda*/
   @media screen and (max-width:380px) {
     .cursos{
-        height: 195vh !important;
+        height: 205vh !important;
     }
     .lados{
         flex-direction: column;
@@ -813,7 +813,7 @@ body{
   /*hacer*/
   @media screen and (max-width:360px) {
     .cursos{
-        height: 190vh !important;
+        height: 200vh !important;
     }
     .lados{
         flex-direction: column;
@@ -881,7 +881,7 @@ body{
   /*listo*/
   @media screen and (max-width:350px) {
     .cursos{
-        height: 180vh !important;
+        height: 190vh !important;
     }
     .lados{
         flex-direction: column;

@@ -1042,7 +1042,8 @@ background-color: #357ABD;
     margin-bottom: -150px;
   }
   .subtitulo{
-    padding-top: 20px;
+    padding-top: 35px;
+    font-size: 1.9rem;
   }
   .tarjetas{
     flex-direction: column !important;
@@ -1053,7 +1054,17 @@ background-color: #357ABD;
     height: 57vh;
   }
   .recomendaciones{
-    height: 80vh;
+    height: 90vh;
+  }
+  .elegirnos{
+    height: 300vh;
+  }
+  .cursos-populares{
+    height: 160vh;
+  }
+  .cursos-titulo{
+    font-size: 1.8rem;
+    padding-top: 20px;
   }
   .footer{
     height: 60vh;
@@ -1084,15 +1095,19 @@ background-color: #357ABD;
     background-image: url(../imagenes/derecha_1.webp);
   }
   .elegirnos{
-    height: 235vh;
+    height: 240vh;
   }
   .subtitulo{
-    padding-top: 100px;
+    padding-top: 120px;
+    font-size: 2rem;
   }
   .tarjetas{
     flex-direction: column !important;
     display: flex;
     gap: 0;
+  }
+  .cursos-titulo{
+    font-size: 1.8rem;
   }
   .grid-cursos{
     grid-template-columns: 350px;
@@ -1109,7 +1124,7 @@ background-color: #357ABD;
     font-size: 5rem;
   }
   .cursos-populares{
-    height: 120vh;
+    height: 125vh;
   }
   .fin-cursos{
     margin-bottom: 25px;
@@ -1118,7 +1133,7 @@ background-color: #357ABD;
     border-bottom: none;
   }
   .recomendaciones{
-    height: 65vh;
+    height: 72vh;
   }
   .caja-carrusel{
     height: 46vh;
@@ -1165,15 +1180,20 @@ background-color: #357ABD;
     background-image: url(../imagenes/derecha_1.webp);
   }
   .elegirnos{
-    height: 242vh;
+    height: 245vh;
   }
   .subtitulo{
-    padding-top: 100px;
+    padding-top: 120px;
+    font-size: 1.7rem;
   }
   .tarjetas{
     flex-direction: column !important;
     display: flex;
     gap: 0;
+  }
+  .cursos-titulo{
+    font-size: 1.5rem;
+    padding-top: 15px;
   }
   .grid-cursos{
     grid-template-columns: 350px;
@@ -1190,7 +1210,7 @@ background-color: #357ABD;
     font-size: 5rem;
   }
   .cursos-populares{
-    height: 120vh;
+    height: 125vh;
   }
   .fin-cursos{
     margin-bottom: 25px;
@@ -1199,7 +1219,7 @@ background-color: #357ABD;
     border-bottom: none;
   }
   .recomendaciones{
-    height: 70vh;
+    height: 75vh;
   }
   .caja-carrusel{
     height: 50vh;
@@ -1230,7 +1250,7 @@ background-color: #357ABD;
     height: 65vh;
   }
   .elegirnos{
-    height: 255vh;
+    height: 265vh;
   }
   .texto-ul{
     display: none;
@@ -1250,7 +1270,7 @@ background-color: #357ABD;
     font-size: 5rem;
   }
   .cursos-populares{
-    height: 125vh;
+    height: 130vh;
   }
   .fin-cursos{
     margin-bottom: 25px;
@@ -1259,7 +1279,7 @@ background-color: #357ABD;
     border-bottom: none;
   }
   .recomendaciones{
-    height: 70vh;
+    height: 80vh;
   }
   .caja-carrusel{
     height: 50vh;
@@ -1310,6 +1330,7 @@ background-color: #357ABD;
   }
   .subtitulo{
     padding-top: 100px;
+    font-size: 1.6rem;
   }
   .tarjetas{
     flex-direction: column !important;
@@ -1317,7 +1338,10 @@ background-color: #357ABD;
     gap: 0;
   }
   .elegirnos{
-    height: 325vh;
+    height: 330vh;
+  }
+  .cursos-titulo{
+    font-size: 1.5rem;
   }
   .grid-cursos{
     grid-template-columns: 350px;
@@ -1334,7 +1358,7 @@ background-color: #357ABD;
     font-size: 5rem;
   }
   .cursos-populares{
-    height: 160vh;
+    height: 165vh;
   }
   .fin-cursos{
     margin-bottom: 25px;
@@ -1343,7 +1367,7 @@ background-color: #357ABD;
     border-bottom: none;
   }
   .recomendaciones{
-    height: 87vh;
+    height: 100vh;
   }
   .caja-carrusel{
     height: 65vh;
