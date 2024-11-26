@@ -47,7 +47,7 @@
           </ul>
           <div class="navbar-actions">
             <i class="bi bi-moon toggle-theme" id="darkModeToggle"></i>
-            <button class="cta-button" onclick="window.location.href='login.html';">¡Ingresar!</button>
+            <button class="cta-button" onclick="window.location.href='login.html';">¡Cerrar sesión!</button>
           </div>
         </div>
       </div>
@@ -61,8 +61,8 @@
               <li><i class="bi bi-clock"></i><b>Acceso 24/7</b><span class="texto-ul">: Aprende dónde y cuándo quieras.</span></li>
               <li><i class="bi bi-person-check"></i><b>Inclusión y Accesibilidad</b><span class="texto-ul">: Cursos adaptados para todos los niveles y capacidades.</span></li>
               <li><i class="bi bi-pencil-square"></i><b>Evaluaciones Prácticas</b><span class="texto-ul">: Gana experiencia con evaluaciones.</span></li>
+              <li><i class="bi bi-arrow-down"></i><b>Deslizá hacia abajo y conoce nuestros cursos</b></li>
             </ul>
-            <button class="btn inscribirse mt-4" onclick="window.location.href='login.html';">¡Ingresar!</button>
         </div>
         <div class="container-fluid lado-der text-center col-lg-6 col-md-6 col-sm-12">
           <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
@@ -141,7 +141,7 @@
             
             <div class="fin-cursos"><span class="uno oscilacion">#1</span>
               <span class="texto-cursos">EN CURSOS DIGITALES</span></div>
-              <a class="btn boton-curso" href="#" id="inicia_sesion">VER TODOS LOS CURSOS</a>
+            <button class="btn boton-curso"><a class="cursos-link" href="cursos_populares.html">VER TODOS LOS CURSOS</a></button>
           </section>
       
           <!--Seccion recomendaciones-->
@@ -208,7 +208,7 @@
             <div class="col-md-3">
               <h5 class="footer-title">Enlaces rápidos</h5>
               <ul class="footer-links">
-                <li><a href="#cursos">Cursos</a></li>
+                <li><a href="cursos_populares.html">Cursos</a></li>
                 <li><a href="#opiniones">Opiniones</a></li>
               </ul>
             </div>
@@ -297,25 +297,6 @@
       }
     });
   }
-</script>
-<script>
-  document.getElementById('inicia_sesion').addEventListener('click', function(event) {
-    event.preventDefault();  // Evita que el enlace haga su acción por defecto
-
-    Swal.fire({
-      icon: 'warning',
-      title: 'Debes iniciar sesión',
-      text: 'Para ver todos los cursos, debes estar logueado.',
-      showCancelButton: true,  // Muestra el botón de cancelar
-      cancelButtonText: 'Cancelar',  // Texto del botón de cancelar
-      confirmButtonText: 'Iniciar sesión',  // Texto del botón de confirmación
-      confirmButtonColor: '#3085d6',  // Color del botón "Iniciar sesión"
-    }).then((result) => {
-      if (result.isConfirmed) {
-        window.location.href = 'login.html';  // Redirige a la página de login
-      }
-    });
-  });
 </script>
     <!--Bootstrap-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

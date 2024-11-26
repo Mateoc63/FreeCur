@@ -326,7 +326,7 @@
                 const password = document.getElementById("password").value;
 
                 if(username === USUARIO_VALIDO && password === CONTRASEÑA_VALIDA){
-                    window.location.href = "index.html";
+                    window.location.href = "sesion_iniciada.html";
                 }else if(username !== USUARIO_VALIDO && password === CONTRASEÑA_VALIDA){
                     Swal.fire({
                         title: "Nombre de usuario incorrecto",

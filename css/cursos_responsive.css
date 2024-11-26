@@ -277,6 +277,12 @@ body{
     .cursos{
         height: 95vh !important;
     }
+    .navbar-actions{
+      margin-left: 320px;
+    }
+    .nav-link{
+      margin-left: 170px !important;
+    }
     .izq {
         padding: 10px !important;
         max-height: 70vh;
@@ -334,6 +340,12 @@ body{
   @media screen and (max-width:780px) {
     .cursos{
         height: 95vh !important;
+    }
+    .navbar-actions{
+      margin-left: 35px;
+    }
+    .nav-link{
+      margin-left: 170px !important;
     }
     .izq {
         padding: 15px !important;
@@ -546,6 +558,12 @@ body{
     .lados{
         flex-direction: column;
     }
+    .navbar-actions{
+      margin-left: 0px;
+    }
+    .nav-link{
+      margin-left: 140px !important;
+    }
     .izq {
         padding: 25px !important;
         max-height: 70vh;
@@ -614,6 +632,12 @@ body{
     .lados{
         flex-direction: column;
     }
+    .navbar-actions{
+      margin-left: 0px;
+    }
+    .nav-link{
+      margin-left: 140px !important;
+    }
     .izq {
         padding: 25px !important;
         max-height: 70vh;
@@ -681,6 +705,12 @@ body{
     }
     .lados{
         flex-direction: column;
+    }
+    .navbar-actions{
+      margin-left: -10px;
+    }
+    .nav-link{
+      margin-left: 130px !important;
     }
     .izq {
         padding: 25px !important;

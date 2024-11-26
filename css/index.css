@@ -154,6 +154,17 @@ body{
 background-color: #eeee;
 border-bottom: 2px solid #0002;
 }
+/* Estilo para el último li */
+.lado-izq ul li:last-child {
+  font-size: 1.1rem;
+  text-align: center; 
+  margin: 30px auto;
+  color: black; 
+  width: fit-content; 
+}
+.lado-izq .bi-arrow-down{
+  color: black;
+}
 .lado-izq{
   width: 50%;
   height: 75vh;
@@ -179,7 +190,6 @@ margin: 15px 0;
 display: flex;
 align-items: center;
 }
-
 .lado-izq ul li i {
 font-size: 1.8rem;
 color: #f39c12;
