@@ -426,8 +426,8 @@
         <h1 class="titulo-curso text-center">BIOLOGIA</h1>
         <p class="descripcion-curso mt-4 text-center">Descubre los fundamentos de la biología: células, genética, <br>evolución y ecosistemas. Aprende sobre la vida en <br> la Tierra y cómo los organismos interactúan, con lecciones claras y prácticas. <br>Al completar el curso, obtendrás un certificado que avala tus conocimientos <br> básicos en biología</p>
         <div class="boton-inscribirse text-center d-flex justify-content-center mt-4">
-            <button class="btn"><a class="enlace-inscripcion" href="#">INSCRIBIRSE</a></button>
-        </div>        
+          <button class="btn" id="inscribirseBtn"><a class="enlace-inscripcion" href="#">INSCRIBIRSE</a></button>
+        </div>          
     </section>
 
     <!--Foro y modulos-->
@@ -652,6 +652,25 @@
           });
       }
       </script> 
+      <!-- Script de EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+    // Inicializar EmailJS
+    emailjs.init("MWuhBht5AHlYhGbls"); // Reemplaza con tu ID de usuario EmailJS
+
+    // Agregar evento al botón
+    document.getElementById("inscribirseBtn").addEventListener("click", function () {
+        emailjs.send("service_o9hw2n9", "template_kzt00j5", {
+            to_name: "Usuario", // Puedes personalizar este dato
+            message: "Te has inscrito con éxito al curso de Biología."
+        })
+        .then(function(response) {
+            alert("Correo enviado con éxito: " + response.status);
+        }, function(error) {
+            alert("Hubo un error al enviar el correo: " + error.text);
+        });
+    });
+</script>
       <!--Sweet Alert-->
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- Bootstrap -->
