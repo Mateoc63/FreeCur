@@ -384,6 +384,14 @@
             background-size: cover;
             margin-right: 10px; 
         }
+        .disabled-link {
+  pointer-events: none;
+  color: gray;
+  text-decoration: none;
+}
+.disabled-link:hover {
+  cursor: not-allowed;
+}
     </style>
 
     <!-- Botón de Preguntas Frecuentes -->
@@ -429,32 +437,31 @@
         </div>           
     </section>
 
-    <!--Foro y modulos-->
-    <section class="foro-modulo container-fluid d-flex flex-wrap">
-      <div class="container izq text-center col-12 col-md-6">
-        <div class="foro" id="foro">
-          <h1 class="text-center mt-2 mb-3">FORO DE PREGUNTAS</h1>
-          <div id="chat-container">
-            <div class="message">
-              <div class="user-photo" style="background-image: url(../imagenes/WhatsApp\ Image\ 2024-10-10\ at\ 14.33.21.jpeg);"></div>
-              <div class="message-content">
-                  <p><strong>Profesor:</strong> ¡Bienvenidos al foro de la materia! No duden en hacer sus preguntas.</p>
-              </div>
-          </div>
-          </div>
-      
-          <div id="input-container">
-              <input type="text" id="message-input" placeholder="Escribe tu pregunta...">
-              <button class="mt-2 boton-enviar" id="send-btn" onclick="addMessage()">Enviar</button>
+<!-- Foro y módulos -->
+<section class="foro-modulo container-fluid d-flex flex-wrap">
+  <div class="container izq text-center col-12 col-md-6">
+    <div class="foro" id="foro">
+      <h1 class="text-center mt-2 mb-3">FORO DE PREGUNTAS</h1>
+      <div id="chat-container">
+        <div class="message">
+          <div class="user-photo" style="background-image: url(../imagenes/WhatsApp\ Image\ 2024-10-10\ at\ 14.33.21.jpeg);"></div>
+          <div class="message-content">
+            <p class="texto-profe"><strong>Profesor:</strong> ¡Bienvenidos al foro de la materia! No duden en hacer sus preguntas.</p>
           </div>
         </div>
       </div>
-      <div class="container der text-center col-12 col-md-6">
-        <ul class="container mt-4 ul-modulos">
-            <li><i class="bi bi-backpack3"></i><b><a class="enlace-modulos" href="../modulos sql/modulo1.html">Modulo 1</a></b></li>
-            <li><i class="bi bi-backpack3"></i><b><a class="enlace-modulos" href="../modulos sql/modulo2.html">Modulo 2</a></b></li>
-            <li><i class="bi bi-pencil-square"></i><b><a class="enlace-modulos" href="../modulos sql/examen.html">Examen final</a></b></li>
-        </ul>
+      <div id="input-container">
+        <input type="text" id="message-input" placeholder="Escribe tu pregunta..." disabled>
+        <button class="mt-2 boton-enviar" id="send-btn" disabled>Enviar</button>
+      </div>
+    </div>
+  </div>
+  <div class="container der text-center col-12 col-md-6">
+    <ul class="container mt-4 ul-modulos">
+      <li><i class="bi bi-backpack3"></i><b><a class="enlace-modulos disabled-link" href="../modulos sql/modulo1.html">Modulo 1</a></b></li>
+      <li><i class="bi bi-backpack3"></i><b><a class="enlace-modulos disabled-link" href="../modulos sql/modulo2.html">Modulo 2</a></b></li>
+      <li><i class="bi bi-pencil-square"></i><b><a class="enlace-modulos disabled-link" href="../modulos sql/examen.html">Examen final</a></b></li>
+    </ul>
         <!--Carrusel opiniones-->
         <div class="container">
             <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -466,7 +473,7 @@
               <div class="carousel-inner">
                 <div class="carousel-item active">
                   <div class="testimonial-item">
-                    <img src="../imagenes/WhatsApp Image 2024-10-10 at 14.33.21.jpeg" class="critic-image" alt="Crítico 1">
+                    <img src="../imagenes/persona1.jpg" class="critic-image" alt="Crítico 1">
                     <blockquote class="critic-text">
                       <p>“Este servicio superó todas mis expectativas. La atención al detalle es impecable.”</p>
                       <div class="critic-name">— Laura Gómez, Cliente Satisfecho</>
@@ -475,7 +482,7 @@
                 </div>
                 <div class="carousel-item">
                   <div class="testimonial-item">
-                    <img src="../imagenes/WhatsApp Image 2024-10-10 at 14.33.21.jpeg" class="critic-image" alt="Crítico 2">
+                    <img src="../imagenes/persona2.jpg" class="critic-image" alt="Crítico 2">
                     <blockquote class="critic-text">
                       <p>“Increíble experiencia de principio a fin. Lo recomendaría sin dudarlo.</p>
                       <div class="critic-name">— Marcos Rivera, Profesional de Marketing</div>
@@ -484,7 +491,7 @@
                 </div>
                 <div class="carousel-item">
                   <div class="testimonial-item">
-                    <img src="../imagenes/WhatsApp Image 2024-10-10 at 14.33.21.jpeg" class="critic-image" alt="Crítico 3">
+                    <img src="../imagenes/persona3.jpg" class="critic-image" alt="Crítico 3">
                     <blockquote class="critic-text">
                       <p>“Una calidad que no he encontrado en ningún otro lugar. Simplemente espectacular.”</p>
                       <div class="critic-name">— Ana Torres, Ejecutiva de Ventas</div>
@@ -679,22 +686,81 @@
 <!-- Script de EmailJS -->
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <script>
-    // Inicializar EmailJS
-    emailjs.init("MWuhBht5AHlYhGbls"); // Reemplaza con tu ID de usuario EmailJS
-
-    // Agregar evento al botón
-    document.getElementById("inscribirseBtn").addEventListener("click", function () {
-        emailjs.send("service_o9hw2n9", "template_kzt00j5", {
-            to_name: "Usuario", // Puedes personalizar este dato
-            message: "Te has inscrito con éxito al curso de SQL."
-        })
-        .then(function(response) {
-            alert("Correo enviado con éxito: " + response.status);
-        }, function(error) {
-            alert("Hubo un error al enviar el correo: " + error.text);
+    document.addEventListener('DOMContentLoaded', function () {
+        // Inicializa EmailJS
+        emailjs.init("MWuhBht5AHlYhGbls");
+    
+        const inscribirseBtn = document.getElementById("inscribirseBtn");
+        const messageInput = document.getElementById("message-input");
+        const sendBtn = document.getElementById("send-btn");
+        const enlacesModulos = document.querySelectorAll(".ul-modulos .enlace-modulos");
+    
+        // Verificar si el usuario ya está inscrito
+        const usuarioRegistrado = localStorage.getItem("usuarioRegistrado");
+    
+        if (usuarioRegistrado === "true") {
+            habilitarAcceso();
+            eliminarBotonInscripcion(); // Elimina el botón si ya está inscrito
+        }
+    
+        // Función para habilitar acceso al foro y módulos
+        function habilitarAcceso() {
+            messageInput.disabled = false;
+            sendBtn.disabled = false;
+    
+            enlacesModulos.forEach((enlace) => {
+                enlace.classList.remove("disabled-link");
+                enlace.style.pointerEvents = "auto";
+                enlace.style.color = ""; // Restablece el color predeterminado
+            });
+        }
+    
+        // Función para eliminar el botón de inscripción
+        function eliminarBotonInscripcion() {
+            if (inscribirseBtn) {
+                inscribirseBtn.remove(); // Elimina el botón del DOM
+            }
+        }
+    
+        // Evento de inscripción
+        inscribirseBtn?.addEventListener("click", function () {
+            emailjs
+                .send("service_o9hw2n9", "template_kzt00j5", {
+                    to_name: "Usuario",
+                    message: "Te has inscrito con éxito al curso de SQL."
+                })
+                .then(function (response) {
+                    alert("Correo enviado con éxito: " + response.status);
+    
+                    // Guardar el estado de inscripción en localStorage
+                    localStorage.setItem("usuarioRegistrado", "true");
+    
+                    // Habilitar acceso
+                    habilitarAcceso();
+    
+                    // Eliminar botón de inscripción
+                    eliminarBotonInscripcion();
+    
+                    // Mostrar notificación de éxito
+                    Swal.fire({
+                        icon: 'success',
+                        title: '¡Inscripción exitosa!',
+                        text: 'Ahora puedes acceder al foro y a los módulos.',
+                        confirmButtonText: 'Entendido'
+                    });
+                })
+                .catch(function (error) {
+                    alert("Hubo un error al enviar el correo: " + error.text);
+                });
         });
     });
-</script>        
+    </script>
+    <!--Este borrarlo, es solo para reiniciar el local storage-->
+    <script>
+      // Código para eliminar la inscripción al cargar la página (solo para pruebas)
+      localStorage.removeItem('usuarioRegistrado');
+      console.log('LocalStorage reseteado. Puedes probar nuevamente.');
+    </script>   
       <!--Sweet Alert-->
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- Bootstrap -->
