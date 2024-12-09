@@ -272,81 +272,78 @@
             </form>
         </div>
     </div>
-        <!-- Modal de Términos y Condiciones -->
-        <div id="termsModal">
-            <div class="modal-content" onclick="event.stopPropagation()"> <!-- Evita que el clic en el contenido cierre el modal -->
-                <div class="modal-header">
-                    <h2>Términos y Condiciones</h2>
-                </div>
-                <div class="modal-body">
-                    <h3>1. Aceptación de los términos</h3>
-                    <p>Al acceder o utilizar este servicio, usted acepta cumplir con los términos y condiciones establecidos en este acuerdo. Si no está de acuerdo con estos términos, no debe utilizar este servicio.</p>
-    
-                    <h3>2. Uso del servicio</h3>
-                    <p>El servicio está destinado solo para su uso personal y no comercial. Usted se compromete a no usar el servicio para ningún propósito ilegal o no autorizado.</p>
-    
-                    <h3>3. Privacidad</h3>
-                    <p>Respetamos su privacidad. Recopilamos datos personales de acuerdo con nuestra Política de Privacidad. Al utilizar el servicio, usted acepta nuestra recopilación y uso de sus datos conforme a dicha política.</p>
-    
-                    <h3>4. Modificaciones al servicio</h3>
-                    <p>Nos reservamos el derecho de modificar o interrumpir el servicio en cualquier momento, sin previo aviso.</p>
-    
-                    <h3>5. Responsabilidad</h3>
-                    <p>No nos hacemos responsables de cualquier daño o pérdida que pueda surgir como resultado de su uso del servicio.</p>
-                </div>
-                <div class="modal-footer">
-                    <button class="close-btn" onclick="closeModal()">Cerrar</button>
-                </div>
+    <!-- Modal de Términos y Condiciones -->
+    <div id="termsModal">
+        <div class="modal-content" onclick="event.stopPropagation()"> <!-- Evita que el clic en el contenido cierre el modal -->
+            <div class="modal-header">
+                <h2>Términos y Condiciones</h2>
+            </div>
+            <div class="modal-body">
+                <h3>1. Aceptación de los términos</h3>
+                <p>Al acceder o utilizar este servicio, usted acepta cumplir con los términos y condiciones establecidos en este acuerdo. Si no está de acuerdo con estos términos, no debe utilizar este servicio.</p>
+
+                <h3>2. Uso del servicio</h3>
+                <p>El servicio está destinado solo para su uso personal y no comercial. Usted se compromete a no usar el servicio para ningún propósito ilegal o no autorizado.</p>
+
+                <h3>3. Privacidad</h3>
+                <p>Respetamos su privacidad. Recopilamos datos personales de acuerdo con nuestra Política de Privacidad. Al utilizar el servicio, usted acepta nuestra recopilación y uso de sus datos conforme a dicha política.</p>
+
+                <h3>4. Modificaciones al servicio</h3>
+                <p>Nos reservamos el derecho de modificar o interrumpir el servicio en cualquier momento, sin previo aviso.</p>
+
+                <h3>5. Responsabilidad</h3>
+                <p>No nos hacemos responsables de cualquier daño o pérdida que pueda surgir como resultado de su uso del servicio.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="close-btn" onclick="closeModal()">Cerrar</button>
             </div>
         </div>
-    
-        <script>
-            // Mostrar el modal
-            document.getElementById('termsLink').addEventListener('click', function() {
-                document.getElementById('termsModal').style.display = 'flex';
-            });
-    
-            // Cerrar el modal cuando se hace clic en el fondo
-            document.getElementById('termsModal').addEventListener('click', function() {
-                closeModal();
-            });
-    
-            // Función para cerrar el modal
-            function closeModal() {
-                document.getElementById('termsModal').style.display = 'none';
-            }
-        </script>
-        <script>
-            const USUARIO_VALIDO = "Mateo";
-            const CONTRASEÑA_VALIDA = "1234";
-
-            function validarUsuario(event){
-                event.preventDefault();
-                const username = document.getElementById("username").value;
-                const password = document.getElementById("password").value;
-
-                if(username === USUARIO_VALIDO && password === CONTRASEÑA_VALIDA){
-                    window.location.href = "sesion_iniciada.html";
-                }else if(username !== USUARIO_VALIDO && password === CONTRASEÑA_VALIDA){
-                    Swal.fire({
-                        title: "Nombre de usuario incorrecto",
-                        text: "Vuelve a intentarlo",
-                        icon: "error"
-                    });
-                }else if (username === USUARIO_VALIDO && password !== CONTRASEÑA_VALIDA){
-                    Swal.fire({
-                        title: "Contraseña incorrecta",
-                        text: "Vuelve a intentarlo",
-                        icon: "error"
-                    });
-                }else{
-                    Swal.fire({
-                        title: "Usuario incorrecto",
-                        text: "Vuelve a intentarlo",
-                        icon: "error"
-                    });
-                }
-            }
-        </script>
+    </div>    
 </body>
+<script>
+    // Mostrar el modal
+    document.getElementById('termsLink').addEventListener('click', function() {
+        document.getElementById('termsModal').style.display = 'flex';
+    });
+    // Cerrar el modal cuando se hace clic en el fondo
+    document.getElementById('termsModal').addEventListener('click', function() {
+        closeModal();
+    });
+    // Función para cerrar el modal
+    function closeModal() {
+        document.getElementById('termsModal').style.display = 'none';
+    }
+</script>
+<script>
+    const USUARIO_VALIDO = "Mateo";
+    const CONTRASEÑA_VALIDA = "1234";
+
+    function validarUsuario(event){
+        event.preventDefault();
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+
+        if(username === USUARIO_VALIDO && password === CONTRASEÑA_VALIDA){
+            window.location.href = "sesion_iniciada.html";
+        }else if(username !== USUARIO_VALIDO && password === CONTRASEÑA_VALIDA){
+            Swal.fire({
+                title: "Nombre de usuario incorrecto",
+                text: "Vuelve a intentarlo",
+                icon: "error"
+            });
+        }else if (username === USUARIO_VALIDO && password !== CONTRASEÑA_VALIDA){
+            Swal.fire({
+                title: "Contraseña incorrecta",
+                text: "Vuelve a intentarlo",
+                icon: "error"
+            });
+        }else{
+            Swal.fire({
+                title: "Usuario incorrecto",
+                text: "Vuelve a intentarlo",
+                icon: "error"
+            });
+        }
+    }
+</script>
 </html>

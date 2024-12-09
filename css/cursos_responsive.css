@@ -824,7 +824,7 @@ body{
       font-size: 2rem !important;
     }
     .footer{
-      height: 76vh;
+      height: 85vh !important;
     }
     .footer-title{
       margin-top: 2px;

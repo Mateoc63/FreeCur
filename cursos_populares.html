@@ -14,14 +14,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jersey+10&family=Quicksand:wght@300..700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
-  </head>
-  <body>
     <style>
-    body, .cursos{
-      background-color: #eeee !important;
-    }
-    /* Estilo para el selector de carreras */
-    #carreraSelector {
+      body, .cursos{
+        background-color: #eeee !important;
+      }
+      /* Estilo para el selector de carreras */
+      #carreraSelector {
         font-family: 'Quicksand', sans-serif;
         font-size: 1.2rem;
         color: #2a9d8f;
@@ -33,37 +31,34 @@
         margin-top: 0;
         transition: all 0.3s ease;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-    .bi-moon{
-      padding-right: 20px;
-      font-size: 2rem;
-    }
-
-    /* Hover y enfoque para el selector */
-    #carreraSelector:hover,
-    #carreraSelector:focus {
+      }
+      .bi-moon{
+        padding-right: 20px;
+        font-size: 2rem;
+      }
+      /* Hover y enfoque para el selector */
+      #carreraSelector:hover,
+      #carreraSelector:focus {
         background-color: rgba(45, 159, 123, 0.8);
         border-color: rgba(45, 159, 123, 0.8);
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         color:#333;
-    }
-
-    /* Texto de opción en el selector */
-    #carreraSelector option {
+      }
+      /* Texto de opción en el selector */
+      #carreraSelector option {
         font-family: 'Quicksand', sans-serif;
         color: #333;
         background-color: rgba(45, 159, 123, 0.8);
-    }
-
-    /* Estilo del label del selector */
-    .form-label {
+      }
+      /* Estilo del label del selector */
+      .form-label {
         font-family: 'Quicksand', sans-serif;
         font-size: 1.5rem;
         color: #2a9d8f;
         margin-bottom: 10px;
         margin-top: -10px;
-    }
-    .izq {
+      }
+      .izq {
         padding: 100px;
         max-height: 70vh;
         display: grid;
@@ -74,12 +69,11 @@
         gap: 30px 0;
         scroll-behavior: smooth;
         direction: rtl; 
-    }
-    .titulo-informatica, .titulo-otros{
-      display: none;
-    }
-
-    .der {
+      }
+      .titulo-informatica, .titulo-otros{
+        display: none;
+      }
+      .der {
         padding: 100px;
         max-height: 70vh;
         display: grid;
@@ -90,225 +84,206 @@
         gap: 30px 0;
         scroll-behavior: smooth;
         direction: ltr; 
-    }
-
-    /* Personalización del scroll */
-    .izq::-webkit-scrollbar,
-    .der::-webkit-scrollbar {
+      }
+      /* Personalización del scroll */
+      .izq::-webkit-scrollbar,
+      .der::-webkit-scrollbar {
         width: 10px;
-    }
-
-    .izq::-webkit-scrollbar-track,
-    .der::-webkit-scrollbar-track {
+      }
+      .izq::-webkit-scrollbar-track,
+      .der::-webkit-scrollbar-track {
         background: #f0e4d7;
-        border-radius: 5px;
-        
-    }
-
-    .izq::-webkit-scrollbar-thumb,
-    .der::-webkit-scrollbar-thumb {
-        background-color: rgba(45, 159, 123, 0.8);
-        border-radius: 5px;
-        border: 2px solid #f0e4d7;
-    }
-
-    .izq::-webkit-scrollbar-thumb:hover,
-    .der::-webkit-scrollbar-thumb:hover {
-        background-color: #a77951;
-    }
-
-    /* Estilo de los elementos de la cuadrícula */
-    .grid-item {
+        border-radius: 5px;   
+      }
+      .izq::-webkit-scrollbar-thumb,
+      .der::-webkit-scrollbar-thumb {
+          background-color: rgba(45, 159, 123, 0.8);
+          border-radius: 5px;
+          border: 2px solid #f0e4d7;
+      }
+      .izq::-webkit-scrollbar-thumb:hover,
+      .der::-webkit-scrollbar-thumb:hover {
+          background-color: #a77951;
+      }
+      /* Estilo de los elementos de la cuadrícula */
+      .grid-item {
         margin-left: 20px;
         background-position: center;
         background-size: contain;
         box-shadow: 0 0 8px black;
-    }
-    .enlace{
-      text-decoration: none;
-      color: transparent;
-      font-size: 4rem;
-    }
-    .grid-item .enlace:hover{
-      opacity: 1;
-      text-shadow: 0 0 40px black;
-      color: black;
-    }
-    .grid-item:hover{
-      background-color: rgba(45, 159, 123, 0.8);
-      background-image: none !important;
-      color: black !important;
-    }
-
-    /*Todos los grid items decorados*/
-    .grid-item:nth-child(1) {
-        margin-top: -100px;
-    }
-    /*Izquierdo*/
-    .izq .grid-item:nth-child(1){
-      background-image: url(imagenes/java1.jpg);
-    }
-    .izq .grid-item:nth-child(2){
-      background-image: url(imagenes/desarrollo-web3.png);
-    }
-    .izq .grid-item:nth-child(3){
-      background-image: url(imagenes/mysql1.jpg);
-    }
-    .izq .grid-item:nth-child(4){
-      background-image: url(imagenes/python1.jpg);
-    }
-    .izq .grid-item:nth-child(5){
-      background-image: url(imagenes/javascript3.jpg);
-    }
-    .izq .grid-item:nth-child(6){
-      background-image: url(imagenes/fullstack.jpg);
-    }
-    /*Derecho*/
-    .der .grid-item:nth-child(1){
-      background-image: url(imagenes/matematicas2.avif);
-    }
-    .der .grid-item:nth-child(2){
-      background-image: url(imagenes/historia1.jpg);
-    }
-    .der .grid-item:nth-child(3){
-      background-image: url(imagenes/ingles1.jpg);
-    }
-    .der .grid-item:nth-child(4){
-      background-image: url(imagenes/biologia1.jpg);
-    }
-    .der .grid-item:nth-child(5){
-      background-image: url(imagenes/psicologia1.jpg);
-    }
-    .der .grid-item:nth-child(6){
-      background-image: url(imagenes/trading1.avif);
-    }
-
-    /* Navbar */
-    nav {
+      }
+      .enlace{
+        text-decoration: none;
+        color: transparent;
+        font-size: 4rem;
+      }
+      .grid-item .enlace:hover{
+        opacity: 1;
+        text-shadow: 0 0 40px black;
+        color: black;
+      }
+      .grid-item:hover{
+        background-color: rgba(45, 159, 123, 0.8);
+        background-image: none !important;
+        color: black !important;
+      }
+      /*Todos los grid items decorados*/
+      .grid-item:nth-child(1) {
+          margin-top: -100px;
+      }
+      /*Izquierdo*/
+      .izq .grid-item:nth-child(1){
+        background-image: url(imagenes/java1.jpg);
+      }
+      .izq .grid-item:nth-child(2){
+        background-image: url(imagenes/desarrollo-web3.png);
+      }
+      .izq .grid-item:nth-child(3){
+        background-image: url(imagenes/mysql1.jpg);
+      }
+      .izq .grid-item:nth-child(4){
+        background-image: url(imagenes/python1.jpg);
+      }
+      .izq .grid-item:nth-child(5){
+        background-image: url(imagenes/javascript3.jpg);
+      }
+      .izq .grid-item:nth-child(6){
+        background-image: url(imagenes/fullstack.jpg);
+      }
+      /*Derecho*/
+      .der .grid-item:nth-child(1){
+        background-image: url(imagenes/matematicas2.avif);
+      }
+      .der .grid-item:nth-child(2){
+        background-image: url(imagenes/historia1.jpg);
+      }
+      .der .grid-item:nth-child(3){
+        background-image: url(imagenes/ingles1.jpg);
+      }
+      .der .grid-item:nth-child(4){
+        background-image: url(imagenes/biologia1.jpg);
+      }
+      .der .grid-item:nth-child(5){
+        background-image: url(imagenes/psicologia1.jpg);
+      }
+      .der .grid-item:nth-child(6){
+        background-image: url(imagenes/trading1.avif);
+      }
+      /* Navbar */
+      nav {
         background-color:#2a9d8f; /* Cambiar */
-    }
-    .navbar-nav {
+      }
+      .navbar-nav {
         display: flex;
         justify-content: center;
         align-items: center;
         width: 100%;
-    }
-    .navbar-nav a {
+      }
+      .navbar-nav a {
         font-size: 22px;
         margin: 0 60px;
-    }
-    .navbar-nav i {
+      }
+      .navbar-nav i {
         font-size: 40px;
         margin: 0 60px;
-    }
-    .nav-link{
-      margin-right: 170px !important;
-    }
-
-/*--------------------------------FOOTER-------------------------------------------*/
-    footer {
-    background-color: #2a9d8f; /* Color de fondo */
-    color: white;
-    font-family: 'Quicksand', sans-serif;
-    }
-
-    /* Título del footer */
-    .footer-title {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 15px;
-    }
-
-    /* Enlaces rápidos */
-    .footer-links {
-    list-style: none;
-    padding-left: 0;
-    }
-
-    .footer-links li {
-    margin-bottom: 10px;
-    }
-
-    .footer-links a {
-    color: white;
-    text-decoration: none;
-    font-size: 1rem;
-    transition: color 0.3s ease;
-    }
-
-    .footer-links a:hover {
-    color: #f1faee;
-    }
-
-    /* Iconos de redes sociales */
-    .social-icons a {
-    font-size: 1.5rem;
-    margin: 0 10px;
-    color: white;
-    transition: color 0.3s ease;
-    }
-
-    .social-icons a:hover {
-    color: #f1faee;
-    }
-
-    /* Derechos de autor */
-    footer .row:last-child {
-    background-color: #1a7d6f;
-    }
-    footer .row:last-child p {
-    font-size: 0.9rem;
-    }
-    /*-------------------modo oscuro---------------------------------- */
-    body.dark-mode {
-      background-color: black !important;
-      color: #ffffff;
-    }
-    .dark-mode .navbar {
-      background-color: #333333;
-    }
-    .dark-mode .cursos{
-      border: 1px solid white !important;
-    }
-    .dark-mode .division-footer{
-      border-top: 1px solid white;
-    }
-    .dark-mode .btn, .dark-mode .faq-button {
-      background-color: #555555;
-      color: #ffffff;
-    }
-    /* Botón de modo oscuro */
-    .dark-mode-button {
-      position: fixed;
-      top: 10px;
-      right: 10px;
-      background-color: #333;
-      color: white;
-      border: none;
-      padding: 10px 15px;
-      cursor: pointer;
-      border-radius: 5px;
-    }
-    /* Estilos específicos para el modo oscuro */
-      body.dark-mode {
-          background-color: #000; /* Fondo negro */
-          color: #fff; /* Texto blanco */
       }
-
+      .nav-link{
+        margin-right: 170px !important;
+      }
+      /*--------------------------------FOOTER-------------------------------------------*/
+      footer {
+      background-color: #2a9d8f; /* Color de fondo */
+      color: white;
+      font-family: 'Quicksand', sans-serif;
+      }
+      /* Título del footer */
+      .footer-title {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 15px;
+      }
+      /* Enlaces rápidos */
+      .footer-links {
+      list-style: none;
+      padding-left: 0;
+      }
+      .footer-links li {
+      margin-bottom: 10px;
+      }
+      .footer-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+      }
+      .footer-links a:hover {
+      color: #f1faee;
+      }
+      /* Iconos de redes sociales */
+      .social-icons a {
+      font-size: 1.5rem;
+      margin: 0 10px;
+      color: white;
+      transition: color 0.3s ease;
+      }
+      .social-icons a:hover {
+      color: #f1faee;
+      }
+      /* Derechos de autor */
+      footer .row:last-child {
+      background-color: #1a7d6f;
+      }
+      footer .row:last-child p {
+      font-size: 0.9rem;
+      }
+      /*-------------------modo oscuro---------------------------------- */
+      body.dark-mode {
+        background-color: black !important;
+        color: #ffffff;
+      }
+      .dark-mode .navbar {
+        background-color: #333333;
+      }
+      .dark-mode .cursos{
+        border: 1px solid white !important;
+      }
+      .dark-mode .division-footer{
+        border-top: 1px solid white;
+      }
+      .dark-mode .btn, .dark-mode .faq-button {
+        background-color: #555555;
+        color: #ffffff;
+      }
+      /* Botón de modo oscuro */
+      .dark-mode-button {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        background-color: #333;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+      /* Estilos específicos para el modo oscuro */
+      body.dark-mode {
+        background-color: #000; /* Fondo negro */
+        color: #fff; /* Texto blanco */
+      }
       /* Elementos con fondo y texto */
       body.dark-mode * {
-          background-color: #000 !important;
-          color: #fff !important;
+        background-color: #000 !important;
+        color: #fff !important;
       }
-
       /* Botones, inputs y otros elementos interactivos */
       body.dark-mode button, 
       body.dark-mode input, 
       body.dark-mode select, 
       body.dark-mode textarea {
-          background-color: #000 !important;
-          color: #fff !important;
-          border-color: #fff;
+        background-color: #000 !important;
+        color: #fff !important;
+        border-color: #fff;
       }
 
       /* Navbar, tarjetas, modales, etc. */
@@ -316,20 +291,18 @@
       body.dark-mode .card, 
       body.dark-mode .modal-content, 
       body.dark-mode .dropdown-menu {
-          background-color: #000 !important;
-          color: #fff !important;
+        background-color: #000 !important;
+        color: #fff !important;
       }
-
       /* Enlaces */
       body.dark-mode a {
-          color: #fff;
+        color: #fff;
       }
-
       body.dark-mode a:hover {
-          color: #ccc;
+        color: #ccc;
       }
       .dark-mode .navbar{
-          border: 1px solid white !important;
+        border: 1px solid white !important;
       }
       .dark-mode .enlace{
         background-color: transparent !important;
@@ -347,187 +320,184 @@
         font-size: 2rem !important;
         padding-right: 20px;
       }
-          /* Personalización del scroll */
-    .dark-mode .izq::-webkit-scrollbar-thumb,
-    .dark-mode .der::-webkit-scrollbar-thumb {
+      /* Personalización del scroll */
+      .dark-mode .izq::-webkit-scrollbar-thumb,
+      .dark-mode .der::-webkit-scrollbar-thumb {
         background-color: black;
         border-radius: 5px;
         border: 2px solid white;
-    }
+      }
     </style>
-        <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg modern-navbar">
-          <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-              <img src="imagenes/logo.png.png" alt="Logo" class="navbar-logo">
-              FreeCur
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-              <ul class="navbar-nav mx-auto">
-                <li><a class="nav-link" href="sesion_iniciada.html">Inicio</a></li>
-              </ul>
-              <div class="navbar-actions">
-                <i class="bi bi-moon toggle-theme" id="darkModeToggle"></i>
-              </div>
-            </div>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg modern-navbar">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="imagenes/logo.png.png" alt="Logo" class="navbar-logo">
+          FreeCur
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <ul class="navbar-nav mx-auto">
+            <li><a class="nav-link" href="sesion_iniciada.html">Inicio</a></li>
+          </ul>
+          <div class="navbar-actions">
+            <i class="bi bi-moon toggle-theme" id="darkModeToggle"></i>
           </div>
-        </nav>
+        </div>
+      </div>
+    </nav>
 
     <!--Hero-->
     <section class="cursos container-fluid">
-        <h1 class="text-center titulo-cursos">NUESTROS CURSOS</h1>
-        <div class="text-center my-4">
-          <label for="carreraSelector" class="form-label">Selecciona uno:</label>
-          <select id="carreraSelector" class="form-select w-50 mx-auto">
-            <option value="">-- Cursos disponibles --</option>
-            <option value="java">Java</option>
-            <option value="frontend">Front-End</option>
-            <option value="mysql">MySQL</option>
-            <option value="python">Python</option>
-            <option value="javascript">JavaScript</option>
-            <option value="fullstack">Full Stack</option>
-            <option value="matematicas">Matemáticas</option>
-            <option value="historia">Historia</option>
-            <option value="ingles">Inglés</option>
-            <option value="biologia">Biología</option>
-            <option value="psicologia">Psicología</option>
-            <option value="trading">Trading</option>
-          </select>
+      <h1 class="text-center titulo-cursos">NUESTROS CURSOS</h1>
+      <div class="text-center my-4">
+        <label for="carreraSelector" class="form-label">Selecciona uno:</label>
+        <select id="carreraSelector" class="form-select w-50 mx-auto">
+          <option value="">-- Cursos disponibles --</option>
+          <option value="java">Java</option>
+          <option value="frontend">Front-End</option>
+          <option value="mysql">MySQL</option>
+          <option value="python">Python</option>
+          <option value="javascript">JavaScript</option>
+          <option value="fullstack">Full Stack</option>
+          <option value="matematicas">Matemáticas</option>
+          <option value="historia">Historia</option>
+          <option value="ingles">Inglés</option>
+          <option value="biologia">Biología</option>
+          <option value="psicologia">Psicología</option>
+          <option value="trading">Trading</option>
+        </select>
+      </div>
+      <div class="lados d-flex mt-4">
+        <h2 class="text-center titulo-informatica">INFORMATICA</h2>
+        <div class="izq container text-center">
+          <div class="grid-item d-flex align-items-center justify-content-center"><a class="enlace" href="cursos/curso_java.html">JAVA</a></div>
+          <div class="grid-item d-flex align-items-center justify-content-center"><a class="enlace" href="cursos/curso_front.html">FRONT-END</a></div>
+          <div class="grid-item d-flex align-items-center justify-content-center"><a class="enlace" href="cursos/curso_sql.html">MYSQL</a></div>
+          <div class="grid-item d-flex align-items-center justify-content-center"><a class="enlace" href="cursos/curso_python.html">PYTHON</a></div>
+          <div class="grid-item d-flex align-items-center justify-content-center"><a class="enlace" href="cursos/curso_javascript.html">JAVASCRIPT</a></div>
+          <div class="grid-item d-flex align-items-center justify-content-center"><a class="enlace" href="cursos/curso_fullstack.html">FULL STACK</a></div>
         </div>
-        <div class="lados d-flex mt-4">
-            <h2 class="text-center titulo-informatica">INFORMATICA</h2>
-            <div class="izq container text-center">
-              <div class="grid-item d-flex align-items-center justify-content-center"><a class="enlace" href="cursos/curso_java.html">JAVA</a></div>
-              <div class="grid-item d-flex align-items-center justify-content-center"><a class="enlace" href="cursos/curso_front.html">FRONT-END</a></div>
-              <div class="grid-item d-flex align-items-center justify-content-center"><a class="enlace" href="cursos/curso_sql.html">MYSQL</a></div>
-              <div class="grid-item d-flex align-items-center justify-content-center"><a class="enlace" href="cursos/curso_python.html">PYTHON</a></div>
-              <div class="grid-item d-flex align-items-center justify-content-center"><a class="enlace" href="cursos/curso_javascript.html">JAVASCRIPT</a></div>
-              <div class="grid-item d-flex align-items-center justify-content-center"><a class="enlace" href="cursos/curso_fullstack.html">FULL STACK</a></div>
-            </div>
-            <h2 class="text-center titulo-otros">OTROS</h2>
-            <div class="der container text-center">
-              <div class="grid-item d-flex align-items-center justify-content-center"><a class="enlace" href="cursos/curso_matematicas.html">MATEMATICAS</a></div>
-              <div class="grid-item d-flex align-items-center justify-content-center"><a class="enlace" href="cursos/curso_historia.html">HISTORIA</a></div>
-              <div class="grid-item d-flex align-items-center justify-content-center"><a class="enlace" href="cursos/curso_ingles.html">INGLES</a></div>
-              <div class="grid-item d-flex align-items-center justify-content-center"><a class="enlace" href="cursos/curso_biologia.html">BIOLOGIA</a></div>
-              <div class="grid-item d-flex align-items-center justify-content-center"><a class="enlace" href="cursos/curso_psicologia.html">PSICOLOGIA</a></div>
-              <div class="grid-item d-flex align-items-center justify-content-center"><a class="enlace" href="cursos/curso_trading.html">TRADING</a></div>   
-            </div>
-        </div>
+        <h2 class="text-center titulo-otros">OTROS</h2>
+        <div class="der container text-center">
+          <div class="grid-item d-flex align-items-center justify-content-center"><a class="enlace" href="cursos/curso_matematicas.html">MATEMATICAS</a></div>
+          <div class="grid-item d-flex align-items-center justify-content-center"><a class="enlace" href="cursos/curso_historia.html">HISTORIA</a></div>
+          <div class="grid-item d-flex align-items-center justify-content-center"><a class="enlace" href="cursos/curso_ingles.html">INGLES</a></div>
+          <div class="grid-item d-flex align-items-center justify-content-center"><a class="enlace" href="cursos/curso_biologia.html">BIOLOGIA</a></div>
+          <div class="grid-item d-flex align-items-center justify-content-center"><a class="enlace" href="cursos/curso_psicologia.html">PSICOLOGIA</a></div>
+            <div class="grid-item d-flex align-items-center justify-content-center"><a class="enlace" href="cursos/curso_trading.html">TRADING</a></div>   
+          </div>
+      </div>
     </section>
     <!-- Footer -->
     <footer class="container-fluid footer">
       <div class="row py-5">
-          <!-- Columna 1: Enlaces rápidos -->
-          <div class="col-md-3">
-            <h5 class="footer-title">Enlaces rápidos</h5>
-            <ul class="footer-links">
-              <li><a href="cursos_populares.html">Cursos</a></li>
-              <li><a href="sesion_iniciada.html">Inicio</a></li>
-            </ul>
-          </div>
+        <!-- Columna 1: Enlaces rápidos -->
+        <div class="col-md-3">
+          <h5 class="footer-title">Enlaces rápidos</h5>
+          <ul class="footer-links">
+            <li><a href="cursos_populares.html">Cursos</a></li>
+            <li><a href="sesion_iniciada.html">Inicio</a></li>
+          </ul>
+        </div>
   
-          <!-- Columna 2: Redes Sociales -->
-          <div class="col-md-3">
-            <h5 class="footer-title">Síguenos</h5>
-            <div class="social-icons">
-              <a href="https://www.facebook.com/?stype=lo&flo=1&deoia=1&jlou=AfeL3MctCi2b0GHXoTsW02jFMerN04bAMTiV91khRt1d4IYehraf-Q-xjnUTbTi-sQdd4YKI-hhsGGPnarSGoxTkczZ3oqgnfgorRU0ukV6JwA&smuh=50444&lh=Ac_VF0qovf6Z80vI7fw" class="social-icon"><i class="bi bi-facebook"></i></a>
-              <a href="https://x.com/?lang=es" class="social-icon"><i class="bi bi-twitter"></i></a>
-              <a href="https://www.linkedin.com/" class="social-icon"><i class="bi bi-linkedin"></i></a>
-              <a href="https://www.instagram.com/" class="social-icon"><i class="bi bi-instagram"></i></a>
-            </div>
-          </div>
-  
-          <!-- Columna 3: Información adicional -->
-          <div class="col-md-6">
-            <h5 class="footer-title">Sobre FreeCur</h5>
-            <p>FreeCur ofrece cursos online de alta calidad, accesibles y a tu propio ritmo. Con el respaldo de mentores y la comunidad, te ayudamos a alcanzar tus metas profesionales.</p>
+        <!-- Columna 2: Redes Sociales -->
+        <div class="col-md-3">
+          <h5 class="footer-title">Síguenos</h5>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/?stype=lo&flo=1&deoia=1&jlou=AfeL3MctCi2b0GHXoTsW02jFMerN04bAMTiV91khRt1d4IYehraf-Q-xjnUTbTi-sQdd4YKI-hhsGGPnarSGoxTkczZ3oqgnfgorRU0ukV6JwA&smuh=50444&lh=Ac_VF0qovf6Z80vI7fw" class="social-icon"><i class="bi bi-facebook"></i></a>
+            <a href="https://x.com/?lang=es" class="social-icon"><i class="bi bi-twitter"></i></a>
+            <a href="https://www.linkedin.com/" class="social-icon"><i class="bi bi-linkedin"></i></a>
+            <a href="https://www.instagram.com/" class="social-icon"><i class="bi bi-instagram"></i></a>
           </div>
         </div>
   
-        <!-- Fila de derechos de autor -->
-        <div class="row division-footer">
-          <div class="col text-center py-3">
-            <p class="m-0">&copy; 2024 FreeCur. Todos los derechos reservados.</p>
-          </div>
+        <!-- Columna 3: Información adicional -->
+        <div class="col-md-6">
+          <h5 class="footer-title">Sobre FreeCur</h5>
+          <p>FreeCur ofrece cursos online de alta calidad, accesibles y a tu propio ritmo. Con el respaldo de mentores y la comunidad, te ayudamos a alcanzar tus metas profesionales.</p>
         </div>
-  </footer>
-
+      </div>
+  
+      <!-- Fila de derechos de autor -->
+      <div class="row division-footer">
+        <div class="col text-center py-3">
+          <p class="m-0">&copy; 2024 FreeCur. Todos los derechos reservados.</p>
+        </div>
+      </div>
+    </footer>
 
     <!--Script para generar un scroll automatico en ambos lados (izq y der)-->
     <script>
-        // Obtener referencias a las secciones izquierda y derecha
-        const izquierda = document.querySelector('.izq');
-        const derecha = document.querySelector('.der');
+      // Obtener referencias a las secciones izquierda y derecha
+      const izquierda = document.querySelector('.izq');
+      const derecha = document.querySelector('.der');
+    
+      // Velocidad de desplazamiento
+      let velocidad = 1; // Puedes ajustar este valor para cambiar la velocidad del scroll
+      let direccion = 1; // 1 para abajo, -1 para arriba
       
-        // Velocidad de desplazamiento
-        let velocidad = 1; // Puedes ajustar este valor para cambiar la velocidad del scroll
-        let direccion = 1; // 1 para abajo, -1 para arriba
-      
-        function autoScroll() {
-          // Incrementar el scroll de ambas secciones en la dirección actual
-          izquierda.scrollTop += velocidad * direccion;
-          derecha.scrollTop += velocidad * direccion;
-      
-          // Cambiar de dirección al llegar al final o al inicio
-          if (izquierda.scrollTop + izquierda.clientHeight >= izquierda.scrollHeight) {
-            direccion = -1; // Cambia la dirección hacia arriba
-          } else if (izquierda.scrollTop <= 0) {
-            direccion = 1; // Cambia la dirección hacia abajo
-          }
-      
-          // Llamar a la función repetidamente para un desplazamiento continuo
-          requestAnimationFrame(autoScroll);
-        }
-      
-        // Iniciar el desplazamiento automático
-        autoScroll();
-      </script> 
-          <!-- JavaScript para alternar el modo oscuro -->
+      function autoScroll() {
+        // Incrementar el scroll de ambas secciones en la dirección actual
+        izquierda.scrollTop += velocidad * direccion;
+        derecha.scrollTop += velocidad * direccion;
+    
+        // Cambiar de dirección al llegar al final o al inicio
+        if (izquierda.scrollTop + izquierda.clientHeight >= izquierda.scrollHeight) {
+          direccion = -1; // Cambia la dirección hacia arriba
+        } else if (izquierda.scrollTop <= 0) {
+          direccion = 1; // Cambia la dirección hacia abajo
+        }    
+        // Llamar a la función repetidamente para un desplazamiento continuo
+        requestAnimationFrame(autoScroll);
+      }     
+      // Iniciar el desplazamiento automático
+      autoScroll();
+    </script> 
+    <!-- JavaScript para alternar el modo oscuro -->
     <script>
       // Selecciona el botón
       const darkModeToggle = document.getElementById('darkModeToggle');
-  
       // Agrega un evento de clic al botón
       darkModeToggle.addEventListener('click', () => {
-          // Alterna la clase 'dark-mode' en el body
-          document.body.classList.toggle('dark-mode');
-  
-          // Alterna el icono entre luna y sol
-          if (document.body.classList.contains('dark-mode')) {
-              darkModeToggle.classList.remove('bi-moon');
-              darkModeToggle.classList.add('bi-sun');
-          } else {
-              darkModeToggle.classList.remove('bi-sun');
-              darkModeToggle.classList.add('bi-moon');
-          }
+        // Alterna la clase 'dark-mode' en el body
+        document.body.classList.toggle('dark-mode');
+
+        // Alterna el icono entre luna y sol
+        if (document.body.classList.contains('dark-mode')) {
+            darkModeToggle.classList.remove('bi-moon');
+            darkModeToggle.classList.add('bi-sun');
+        } else {
+            darkModeToggle.classList.remove('bi-sun');
+            darkModeToggle.classList.add('bi-moon');
+        }
       });
     </script>
     <script>
-        document.getElementById("carreraSelector").addEventListener("change", function () {
-          const carrera = this.value;
-          const carreraMap = {
-            java: "cursos/curso_java.html",
-            frontend: "cursos/curso_front.html",
-            mysql: "cursos/curso_sql.html",
-            python: "cursos/curso_python.html",
-            javascript: "cursos/curso_javascript.html",
-            fullstack: "cursos/curso_fullstack.html",
-            matematicas: "cursos/curso_matematicas.html",
-            historia: "cursos/curso_historia.html",
-            ingles: "cursos/curso_ingles.html",
-            biologia: "cursos/curso_biologia.html",
-            psicologia: "cursos/curso_psicologia.html",
-            trading: "cursos/curso_trading.html"
-          };
-        
-          if (carrera && carreraMap[carrera]) {
-            window.location.href = carreraMap[carrera];
-          }
-        });
+      document.getElementById("carreraSelector").addEventListener("change", function () {
+        const carrera = this.value;
+        const carreraMap = {
+          java: "cursos/curso_java.html",
+          frontend: "cursos/curso_front.html",
+          mysql: "cursos/curso_sql.html",
+          python: "cursos/curso_python.html",
+          javascript: "cursos/curso_javascript.html",
+          fullstack: "cursos/curso_fullstack.html",
+          matematicas: "cursos/curso_matematicas.html",
+          historia: "cursos/curso_historia.html",
+          ingles: "cursos/curso_ingles.html",
+          biologia: "cursos/curso_biologia.html",
+          psicologia: "cursos/curso_psicologia.html",
+          trading: "cursos/curso_trading.html"
+        };        
+        if (carrera && carreraMap[carrera]) {
+          window.location.href = carreraMap[carrera];
+        }
+      });
     </script>     
     <!--Bootstrap-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
