@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Inicio - FreeCur</title>
+    <title>BORRAAAAAAAAAAAAR</title>
     <link rel="stylesheet" href="css/index.css">
     <!-- Favicon -->
     <link rel="icon" href="../imagenes/logo.png.png" type="image/x-icon">
@@ -42,10 +42,10 @@
                   <i class="bi bi-gear"></i>
                 </button>
                 <ul class="dropdown-menu">
-                  <li><button onclick="cambiarTamanoTexto('a')">Aumentar texto</button></li>
-                  <li><button onclick="cambiarTamanoTexto('b')">Reducir texto</button></li>
-                  <li><button onclick="cambiarTamanoTexto()">Restablecer texto</button></li>
-              </ul> 
+                    <li><button onclick="cambiarTamanoTexto('a')">Aumentar texto</button></li>
+                    <li><button onclick="cambiarTamanoTexto('b')">Reducir texto</button></li>
+                    <li><button onclick="cambiarTamanoTexto()">Restablecer texto</button></li>
+                </ul>                  
               </div>
             </li>
           </ul>
@@ -307,53 +307,54 @@
       });
     </script>
 <script>     
-  // Variable global para controlar el estado del tamaño del texto (0: normal, 1: grande, -1: chico)
-  let estadoTamano = 0;
-  
-  function cambiarTamanoTexto(accion) {
-    // Selección de todos los elementos a modificar
-    const elementos = document.querySelectorAll('h1, h2, h3, .tarjetas , .hero, .navbar, .footer, .card-text, .texto-ul');
-  
-    if (accion === 'a') { // Aumentar tamaño
-      estadoTamano = Math.min(1, estadoTamano + 1); // Máximo estado 1
-    } else if (accion === 'b') { // Reducir tamaño
-      estadoTamano = Math.max(-1, estadoTamano - 1); // Mínimo estado -1
-    } else { // Resetear tamaño a normal
-      estadoTamano = 0;
-    }
-  
-    // Definimos tamaños específicos para cada tipo de elemento
-    const tamanos = {
-      h1: ['40px', '48px', '28px'], // Normal, Grande, Chico
-      h2: ['40px', '48px', '24px'],
-      descripcion: ['20.8px', '24px', '14px'],
-      message: ['16px', '24px', '12px'],
-      navbar: ['16px', '20px', '12px'],
-      footer: ['16px', '28px', '10px'],
-      tarjetas: ['16px', '18px', '14px'], // Ajusta el tamaño de texto dentro de las tarjetas
-      hero: ['20px', '24px', '16px'],    // Ajusta el tamaño de texto en el héroe
-      'card-text': ['16px', '18.2px', '12px'], // Texto dentro de las tarjetas
-      'texto-ul': ['17.6px', '22px', '12px'] // Texto de las listas
-    };
-  
-    // Determinamos qué índice de tamaño usar (0: normal, 1: grande, 2: chico)
-    const indice = estadoTamano === 1 ? 1 : estadoTamano === -1 ? 2 : 0;
-  
-    // Aplicamos tamaños específicos a cada grupo de elementos
-    document.querySelectorAll('h1').forEach(e => e.style.fontSize = tamanos.h1[indice]);
-    document.querySelectorAll('h2').forEach(e => e.style.fontSize = tamanos.h2[indice]);
-    document.querySelectorAll('.descripcion-curso').forEach(e => e.style.fontSize = tamanos.descripcion[indice]);
-    document.querySelectorAll('.message').forEach(e => e.style.fontSize = tamanos.message[indice]);
-    document.querySelectorAll('.navbar').forEach(e => e.style.fontSize = tamanos.navbar[indice]);
-    document.querySelectorAll('.footer').forEach(e => e.style.fontSize = tamanos.footer[indice]);
+    // Variable global para controlar el estado del tamaño del texto (0: normal, 1: grande, -1: chico)
+    let estadoTamano = 0;
     
-    // Para las tarjetas y el héroe
-    document.querySelectorAll('.tarjetas').forEach(e => e.style.fontSize = tamanos.tarjetas[indice]);
-    document.querySelectorAll('.hero').forEach(e => e.style.fontSize = tamanos.hero[indice]);
-    document.querySelectorAll('.card-text').forEach(e => e.style.fontSize = tamanos['card-text'][indice]);
-    document.querySelectorAll('.texto-ul').forEach(e => e.style.fontSize = tamanos['texto-ul'][indice]);
-  }
+    function cambiarTamanoTexto(accion) {
+      // Selección de todos los elementos a modificar
+      const elementos = document.querySelectorAll('h1, h2, h3, .tarjetas , .hero, .navbar, .footer, .card-text, .texto-ul');
+    
+      if (accion === 'a') { // Aumentar tamaño
+        estadoTamano = Math.min(1, estadoTamano + 1); // Máximo estado 1
+      } else if (accion === 'b') { // Reducir tamaño
+        estadoTamano = Math.max(-1, estadoTamano - 1); // Mínimo estado -1
+      } else { // Resetear tamaño a normal
+        estadoTamano = 0;
+      }
+    
+      // Definimos tamaños específicos para cada tipo de elemento
+      const tamanos = {
+        h1: ['40px', '48px', '28px'], // Normal, Grande, Chico
+        h2: ['40px', '48px', '24px'],
+        descripcion: ['20.8px', '24px', '14px'],
+        message: ['16px', '24px', '12px'],
+        navbar: ['16px', '20px', '12px'],
+        footer: ['16px', '28px', '10px'],
+        tarjetas: ['16px', '18px', '14px'], // Ajusta el tamaño de texto dentro de las tarjetas
+        hero: ['20px', '24px', '16px'],    // Ajusta el tamaño de texto en el héroe
+        'card-text': ['16px', '18.2px', '12px'], // Texto dentro de las tarjetas
+        'texto-ul': ['17.6px', '22px', '12px'] // Texto de las listas
+      };
+    
+      // Determinamos qué índice de tamaño usar (0: normal, 1: grande, 2: chico)
+      const indice = estadoTamano === 1 ? 1 : estadoTamano === -1 ? 2 : 0;
+    
+      // Aplicamos tamaños específicos a cada grupo de elementos
+      document.querySelectorAll('h1').forEach(e => e.style.fontSize = tamanos.h1[indice]);
+      document.querySelectorAll('h2').forEach(e => e.style.fontSize = tamanos.h2[indice]);
+      document.querySelectorAll('.descripcion-curso').forEach(e => e.style.fontSize = tamanos.descripcion[indice]);
+      document.querySelectorAll('.message').forEach(e => e.style.fontSize = tamanos.message[indice]);
+      document.querySelectorAll('.navbar').forEach(e => e.style.fontSize = tamanos.navbar[indice]);
+      document.querySelectorAll('.footer').forEach(e => e.style.fontSize = tamanos.footer[indice]);
+      
+      // Para las tarjetas y el héroe
+      document.querySelectorAll('.tarjetas').forEach(e => e.style.fontSize = tamanos.tarjetas[indice]);
+      document.querySelectorAll('.hero').forEach(e => e.style.fontSize = tamanos.hero[indice]);
+      document.querySelectorAll('.card-text').forEach(e => e.style.fontSize = tamanos['card-text'][indice]);
+      document.querySelectorAll('.texto-ul').forEach(e => e.style.fontSize = tamanos['texto-ul'][indice]);
+    }
 </script>
+  
     <script>
       document.getElementById('inicia_sesion').addEventListener('click', function(event) {
         event.preventDefault();  // Evita que el enlace haga su acción por defecto

@@ -414,8 +414,9 @@
                 <i class="bi bi-gear"></i>
               </button>
               <ul class="dropdown-menu">
-                <li><button onclick="cambiarTamanoTexto('a')" class="btn">Agrandar texto</button></li>
-                <li><button onclick="cambiarTamanoTexto('b')" class="btn">Achicar texto</button></li>                     
+                <li><button onclick="cambiarTamanoTexto('a')">Aumentar texto</button></li>
+                <li><button onclick="cambiarTamanoTexto('b')">Reducir texto</button></li>
+                <li><button onclick="cambiarTamanoTexto()">Restablecer texto</button></li>                  
               </ul>
             </div>
           <i class="bi bi-moon toggle-theme" id="darkModeToggle"></i>
@@ -649,24 +650,45 @@
                 }
             });
           </script>   
-                <script>
-        function cambiarTamanoTexto(accion) {
-          const elementos = document.querySelectorAll('h1, h2, h3, .descripcion-curso, .message, .texto-profe, .navbar, .footer');  // Seleccionamos todos los elementos que contienen texto
-          let fontSize = window.getComputedStyle(elementos[0]).fontSize;  // Obtenemos el tamaño de fuente actual
-          fontSize = parseFloat(fontSize);  // Convertimos a número
-          
-          if (accion === 'a') {
-              fontSize *= 1.2;  // Aumentamos el tamaño
-          } else if (accion === 'b') {
-              fontSize *= 0.8;  // Reducimos el tamaño
-          }
-          
-          // Aplicamos el nuevo tamaño a todos los elementos seleccionados
-          elementos.forEach(element => {
-              element.style.fontSize = `${fontSize}px`;
-          });
-      }
-      </script> 
+<script>     
+  // Variable global para controlar el estado del tamaño del texto (0: normal, 1: grande, -1: chico)
+  let estadoTamano = 0;
+  
+  function cambiarTamanoTexto(accion) {
+    const elementos = document.querySelectorAll('h1, h2, h3, .descripcion-curso, .presentacion-curso, .message, .texto-profe, .navbar, .footer');
+  
+    if (accion === 'a') { // Aumentar tamaño
+      estadoTamano = Math.min(1, estadoTamano + 1); // Máximo estado 1
+    } else if (accion === 'b') { // Reducir tamaño
+      estadoTamano = Math.max(-1, estadoTamano - 1); // Mínimo estado -1
+    } else { // Resetear tamaño a normal
+      estadoTamano = 0;
+    }
+  
+    // Definimos tamaños específicos para cada tipo de elemento
+    const tamanos = {
+      h1: ['40px', '48px', '28px'], // Normal, Grande, Chico
+      h2: ['34px', '40px', '24px'],
+      h3: ['28px', '32px', '20px'],
+      descripcion: ['20.8px', '24px', '14px'],
+      message: ['16px', '24px', '12px'],
+      navbar: ['16px', '20px', '12px'],
+      footer: ['16px', '28px', '10px']
+    };
+  
+    // Determinamos qué índice de tamaño usar (0: normal, 1: grande, 2: chico)
+    const indice = estadoTamano === 1 ? 1 : estadoTamano === -1 ? 2 : 0;
+  
+    // Aplicamos tamaños específicos a cada grupo de elementos
+    document.querySelectorAll('h1').forEach(e => e.style.fontSize = tamanos.h1[indice]);
+    document.querySelectorAll('h2').forEach(e => e.style.fontSize = tamanos.h2[indice]);
+    document.querySelectorAll('h3').forEach(e => e.style.fontSize = tamanos.h3[indice]);
+    document.querySelectorAll('.descripcion-curso').forEach(e => e.style.fontSize = tamanos.descripcion[indice]);
+    document.querySelectorAll('.message').forEach(e => e.style.fontSize = tamanos.message[indice]);
+    document.querySelectorAll('.navbar').forEach(e => e.style.fontSize = tamanos.navbar[indice]);
+    document.querySelectorAll('.footer').forEach(e => e.style.fontSize = tamanos.footer[indice]);
+  }
+  </script>
 <!-- Script de EmailJS -->
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <script>

@@ -64,9 +64,10 @@
                   <i class="bi bi-gear"></i>
                 </button>
                 <ul class="dropdown-menu">
-                  <li><button onclick="cambiarTamanoTexto('a')" class="btn">Agrandar texto</button></li>
-                  <li><button onclick="cambiarTamanoTexto('b')" class="btn">Achicar texto</button></li>
-                </ul>
+                  <li><button onclick="cambiarTamanoTexto('a')">Aumentar texto</button></li>
+                  <li><button onclick="cambiarTamanoTexto('b')">Reducir texto</button></li>
+                  <li><button onclick="cambiarTamanoTexto()">Restablecer texto</button></li>
+              </ul> 
               </div>
             </li>
           </ul>
@@ -163,79 +164,79 @@
           <span class="texto-cursos">EN CURSOS DIGITALES</span></div>
         <button class="btn boton-curso"><a class="cursos-link" href="cursos_populares.html">VER TODOS LOS CURSOS</a></button>
       </section>     
-      <!--Seccion recomendaciones-->
-      <section class="recomendaciones container-fluid" id="opiniones">
-        <div class="swiffy-slider slider-item-show3 slider-item-snapstart slider-nav-round slider-nav-dark slider-nav-sm slider-nav-touch slider-nav-autoplay slider-indicators-round slider-indicators-highlight slider-nav-animation slider-nav-animation-appear" data-slider-nav-autoplay-interval="4000">
+        <!--Seccion recomendaciones-->
+        <section id="opiniones" class="recomendaciones container-fluid">
+          <div class="swiffy-slider slider-item-show3 slider-item-snapstart slider-nav-round slider-nav-dark slider-nav-sm slider-nav-touch slider-nav-autoplay slider-indicators-round slider-indicators-highlight slider-nav-animation slider-nav-animation-appear" data-slider-nav-autoplay-interval="4000">
             <ul class="slider-container">
-                <!-- Carta 1 -->
-                <li>
-                  <div class="card">
-                    <img src="imagenes/persona2.jpg" alt="Curso 1">
-                    <div class="card-content">
-                      <h3>Curso de Desarrollo Web</h3>
-                      <p>"Este curso cambió mi vida. Aprendí a crear páginas web desde cero y conseguí mi primer empleo."</p>
-                    </div>
+              <!-- Carta 1 -->
+              <li>
+                <div class="card">
+                  <img src="imagenes/persona2.jpg" alt="Curso 1">
+                  <div class="card-content">
+                    <h3>Curso de Desarrollo Web</h3>
+                    <p>"Este curso cambió mi vida. Aprendí a crear páginas web desde cero y conseguí mi primer empleo."</p>
                   </div>
-                </li>
-                <!-- Carta 2 -->
-                <li>
-                  <div class="card">
-                    <img src="imagenes/persona1.jpg" alt="Curso 2">
-                    <div class="card-content">
-                      <h3>Curso de Diseño Gráfico</h3>
-                      <p>"El curso fue excelente. Ahora diseño logotipos y materiales para empresas."</p>
-                    </div>
+                </div>
+              </li>
+              <!-- Carta 2 -->
+              <li>
+                <div class="card">
+                  <img src="imagenes/persona1.jpg" alt="Curso 2">
+                  <div class="card-content">
+                    <h3>Curso de Diseño Gráfico</h3>
+                    <p>"El curso fue excelente. Ahora diseño logotipos y materiales para empresas."</p>
                   </div>
-                </li>
-                <!-- Carta 3 -->
-                <li>
-                  <div class="card">
-                    <img src="imagenes/persona1.jpg" alt="Curso 3">
-                    <div class="card-content">
-                      <h3>Curso de Data Science</h3>
-                      <p>"Gracias al curso, desarrollé habilidades en análisis de datos que me destacaron en mi trabajo."</p>
-                    </div>
+                </div>
+              </li>
+              <!-- Carta 3 -->
+              <li>
+                <div class="card">
+                  <img src="imagenes/persona1.jpg" alt="Curso 3">
+                  <div class="card-content">
+                    <h3>Helena - Curso de Front-End</h3>
+                    <p>"Gracias al curso, desarrollé habilidades en el diseño y desarrollo de aplicaciones web que me destacaron en mi trabajo."</p>
                   </div>
-                </li>
-                <!-- Carta 4 -->
-                <li>
-                  <div class="card card-one">
-                    <img src="imagenes/persona2.jpg" alt="Curso 4">
-                    <div class="card-content">
-                      <h3>Curso de Marketing Digital</h3>
-                      <p>"Un curso imprescindible para cualquiera que quiera aprender estrategias modernas de marketing."</p>
-                    </div>
+                </div>
+              </li>
+              <!-- Carta 4 -->
+              <li>
+                <div class="card card-one">
+                  <img src="imagenes/persona2.jpg" alt="Curso 4">
+                  <div class="card-content">
+                    <h3>Lucas - Curso de Trading</h3>
+                    <p>"Un curso imprescindible para cualquiera que quiera aprender estrategias sobre el trading y cómo operar en la bolsa."</p>
                   </div>
-                </li>
-                <!-- Carta 5 -->
-                <li>
-                  <div class="card">
-                    <img src="imagenes/persona1.jpg" alt="Curso 5">
-                    <div class="card-content">
-                      <h3>Curso de Machine Learning</h3>
-                      <p>"He aplicado lo aprendido para desarrollar modelos predictivos efectivos."</p>
-                    </div>
+                </div>
+              </li>
+              <!-- Carta 5 -->
+              <li>
+                <div class="card">
+                  <img src="imagenes/persona4.jpg" alt="Curso 5">
+                  <div class="card-content">
+                    <h3>Eugenia - Curso de Inglés</h3>
+                    <p>"Los cursos de FreeCur me ayudaron a potenciar mi inglés al punto de lograr tener conversaciones fluidas con mis clientes"</p>
                   </div>
-                </li>
-                <li>
-                  <div class="card">
-                    <img src="imagenes/persona1.jpg" alt="Curso 5">
-                    <div class="card-content">
-                      <h3>Curso de Machine Learning</h3>
-                      <p>"He aplicado lo aprendido para desarrollar modelos predictivos efectivos."</p>
-                    </div>
+                </div>
+              </li>
+              <li>
+                <div class="card">
+                  <img src="imagenes/persona5.jpg" alt="Curso 5">
+                  <div class="card-content">
+                    <h3>Daniel - Curso de Java</h3>
+                    <p>"Mis conocimientos en programación eran nulos y mis ganas de aprender muy grandes. A mis 40 años, conseguí empleo gracias a estos cursos"</p>
                   </div>
-                </li>
-                <li>
-                  <div class="card">
-                    <img src="imagenes/persona1.jpg" alt="Curso 5">
-                    <div class="card-content">
-                      <h3>Curso de Machine Learning</h3>
-                      <p>"He aplicado lo aprendido para desarrollar modelos predictivos efectivos."</p>
-                    </div>
+                </div>
+              </li>
+              <li>
+                <div class="card">
+                  <img src="imagenes/persona6.jpg" alt="Curso 5">
+                  <div class="card-content">
+                    <h3>Marcos - Curso de Historia</h3>
+                    <p>"Siempre fui apasionado por la historia argentina. Con los cursos, pude adentrarme un poco más en esta pasión que tengo."</p>
                   </div>
-                </li>
-            </ul>   
+                </div>
+              </li>
+            </ul>    
             <!-- Botones de navegación -->
             <button type="button" class="slider-nav"></button>
             <button type="button" class="slider-nav slider-nav-next"></button> 
@@ -327,20 +328,52 @@
       }
     });
     </script>
-    <script>
-      // Función para cambiar el tamaño del texto
+    <script>     
+      // Variable global para controlar el estado del tamaño del texto (0: normal, 1: grande, -1: chico)
+      let estadoTamano = 0;
+      
       function cambiarTamanoTexto(accion) {
-        const elementosTexto = document.querySelectorAll('.texto-ul, b, .card-text, .nombre-curso'); // Selecciona los elementos cuyo texto se cambiará
-        elementosTexto.forEach(elemento => {
-          let tamanoActual = parseFloat(window.getComputedStyle(elemento).fontSize); // Obtiene el tamaño actual de la fuente
-          if (accion === 'a') {
-            // Aumenta el tamaño de la fuente un 10%
-            elemento.style.fontSize = (tamanoActual * 1.1) + 'px';
-          } else if (accion === 'b') {
-            // Disminuye el tamaño de la fuente un 10%
-            elemento.style.fontSize = (tamanoActual * 0.9) + 'px';
-          }
-        });
+        // Selección de todos los elementos a modificar
+        const elementos = document.querySelectorAll('h1, h2, h3, .tarjetas , .hero, .navbar, .footer, .card-text, .texto-ul');
+      
+        if (accion === 'a') { // Aumentar tamaño
+          estadoTamano = Math.min(1, estadoTamano + 1); // Máximo estado 1
+        } else if (accion === 'b') { // Reducir tamaño
+          estadoTamano = Math.max(-1, estadoTamano - 1); // Mínimo estado -1
+        } else { // Resetear tamaño a normal
+          estadoTamano = 0;
+        }
+      
+        // Definimos tamaños específicos para cada tipo de elemento
+        const tamanos = {
+          h1: ['40px', '48px', '28px'], // Normal, Grande, Chico
+          h2: ['40px', '48px', '24px'],
+          descripcion: ['20.8px', '24px', '14px'],
+          message: ['16px', '24px', '12px'],
+          navbar: ['16px', '20px', '12px'],
+          footer: ['16px', '28px', '10px'],
+          tarjetas: ['16px', '18px', '14px'], // Ajusta el tamaño de texto dentro de las tarjetas
+          hero: ['20px', '24px', '16px'],    // Ajusta el tamaño de texto en el héroe
+          'card-text': ['16px', '18.2px', '12px'], // Texto dentro de las tarjetas
+          'texto-ul': ['17.6px', '22px', '12px'] // Texto de las listas
+        };
+      
+        // Determinamos qué índice de tamaño usar (0: normal, 1: grande, 2: chico)
+        const indice = estadoTamano === 1 ? 1 : estadoTamano === -1 ? 2 : 0;
+      
+        // Aplicamos tamaños específicos a cada grupo de elementos
+        document.querySelectorAll('h1').forEach(e => e.style.fontSize = tamanos.h1[indice]);
+        document.querySelectorAll('h2').forEach(e => e.style.fontSize = tamanos.h2[indice]);
+        document.querySelectorAll('.descripcion-curso').forEach(e => e.style.fontSize = tamanos.descripcion[indice]);
+        document.querySelectorAll('.message').forEach(e => e.style.fontSize = tamanos.message[indice]);
+        document.querySelectorAll('.navbar').forEach(e => e.style.fontSize = tamanos.navbar[indice]);
+        document.querySelectorAll('.footer').forEach(e => e.style.fontSize = tamanos.footer[indice]);
+        
+        // Para las tarjetas y el héroe
+        document.querySelectorAll('.tarjetas').forEach(e => e.style.fontSize = tamanos.tarjetas[indice]);
+        document.querySelectorAll('.hero').forEach(e => e.style.fontSize = tamanos.hero[indice]);
+        document.querySelectorAll('.card-text').forEach(e => e.style.fontSize = tamanos['card-text'][indice]);
+        document.querySelectorAll('.texto-ul').forEach(e => e.style.fontSize = tamanos['texto-ul'][indice]);
       }
     </script>
     <!--Bootstrap-->

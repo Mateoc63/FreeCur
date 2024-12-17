@@ -19,6 +19,41 @@ body{
   z-index: 1000;
   transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
 }
+/* Estilo general del dropdown */
+.dropdown-menu {
+  background-color: #f8f9fa; /* Color de fondo claro */
+  border: 1px solid #ddd; /* Borde sutil */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  padding: 10px 0; /* Espaciado interno */
+  min-width: 180px; /* Ancho mínimo */
+}
+
+/* Estilo de los botones dentro del dropdown */
+.dropdown-menu li {
+  list-style: none; /* Quitamos los estilos de lista */
+  margin: 0; /* Eliminamos márgenes */
+}
+
+.dropdown-menu li button {
+  display: block; /* Ocupa todo el ancho del dropdown */
+  width: 100%; /* Que los botones ocupen el ancho completo */
+  text-align: left; /* Alineación de texto */
+  background-color: transparent; /* Fondo transparente */
+  border: none; /* Sin bordes */
+  padding: 8px 15px; /* Espaciado interno */
+  font-size: 16px; /* Tamaño del texto */
+  color: #333; /* Color del texto */
+  cursor: pointer; /* Cursor tipo puntero */
+  transition: all 0.3s ease; /* Transición suave */
+}
+
+/* Efecto hover */
+.dropdown-menu li button:hover {
+  background-color: rgba(45, 159, 123, 0.8); /* Fondo azul al pasar el mouse */
+  color: #fff; /* Texto blanco */
+  border-radius: 4px; /* Bordes ligeramente redondeados */
+}
 .modern-navbar.scrolled {
   transform: translateX(-50%) scale(0.9);
   background: rgba(45, 159, 123, 0.95); 
