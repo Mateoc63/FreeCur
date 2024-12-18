@@ -824,7 +824,7 @@ body{
       font-size: 2rem !important;
     }
     .footer{
-      height: 85vh !important;
+      height: 75vh !important;
     }
     .footer-title{
       margin-top: 2px;
@@ -892,7 +892,7 @@ body{
       font-size: 2rem !important;
     }
     .footer{
-      height: 71vh;
+      height: 65vh !important;
     }
     .footer-title{
       margin-top: 2px;
@@ -960,7 +960,7 @@ body{
       font-size: 2rem !important;
     }
     .footer{
-      height: 60vh;
+      height: 58vh !important;
     }
     .footer-title{
       margin-top: 2px;
